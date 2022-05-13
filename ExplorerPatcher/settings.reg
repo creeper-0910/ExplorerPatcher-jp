@@ -17,13 +17,13 @@
 ;y 通知エリアのシステムアイコンをカスタマイズする 🡕
 ;shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}\SystemIcons
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 4 画面上の主なタスクバーの位置 *
+;c 4 画面上のプライマリタスクバーの位置 *
 ;x 3 下 (既定)
 ;x 1 上
 ;x 0 左
 ;x 2 右
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_TaskbarPosition"=dword:00000003
-;c 4 画面上の二次的なタスクバーの位置
+;c 4 画面上のセカンダリタスクバーの位置
 ;x 3 下 (既定)
 ;x 1 上
 ;x 0 左
@@ -47,119 +47,119 @@
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b 自動でタスクバーを隠す
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_AutoHideTaskbar"=dword:00000000
-;t The following settings only apply to the Windows 10 taskbar:                                
+;t 以下の設定は、Windows 10のタスクバーだけに適用されます:                                
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 2 Start button style
-;x 0 Windows 10 (default)
+;c 2 スタートボタンのスタイル
+;x 0 Windows 10 (既定)
 ;x 1 Windows 11
 "OrbStyle"=dword:00000000
-;c 5 Primary taskbar alignment
-;x 0 At screen edge (default)
-;x 1 Centered
-;x 5 Centered, at screen edge when full
-;x 3 Centered with Start button
-;x 7 Centered with Start button, at screen edge when full
+;c 5 プライマリタスクバーの配置
+;x 0 画面端 (既定)
+;x 1 中央
+;x 5 中央、フルスクリーン時画面端
+;x 3 スタートボタンを中心に
+;x 7 スタートボタンを中心に、フルスクリーン時は画面端に配置
 "OldTaskbarAl"=dword:00000000
-;c 5 Secondary taskbar(s) alignment
-;x 0 At screen edge (default)
-;x 1 Centered
-;x 5 Centered, at screen edge when full
-;x 3 Centered with Start button
-;x 7 Centered with Start button, at screen edge when full
+;c 5 セカンダリタスクバーの配置
+;x 0 画面端 (既定)
+;x 1 中央
+;x 5 中央、フルスクリーン時画面端
+;x 3 スタートボタンを中心に
+;x 7 スタートボタンを中心に、フルスクリーン時は画面端に配置
 "MMOldTaskbarAl"=dword:00000000
-;c 3 Combine taskbar icons on primary taskbar
-;x 0 Always combine
-;x 1 Combine when taskbar is full
-;x 2 Never combine (default)
+;c 3 プライマリタスクバーのアイコン結合
+;x 0 常に結合する
+;x 1 タスクバーが一杯のときに結合する
+;x 2 結合しない (既定)
 "TaskbarGlomLevel"=dword:00000002
-;c 3 Combine taskbar icons on secondary taskbar(s)
-;x 0 Always combine
-;x 1 Combine when taskbar is full
-;x 2 Never combine (default)
+;c 3 セカンダリタスクバーのアイコン結合
+;x 0 常に結合する
+;x 1 タスクバーが一杯のときに結合する
+;x 2 結合しない (既定)
 "MMTaskbarGlomLevel"=dword:00000002
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;c 2 Taskbar icon size
-;x 1 Small
-;x 0 Large (default)
+;c 2 タスクバーのアイコンサイズ
+;x 1 小さい
+;x 0 大きい (既定)
 "TaskbarSmallIcons"=dword:00000000
 ;e 
 
 
-;T System tray
+;T システムトレイ
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Skin taskbar and tray pop-up menus
+;b タスクバーとトレイのポップアップメニューのスキン
 "SkinMenus"=dword:00000001
-;b Center tray icon pop-up menus
+;b センタートレイのアイコンのポップアップメニュー
 "CenterMenus"=dword:00000001
-;b Flyout behavior for tray icon pop-up menus
+;b トレイアイコンのポップアップメニューのフライアウト動作
 "FlyoutMenus"=dword:00000001
 [HKEY_CURRENT_USER\Software\Microsoft\TabletTip\1.7]
-;b Show touch keyboard button *
+;b タッチキーボードボタンを表示する *
 "TipbandDesiredVisibility"=dword:00000000
-;t The following settings only apply to the Windows 10 taskbar:
+;t 以下の設定は、Windows 10のタスクバーだけに適用されます:
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;p 2
-;b Apply Windows 11 style to system tray icons *
+;b システムトレイアイコンにWindows 11のスタイルを適用 *
 "SkinIcons"=dword:00000001
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;b Show seconds in the clock
+;b 時計に秒を表示する
 "ShowSecondsInSystemClock"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Hide Control Center button *
+;b コントロールセンターのボタンを隠す *
 "HideControlCenterButton"=dword:00000000
-;a Choosing 'Open Network && Internet settings' when right clicking the
-;c 3 network icon should open:
-;x 0 Network section in the Settings app (default)
-;x 1 Network and Sharing Center in Control Panel
-;x 2 Network Connections in Control Panel
+;a ネットワークアイコンを右クリックし、「ネットワークとインターネットの設定を開く」を選択した時
+;c 3 開くウィンドウ:
+;x 0 設定アプリのネットワーク設定 (既定)
+;x 1 コントロールパネルのネットワークと共有
+;x 2 コントロールパネルのネットワーク接続
 "ReplaceNetwork"=dword:00000000
 ;q
-;t When clicking a system icon in the Windows 10 taskbar system tray, open:
+;t Windows 10のシステムトレイにあるアイコンをクリックした時:
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Control Panel\Settings\Network]
-;c 7 Network
-;x 6 Control Center
+;c 7 ネットワーク
+;x 6 コントロールセンター
 ;x 5 Windows 11 WiFi flyout
-;x 0 Windows 10 flyout (default)
+;x 0 Windows 10 flyout (既定)
 ;x 2 Windows 8 flyout
-;x 1 Network section in the Settings app
-;x 3 Network and Sharing Center in Control Panel
-;x 4 Network Connections in Control Panel
+;x 1 設定アプリのネットワーク設定
+;x 3 コントロールパネルのネットワークと共有
+;x 4 コントロールパネルのネットワーク接続
 "ReplaceVan"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\MTCUVC]
-;c 2 Sound
-;x 1 Windows 10 flyout (default)
+;c 2 サウンド
+;x 1 Windows 10 flyout (既定)
 ;x 0 Windows 7 flyout
 "EnableMtcUvc"=dword:00000001
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell]
-;c 3 Clock
+;c 3 時計
 ;x 2 Windows 11 flyout
-;x 0 Windows 10 flyout (default)
+;x 0 Windows 10 flyout (既定)
 ;x 1 Windows 7
 "UseWin32TrayClockExperience"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell]
-;c 2 Battery
-;x 0 Windows 10 flyout (default)
+;c 2 バッテリー
+;x 0 Windows 10 flyout (既定)
 ;x 1 Windows 7
 "UseWin32BatteryFlyout"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 3 Language switcher *
-;x 0 Windows 11 (default)
-;x 1 Windows 10 (with link to "Language Preferences")
+;c 3 言語設定 *
+;x 0 Windows 11 (既定)
+;x 1 Windows 10 ("言語設定"にリンクされています)
 ;x 4 Windows 10
 "IMEStyle"=dword:00000000
 
 
-;T File Explorer
-;e For the settings marked with (**) to work in Open or Save file dialogs as well, register
-;e this utility as shell extension using the option below.
-;y Learn more 🡕
+;T ファイルエクスプローラー
+;e (**) の付いた設定が"ファイルを開く"または"ファイルを保存する"ダイアログで機能するようにするには、
+;e 以下のオプションを利用してこのプログラムをシェル拡張として登録します。
+;y 詳しく見る 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Using-ExplorerPatcher-as-shell-extension
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;q
-;b Register as shell extension
+;b シェル拡張として登録
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_RegisterAsShellExtension"=dword:00000000
 [-HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32]
-;d Disable the Windows 11 context menu *
+;d Windows11のコンテキストメニューを無効にする *
 @=""
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b Always use legacy file transfer dialog
@@ -169,7 +169,7 @@
 "UseClassicDriveGrouping"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;c 3 Control Interface *
-;x 0 Windows 11 Command Bar (default)
+;x 0 Windows 11 Command Bar (既定)
 ;x 1 Windows 10 Ribbon
 ;x 2 Windows 7 Command Bar
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_FileExplorerCommandUI"=dword:00000000
@@ -187,14 +187,14 @@
 ;b Hide search bar completely **
 "HideExplorerSearchBar"=dword:00000000
 ;c 4 Title bar
-;x 0 Show icon and title (default)
+;x 0 Show icon and title (既定)
 ;x 1 Hide title, show icon
 ;x 2 Hide icon, show title
 ;x 3 Hide icon and title
 "HideIconAndTitleInExplorer"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;c 3 Apply Mica effect on these areas
-;x 0 Let File Explorer decide (default)
+;x 0 Let File Explorer decide (既定)
 ;x 1 Title bar, command bar and navigation bar
 ;x 2 Nowhere
 "MicaEffectOnTitlebar"=dword:00000000
@@ -203,7 +203,7 @@
 ;T Start menu
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 ;z 2 Start menu style
-;x 0 Windows 11 (default)
+;x 0 Windows 11 (既定)
 ;x 1 Windows 10
 "Start_ShowClassicMode"=dword:00000000
 ;y More Start menu options in the Settings app 🡕
@@ -211,7 +211,7 @@
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 ;c 2 Position on screen
 ;x 0 At screen edge
-;x 1 Center (default)
+;x 1 Center (既定)
 "TaskbarAl"=dword:00000001
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;c 22 Maximum number of frequent apps to show
@@ -221,7 +221,7 @@
 ;x 3 3
 ;x 4 4
 ;x 5 5
-;x 6 6 (default)
+;x 6 6 (既定)
 ;x 7 7
 ;x 8 8
 ;x 9 9
@@ -241,7 +241,7 @@
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage]
 ;a When using multiple displays, open Start on this monitor when invoked using
 ;c 10 the keyboard
-;x 1 Primary monitor (default)
+;x 1 Primary monitor (既定)
 ;x 0 Monitor on which the cursor is on
 ;x 2 Monitor #2
 ;x 3 Monitor #3
@@ -287,7 +287,7 @@
 ;T Window switcher
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
 ;z 4 Window switcher (Alt+Tab) style *
-;x 0 Windows 11 (default)
+;x 0 Windows 11 (既定)
 ;x 3 Windows 10
 ;x 1 Windows NT
 ;x 2 Simple Window Switcher
@@ -314,7 +314,7 @@
 ;x 100 Opaque
 ;x 98 98 %
 ;x 96 96 %
-;x 95 95 % (default)
+;x 95 95 % (既定)
 ;x 94 94 %
 ;x 92 92 %
 ;x 90 90 %
@@ -333,13 +333,13 @@
 "Grid_backgroundPercent"=dword:0000005F
 [HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
 ;c 3 Color scheme
-;x 0 Follow system setting (default)
+;x 0 Follow system setting (既定)
 ;x 1 Light
 ;x 2 Dark
 "ColorScheme"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
 ;c 3 Corner preference
-;x 2 Rounded (default)
+;x 2 Rounded (既定)
 ;x 3 Small rounded
 ;x 1 Not rounded
 "CornerPreference"=dword:00000002
@@ -355,7 +355,7 @@
 ;x 260 260 pt
 ;x 250 250 pt
 ;x 240 240 pt
-;x 230 230 pt (default)
+;x 230 230 pt (既定)
 ;x 220 220 pt
 ;x 210 210 pt
 ;x 200 200 pt
@@ -371,7 +371,7 @@
 ;x 95 95 %
 ;x 90 90 %
 ;x 85 85 %
-;x 80 80 % (default)
+;x 80 80 % (既定)
 ;x 75 75 %
 ;x 70 70 %
 ;x 65 65 %
@@ -383,7 +383,7 @@
 ;x 95 95 %
 ;x 90 90 %
 ;x 85 85 %
-;x 80 80 % (default)
+;x 80 80 % (既定)
 ;x 75 75 %
 ;x 70 70 %
 ;x 65 65 %
@@ -397,7 +397,7 @@
 ;x 35 30 pt
 ;x 30 30 pt
 ;x 25 25 pt
-;x 20 20 pt (default)
+;x 20 20 pt (既定)
 ;x 15 15 pt
 ;x 10 10 pt
 ;x 5 5 pt
@@ -408,7 +408,7 @@
 ;x 25 25 ms
 ;x 50 50 ms
 ;x 75 75 ms
-;x 100 100 ms (default)
+;x 100 100 ms (既定)
 ;x 125 125 ms
 ;x 150 150 ms
 ;x 200 200 ms
@@ -429,61 +429,61 @@
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_PeopleBand"=dword:00000000
 ;w Location
 ;Search City or Zip Code; the program looks up "weather in /* what you typed */" on Google. Leave blank for the default value (current location).
-;Current location (default)
+;Current location (既定)
 "WeatherLocation"=""
 ;c 5 Layout
-;x 0 Icon and description (default)
+;x 0 Icon and description (既定)
 ;x 3 Icon and temperature
 ;x 1 Icon only
 ;x 4 Temperature only
 ;x 5 Temperature and description
 "WeatherViewMode"=dword:00000000
 ;c 3 Widget size
-;x 0 Automatic (fit contents) (default)
+;x 0 Automatic (fit contents) (既定)
 ;x 2 Automatic (fit contents) with threshold
 ;x 1 Fixed
 "WeatherFixedSize"=dword:00000000
 ;c 2 Widget position
-;x 0 Right / bottom (default)
+;x 0 Right / bottom (既定)
 ;x 1 Left / top
 "WeatherToLeft"=dword:00000000
 ;c 7 Update frequency
 ;x 60 Every minute
 ;x 300 Every 5 minutes
 ;x 900 Every 15 minutes
-;x 1200 Every 20 minutes (default)
+;x 1200 Every 20 minutes (既定)
 ;x 1800 Every half an hour
 ;x 3600 Every hour
 ;x 7200 Every couple of hours
 "WeatherContentUpdateMode"=dword:000004B0
 ;c 2 Temperature unit
-;x 0 Celsius (default)
+;x 0 Celsius (既定)
 ;x 1 Fahrenheit
 "WeatherTemperatureUnit"=dword:00000000
 ;;;c 2 Location accuracy
-;;;x 0 Generic (based on the IP address) (default)
+;;;x 0 Generic (based on the IP address) (既定)
 ;;;x 1 Precise (geolocation)
 ;;"WeatherLocationType"=dword:00000000
 ;w Language
 ;Type the short code for the language you'd like the weather data to be displayed in. For example, try "en", "ro", "de", "fr" etc. Leave blank for the default value (language of the Windows OS).
-;System language (default)
+;System language (既定)
 "WeatherLanguage"=""
 ;c 3 Color scheme
-;x 0 Follow system setting (default)
+;x 0 Follow system setting (既定)
 ;x 1 Light
 ;x 2 Dark
 "WeatherTheme"=dword:00000000
 ;c 3 Corner preference
-;x 2 Rounded (default)
+;x 2 Rounded (既定)
 ;x 3 Small rounded
 ;x 1 Not rounded
 "WeatherWindowCornerPreference"=dword:00000002
 ;c 2 Icon pack
-;x 0 Microsoft (default)
+;x 0 Microsoft (既定)
 ;x 1 Google
 "WeatherIconPack"=dword:00000000
 ;c 2 Display widget contents
-;x 0 On a single line (default)
+;x 0 On a single line (既定)
 ;x 1 On 2 lines, if possible
 "WeatherContentsMode"=dword:00000000
 ;c 17 Zoom
@@ -494,7 +494,7 @@
 ;x 75 75 %
 ;x 80 80 %
 ;x 90 90 %
-;x 0 100 % (default)
+;x 0 100 % (既定)
 ;x 110 110 %
 ;x 125 125 %
 ;x 150 150 %
@@ -543,7 +543,7 @@
 "DisableAeroSnapQuadrants"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;c 2 Snap Assist style
-;x 0 Windows 11 (default)
+;x 0 Windows 11 (既定)
 ;x 3 Windows 10
 "SnapAssistSettings"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
@@ -552,7 +552,7 @@
 ;x 1 Sign out
 ;x 16 Sleep
 ;x 64 Hibernate
-;x 2 Shut down (default)
+;x 2 Shut down (既定)
 ;x 4 Restart
 "Start_PowerButtonAction"=dword:00000002
 ;t Prevent the following Control Panel links from being redirected to the Settings app:
@@ -570,7 +570,7 @@
 ;T Updates
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;z 3 When File Explorer starts
-;x 1 Notify about available updates (default)
+;x 1 Notify about available updates (既定)
 ;x 0 Prompt to install available updates
 ;x 2 Do not check for updates
 "UpdatePolicy"=dword:00000001
@@ -624,7 +624,7 @@
 ;b Enable symbols download *
 "EnableSymbolDownload"=dword:00000001
 ;c 12 Supplementary delay at logon *
-;x 0 None (default)
+;x 0 None (既定)
 ;x 300 300 ms
 ;x 600 600 ms
 ;x 1000 1 second
