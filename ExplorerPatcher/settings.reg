@@ -162,59 +162,59 @@
 ;d Windows11のコンテキストメニューを無効にする *
 @=""
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Always use legacy file transfer dialog
+;b 常にレガシーなファイル転送ダイアログを使用する
 "LegacyFileTransferDialog"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Use classic drive groupings in This PC
+;b このPCでクラシックなドライブグループを使用する
 "UseClassicDriveGrouping"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 3 Control Interface *
-;x 0 Windows 11 Command Bar (既定)
-;x 1 Windows 10 Ribbon
-;x 2 Windows 7 Command Bar
+;c 3 コントロールインターフェース *
+;x 0 Windows 11 コマンドバー (既定)
+;x 1 Windows 10 リボン
+;x 2 Windows 7 コマンドバー
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_FileExplorerCommandUI"=dword:00000000
-;t The following settings take effect on newly created File Explorer windows:
+;t 以下の設定は、新しく作成されたファイルエクスプローラーのウィンドウに適用されます:
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;i Use immersive menus when displaying Windows 10 context menus **
+;i Windows 10のコンテキストメニューの表示時、没入型メニューを使用する **
 "DisableImmersiveContextMenu"=dword:00000000
 [-HKEY_CURRENT_USER\Software\Classes\CLSID\{056440FD-8568-48e7-A632-72157243B55B}\InprocServer32]
-;d Disable navigation bar **
+;d ナビゲーションバーを無効にする **
 @=""
 [-HKEY_CURRENT_USER\Software\Classes\CLSID\{1d64637d-31e9-4b06-9124-e83fb178ac6e}\TreatAs]
-;d Disable modern search bar
+;d モダンな検索バーを無効にする
 @="{64bc32b5-4eec-4de7-972d-bd8bd0324537}"
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Hide search bar completely **
+;b 検索バーを完全に隠す **
 "HideExplorerSearchBar"=dword:00000000
-;c 4 Title bar
-;x 0 Show icon and title (既定)
-;x 1 Hide title, show icon
-;x 2 Hide icon, show title
-;x 3 Hide icon and title
+;c 4 タイトルバー
+;x 0 アイコンとタイトルを表示する (既定)
+;x 1 タイトルを隠し、アイコンを表示する
+;x 2 アイコンを隠し、タイトルを表示する
+;x 3 アイコンとタイトルを隠す
 "HideIconAndTitleInExplorer"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 3 Apply Mica effect on these areas
-;x 0 Let File Explorer decide (既定)
-;x 1 Title bar, command bar and navigation bar
-;x 2 Nowhere
+;c 3 マイカ効果(透過ぼかし)を適用する範囲
+;x 0 ファイルエクスプローラに任せる (既定)
+;x 1 タイトルバー、コマンドバー、ナビゲーションバーに適用
+;x 2 使用しない
 "MicaEffectOnTitlebar"=dword:00000000
 
 
-;T Start menu
+;T スタートメニュー
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;z 2 Start menu style
+;z 2 スタートメニューのスタイル
 ;x 0 Windows 11 (既定)
 ;x 1 Windows 10
 "Start_ShowClassicMode"=dword:00000000
-;y More Start menu options in the Settings app 🡕
+;y 設定アプリのその他のスタートメニューオプション 🡕
 ;ms-settings:personalization-start
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;c 2 Position on screen
-;x 0 At screen edge
-;x 1 Center (既定)
+;c 2 画面上の位置
+;x 0 画面端
+;x 1 中央 (既定)
 "TaskbarAl"=dword:00000001
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 22 Maximum number of frequent apps to show
+;c 22 表示するよく使うアプリの最大数
 ;x 0 None
 ;x 1 1
 ;x 2 2
@@ -236,82 +236,82 @@
 ;x 18 18
 ;x 19 19
 ;x 20 20
-;x 99999 Unlimited
+;x 99999 無制限
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_Start_MaximumFrequentApps"=dword:00000006
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage]
-;a When using multiple displays, open Start on this monitor when invoked using
-;c 10 the keyboard
-;x 1 Primary monitor (既定)
-;x 0 Monitor on which the cursor is on
-;x 2 Monitor #2
-;x 3 Monitor #3
-;x 4 Monitor #4
-;x 5 Monitor #5
-;x 6 Monitor #6
-;x 7 Monitor #7
-;x 8 Monitor #8
-;x 9 Monitor #9
+;a マルチディスプレイの場合、キーボードを使用すると設定されたディスプレイでスタートが
+;c 10 表示されます
+;x 1 プライマリモニター (既定)
+;x 0 カーソルがあるモニター
+;x 2 モニター #2
+;x 3 モニター #3
+;x 4 モニター #4
+;x 5 モニター #5
+;x 6 モニター #6
+;x 7 モニター #7
+;x 8 モニター #8
+;x 9 モニター #9
 "MonitorOverride"=dword:00000001
-;t The following settings only apply to the Windows 11 Start menu:
+;t 以下の設定は、Windows 11のスタートメニューにのみ適用されます:
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Disable the "Recommended" section
+;b "おすすめ"の項目を無効にする
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_StartDocked_DisableRecommendedSection"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage]
-;b Open Start in All apps by default
+;b 既定で"すべてのアプリ"の状態でスタートを開く
 "MakeAllAppsDefault"=dword:00000000
-;t The following settings only apply to the Windows 10 Start menu:
+;t 以下の設定は、Windows 10のスタートメニューにのみ適用されます:
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Show more tiles
+;b その他のタイルを表示する
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_StartUI_ShowMoreTiles"=dword:00000000
-;c 3 Corner preference
-;x 1 Rounded corners, floating menu
-;x 2 Rounded corners, docked menu
-;x 0 Not rounded
+;c 3 コーナー設定
+;x 1 丸みを帯びた角、フローティングメニュー
+;x 2 丸みを帯びた角、ドッキングメニュー
+;x 0 丸みなし
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_StartUI_EnableRoundedCorners"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 3 Display mode
-;x 0 Default
-;x 1 Start menu
-;x 2 Full screen Start
+;c 3 表示方法
+;x 0 既定
+;x 1 スタートメニュー
+;x 2 フルスクリーンのスタートメニュー
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_ForceStartSize"=dword:00000000
-;c 3 App list
-;x 0 Display
-;x 3 Hide
-;x 1 Disable 
+;c 3 アプリ一覧
+;x 0 表示
+;x 3 隠す
+;x 1 無効にする
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_NoStartMenuMorePrograms"=dword:00000000
-;u Pin tiles to Windows 10 Start menu from File Explorer
+;u ファイルエクスプローラーからWindows 10のスタートメニューにタイルをピン留めする
 ;pin_tiles
 
 
 
-;T Window switcher
+;T ウインドウの切り替え
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
-;z 4 Window switcher (Alt+Tab) style *
+;z 4 ウィンドウの切り替え (Alt+Tab) スタイル *
 ;x 0 Windows 11 (既定)
 ;x 3 Windows 10
 ;x 1 Windows NT
 ;x 2 Simple Window Switcher
 "AltTabSettings"=dword:00000000
-;t The following settings only apply to the Simple Window Switcher:
+;t 以下の設定は、Simple Window Switcherにのみ適用されます:
 [HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
-;b Include desktop
+;b デスクトップを含める
 "IncludeWallpaper"=dword:00000001
-;b Always show on primary monitor
+;b 常にプライマリモニタに表示する
 "PrimaryOnly"=dword:00000000
-;b Show windows only from current monitor
+;b 現在のモニターで表示されているウィンドウのみを表示する
 "PerMonitor"=dword:00000000
-;b Display only the most recent window (per application switcher)
+;b 直近のウィンドウのみ表示（アプリケーションスイッチャーごと）
 "SwitcherIsPerApplication"=dword:00000000
 ;b %PLACEHOLDER_0001%
 "NoPerApplicationList"=dword:00000000
-;c 3 Theme
-;x 0 Default
-;x 1 Acrylic
-;x 2 Mica (always opaque)
+;c 3 テーマ
+;x 0 既定
+;x 1 アクリル
+;x 2 マイカ (常に不透明)
 "Theme"=dword:00000000
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MultitaskingView\AltTabViewHost]
-;c 19 Opacity
-;x 100 Opaque
+;c 19 不透明度
+;x 100 不透明
 ;x 98 98 %
 ;x 96 96 %
 ;x 95 95 % (既定)
@@ -332,19 +332,19 @@
 ;x 30 30 %
 "Grid_backgroundPercent"=dword:0000005F
 [HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
-;c 3 Color scheme
-;x 0 Follow system setting (既定)
-;x 1 Light
-;x 2 Dark
+;c 3 配色
+;x 0 システムの設定に従う (既定)
+;x 1 ライト
+;x 2 ダーク
 "ColorScheme"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
-;c 3 Corner preference
-;x 2 Rounded (既定)
-;x 3 Small rounded
-;x 1 Not rounded
+;c 3 コーナー設定
+;x 2 丸める (既定)
+;x 3 少しだけ丸める
+;x 1 丸みなし
 "CornerPreference"=dword:00000002
 [HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
-;c 20 Row height
+;c 20 列の高さ
 ;x 330 330 pt
 ;x 320 320 pt
 ;x 310 310 pt
@@ -366,8 +366,8 @@
 ;x 150 150 pt
 ;x 140 140 pt
 "RowHeight"=dword:000000e6
-;c 10 Maximum width (percentage of screen width)
-;x 100 100 % (not recommended)
+;c 10 最大幅（画面幅に対する割合）
+;x 100 100 % (非推奨)
 ;x 95 95 %
 ;x 90 90 %
 ;x 85 85 %
@@ -378,8 +378,8 @@
 ;x 60 60 %
 ;x 55 55 %
 "MaxWidth"=dword:00000050
-;c 10 Maximum height (percentage of screen height)
-;x 100 100 % (not recommended)
+;c 10 高さの最大値（画面の高さに対する割合)
+;x 100 100 % (非推奨)
 ;x 95 95 %
 ;x 90 90 %
 ;x 85 85 %
@@ -390,7 +390,7 @@
 ;x 60 60 %
 ;x 55 55 %
 "MaxHeight"=dword:00000050
-;c 11 Window padding
+;c 11 ウィンドウの余白
 ;x 50 50 pt
 ;x 45 45 pt
 ;x 40 40 pt
@@ -401,10 +401,10 @@
 ;x 15 15 pt
 ;x 10 10 pt
 ;x 5 5 pt
-;x 0 None
+;x 0 なし
 "MasterPadding"=dword:00000014
-;c 11 Show delay
-;x 0 None
+;c 11 表示の遅延
+;x 0 なし
 ;x 25 25 ms
 ;x 50 50 ms
 ;x 75 75 ms
@@ -417,76 +417,76 @@
 ;x 500 500 ms
 "ShowDelay"=dword:00000064
 ;q
-;y Learn more about Simple Window Switcher 🡕
+;y Simple Window Switcherについての詳細はこちら 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Simple-Window-Switcher
 
 
 
-;T Weather
-;t The following settings only apply to the Windows 10 taskbar:
+;T 天気
+;t 以下の設定は、Windows 10のタスクバーだけに適用されます:
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Show Weather on the taskbar
+;b タスクバーに天気を表示する
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_PeopleBand"=dword:00000000
-;w Location
-;Search City or Zip Code; the program looks up "weather in /* what you typed */" on Google. Leave blank for the default value (current location).
-;Current location (既定)
+;w 場所
+;都市または郵便番号を検索します。プログラムはGoogleで"/*あなたが入力した場所*/の天気"を検索します。デフォルト値（現在地）は空白のままにしておきます。
+;現在地 (既定)
 "WeatherLocation"=""
-;c 5 Layout
-;x 0 Icon and description (既定)
-;x 3 Icon and temperature
-;x 1 Icon only
-;x 4 Temperature only
-;x 5 Temperature and description
+;c 5 レイアウト
+;x 0 アイコンと概要 (既定)
+;x 3 アイコンと温度
+;x 1 アイコンのみ
+;x 4 温度のみ
+;x 5 温度と概要
 "WeatherViewMode"=dword:00000000
-;c 3 Widget size
-;x 0 Automatic (fit contents) (既定)
-;x 2 Automatic (fit contents) with threshold
-;x 1 Fixed
+;c 3 ウィジェットのサイズ
+;x 0 自動（内容に合わせて） (既定)
+;x 2 自動（内容に合わせて）しきい値あり
+;x 1 固定
 "WeatherFixedSize"=dword:00000000
-;c 2 Widget position
-;x 0 Right / bottom (既定)
-;x 1 Left / top
+;c 2 ウィジェットの位置
+;x 0 右／下部 (既定)
+;x 1 左／上部
 "WeatherToLeft"=dword:00000000
-;c 7 Update frequency
-;x 60 Every minute
-;x 300 Every 5 minutes
-;x 900 Every 15 minutes
-;x 1200 Every 20 minutes (既定)
-;x 1800 Every half an hour
-;x 3600 Every hour
-;x 7200 Every couple of hours
+;c 7 更新頻度
+;x 60 毎分
+;x 300 5分ごと
+;x 900 15分ごと
+;x 1200 20分ごと (既定)
+;x 1800 30分ごと
+;x 3600 毎時間
+;x 7200 数時間おきに
 "WeatherContentUpdateMode"=dword:000004B0
-;c 2 Temperature unit
-;x 0 Celsius (既定)
-;x 1 Fahrenheit
+;c 2 温度単位
+;x 0 摂氏 (既定)
+;x 1 華氏
 "WeatherTemperatureUnit"=dword:00000000
-;;;c 2 Location accuracy
-;;;x 0 Generic (based on the IP address) (既定)
-;;;x 1 Precise (geolocation)
+;;;c 2 位置情報の精度
+;;;x 0 一般的（IPアドレスに基づく） (既定)
+;;;x 1 精密（ジオロケーションを使用します）
 ;;"WeatherLocationType"=dword:00000000
-;w Language
-;Type the short code for the language you'd like the weather data to be displayed in. For example, try "en", "ro", "de", "fr" etc. Leave blank for the default value (language of the Windows OS).
-;System language (既定)
+;w 言語
+;天気データを表示させたい言語のショートコードを入力します。（"en", "ro", "de", "fr "など）デフォルト値（Windowsの言語）は空白にしてください。
+;システムの言語 (既定)
 "WeatherLanguage"=""
-;c 3 Color scheme
-;x 0 Follow system setting (既定)
-;x 1 Light
-;x 2 Dark
+;c 3 配色
+;x 0 システムの設定に従う (既定)
+;x 1 ライト
+;x 2 ダーク
 "WeatherTheme"=dword:00000000
-;c 3 Corner preference
-;x 2 Rounded (既定)
-;x 3 Small rounded
-;x 1 Not rounded
+;c 3 コーナー設定
+;x 2 丸める (既定)
+;x 3 少しだけ丸める
+;x 1 丸みなし
 "WeatherWindowCornerPreference"=dword:00000002
-;c 2 Icon pack
+;c 2 アイコンパック
 ;x 0 Microsoft (既定)
 ;x 1 Google
 "WeatherIconPack"=dword:00000000
-;c 2 Display widget contents
-;x 0 On a single line (既定)
-;x 1 On 2 lines, if possible
+;c 2 ウィジェットの内容を表示する
+;x 0 一行で表示 (既定)
+;x 1 可能であれば2行で表示
 "WeatherContentsMode"=dword:00000000
-;c 17 Zoom
+;c 17 拡大率
 ;x 25 25 %
 ;x 33 33 %
 ;x 50 50 %
@@ -506,12 +506,12 @@
 ;x 500 500 %
 "WeatherZoomFactor"=dword:00000000
 ;q
-;y Learn more about the Weather taskbar widget 🡕
+;y 天気予報タスクバーウィジェットについてもっと知る 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Weather
 ;t %WEATHERLASTUPDATETEXT%
-;u Update weather now
+;u 天気予報を更新する
 ;update_weather
-;u Clear weather widget local data
+;u 天気予報ウィジェットのローカルデータをクリアする
 ;clear_data_weather
 
 
@@ -574,9 +574,9 @@
 ;x 0 Prompt to install available updates
 ;x 2 Do not check for updates
 "UpdatePolicy"=dword:00000001
-;b Receive pre-release versions, if available (not recommended)
+;b Receive pre-release versions, if available (非推奨)
 "UpdatePreferStaging"=dword:00000000
-;b Suggest the latest version on the server, even if it's older (not recommended)
+;b Suggest the latest version on the server, even if it's older (非推奨)
 "UpdateAllowDowngrades"=dword:00000000
 ;t Update servers:
 ;w Releases
@@ -637,7 +637,7 @@
 ;x 8000 8 seconds
 ;x 10000 10 seconds
 "ExplorerReadyDelay"=dword:00000000
-;t The following settings only apply to the Windows 10 taskbar:                          
+;t 以下の設定は、Windows 10のタスクバーだけに適用されます:                          
 ;b Pinned items act as quick launch (don't group pinned items with active apps) *
 "PinnedItemsActAsQuickLaunch"=dword:00000000
 ;b When the taskbar shows button labels, remove the extra gap around pinned items *
