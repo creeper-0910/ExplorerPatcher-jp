@@ -1047,6 +1047,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
         FILE* f = fmemopen(pRscr, cbRscr, "r");
         char* line = malloc(MAX_LINE_LENGTH * sizeof(char));
         wchar_t* text = malloc((MAX_LINE_LENGTH + 3) * sizeof(wchar_t)); 
+        char* text = malloc((MAX_LINE_LENGTH + 3) * sizeof(char));
         wchar_t* name = malloc(MAX_LINE_LENGTH * sizeof(wchar_t));
         wchar_t* section = malloc(MAX_LINE_LENGTH * sizeof(wchar_t));
         size_t bufsiz = MAX_LINE_LENGTH, numChRd = 0, tabOrder = 1, currentSection = -1, topAdj = 0;
