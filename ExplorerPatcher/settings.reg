@@ -1,33 +1,33 @@
 ﻿Windows Registry Editor Version 5.00
 
 
-;M Settings
+;M 設定
 ;q
 
-;T Taskbar
+;T タスクバー
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;z 2 Taskbar style *
-;x 0 Windows 11 (default)
+;z 2 タスクバーのスタイル *
+;x 0 Windows 11 (既定)
 ;x 1 Windows 10
 "OldTaskbar"=dword:00000001
-;y More taskbar options in the Settings app 🡕
+;y 設定アプリでその他のタスクバーオプションを開く🡕
 ;ms-settings:taskbar
-;y Customize notification area icons 🡕
+;y 通知エリアのアイコンをカスタマイズする 🡕
 ;shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}
-;y Customize system icons in the notification area 🡕
+;y 通知エリアのシステムアイコンをカスタマイズする 🡕
 ;shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}\SystemIcons
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 4 Primary taskbar location on screen *
-;x 3 Bottom (default)
-;x 1 Top
-;x 0 Left
-;x 2 Right
+;c 4 画面上の主なタスクバーの位置 *
+;x 3 下 (既定)
+;x 1 上
+;x 0 左
+;x 2 右
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_TaskbarPosition"=dword:00000003
-;c 4 Secondary taskbar(s) location on screen
-;x 3 Bottom (default)
-;x 1 Top
-;x 0 Left
-;x 2 Right
+;c 4 画面上の二次的なタスクバーの位置
+;x 3 下 (既定)
+;x 1 上
+;x 0 左
+;x 2 右
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_MMTaskbarPosition"=dword:00000003
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 ;c 3 Extra button should be
