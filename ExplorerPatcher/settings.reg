@@ -516,115 +516,115 @@
 
 
 
-;T Other
+;T その他
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Remember last used section in this window
+;b このウィンドウで最後に使用したセクションを記憶する
 "LastSectionInProperties"=dword:00000000
-;b Open clock flyout when pressing Win+C instead of Microsoft Teams *
+;b Win+Cを押した時、MicrosoftTeamsの代わりに時計のフライアウトを開く *
 "ClockFlyoutOnWinC"=dword:00000000
-;b Show separators between taskbar toolbars *
+;b タスクバーのツールバー間にセパレータを表示する *
 "ToolbarSeparators"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;b Show Command Prompt instead of PowerShell in Win+X menu *
+;b Win+XメニューでPowerShellの代わりにコマンドプロンプトを表示する *
 "DontUsePowerShellOnWinX"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Add shortcut to program settings in Win+X menu
+;b Win+Xメニューにプログラムの設定へのショートカットを追加
 "PropertiesInWinX"=dword:00000000
-;b Remove shortcut key from program settings item in Win+X menu
+;b Win+Xメニューのプログラム設定項目からショートカットキーを削除する
 "NoMenuAccelerator"=dword:00000000
-;b Disable Office hotkeys (Ctrl+Alt+Shift+Windows key combinations) *
+;b Office ホットキー（Ctrl+Alt+Shift+Windowsキーの組み合わせ）を無効化する *
 "DisableOfficeHotkeys"=dword:00000000
-;b Disable Win+F (Feedback Hub) hotkey *
+;b Win+F（フィードバック・ハブ）ホットキーを無効化する *
 "DisableWinFHotkey"=dword:00000000
-;b Disable rounded corners for application windows
+;b アプリケーションウィンドウの角の丸みを無効化する
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_DisableRoundedCorners"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Disable quadrants when snapping windows *
+;b ウィンドウをスナップするとき象限を無効にする *
 "DisableAeroSnapQuadrants"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 2 Snap Assist style
+;c 2 スナップアシストのスタイル
 ;x 0 Windows 11 (既定)
 ;x 3 Windows 10
 "SnapAssistSettings"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;c 6 Default action in the Alt+F4 dialog on the desktop
-;x 256 Switch user
-;x 1 Sign out
-;x 16 Sleep
-;x 64 Hibernate
-;x 2 Shut down (既定)
-;x 4 Restart
+;c 6 デスクトップ上のAlt+F4ダイアログのデフォルトの動作
+;x 256 ユーザーの切り替え
+;x 1 サインアウト
+;x 16 スリープ
+;x 64 ハイバーネート
+;x 2 シャットダウン (既定)
+;x 4 再起動
 "Start_PowerButtonAction"=dword:00000002
-;t Prevent the following Control Panel links from being redirected to the Settings app:
+;t 以下のコントロールパネルのリンクが設定アプリにリダイレクトされないようにします:
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b System / About page
+;b システム／このページについて
 "DoNotRedirectSystemToSettingsApp"=dword:00000000
-;b Programs and Features
+;b プログラムと機能
 "DoNotRedirectProgramsAndFeaturesToSettingsApp"=dword:00000000
-;b Adjust date/time
+;b 日付/時刻の調整
 "DoNotRedirectDateAndTimeToSettingsApp"=dword:00000000
-;b Customize notification icons
+;b 通知アイコンのカスタマイズ
 "DoNotRedirectNotificationIconsToSettingsApp"=dword:00000000
 
 
-;T Updates
+;T アップデート
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;z 3 When File Explorer starts
-;x 1 Notify about available updates (既定)
-;x 0 Prompt to install available updates
-;x 2 Do not check for updates
+;z 3 ファイルエクスプローラー起動時
+;x 1 利用可能なアップデートを通知する (既定)
+;x 0 利用可能なアップデートをインストールするためのプロンプトを表示
+;x 2 アップデートをチェックしない
 "UpdatePolicy"=dword:00000001
-;b Receive pre-release versions, if available (非推奨)
+;b プレリリースバージョンがある場合は、それを受け取る (非推奨)
 "UpdatePreferStaging"=dword:00000000
-;b Suggest the latest version on the server, even if it's older (非推奨)
+;b 古いバージョンでも、サーバー上の最新バージョンを提案する (非推奨)
 "UpdateAllowDowngrades"=dword:00000000
-;t Update servers:
-;w Releases
-;Type a URL that serves resources adhering to GitHub's releases API. To learn how to configure your own update server, please consult the wiki.
-;github.com/valinet/ExplorerPatcher/releases/latest
-"UpdateURL"=""
-;w Pre-releases
-;Type a URL that serves resources adhering to GitHub's pre-releases API. To learn how to configure your own update server, please consult the wiki.
-;api.github.com/repos/valinet/ExplorerPatcher/releases?per_page=1
-"UpdateURLStaging"=""
-;y Check for updates
+;t アップデートサーバー:
+;w リリース
+;GitHub の releases API に準拠したリソースを提供する URL を指定します。独自のアップデートサーバーを設定する方法については、wiki をご参照ください。
+;github.com/creeper-0910/ExplorerPatcher-jp/releases/latest
+"UpdateURL"="https://github.com/creeper-0910/ExplorerPatcher-jp/releases/latest"
+;w プレリリース
+;GitHub の pre-releases API に準拠したリソースを提供する URL を指定します。独自のアップデートサーバーを設定する方法については、wiki をご参照ください。
+;api.github.com/repos/creeper-0910/ExplorerPatcher-jp/releases?per_page=1
+"UpdateURLStaging"="https://api.github.com/repos/creeper-0910/ExplorerPatcher-jp/releases?per_page=1"
+;y アップデートを確認する
 ;;;EP_CHECK_FOR_UPDATES
-;y Update program and restart File Explorer
+;y 更新し、ファイルエクスプローラを再起動する
 ;;;EP_INSTALL_UPDATES
-;y Read about changes in the latest releases 🡕
+;y 最新リリースの変更点について 🡕
 ;https://github.com/valinet/ExplorerPatcher/blob/master/CHANGELOG.md
-;y Learn more 🡕
+;y 詳しく見る 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Configure-updates
 
 
-;T Advanced
-;e Only change these settings after reading the documentation about them.
-;y Learn more 🡕
+;T 高度な設定
+;e これらの設定は、それに関するドキュメントを読んだ後にのみ変更してください。
+;y 詳しく見る 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/About-advanced-settings
 ;q
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Enable console
+;b コンソールを有効にする
 "AllocConsole"=dword:00000000
-;b Dump memory leaks
+;b メモリリークをダンプする
 "Memcheck"=dword:00000000
-;b Double click taskbar to toggle auto-hide (only works when the taskbar is locked) 
+;b タスクバーのダブルクリックで自動非表示を切り替え（タスクバーがロックされている時のみ有効） 
 "TaskbarAutohideOnDoubleClick"=dword:00000000
 [HKEY_CURRENT_USER\Control Panel\Desktop]
-;b Show Windows build info on the desktop *
+;b Windowsのビルド情報をデスクトップに表示 *
 "PaintDesktopVersion"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Enable advanced mitigations for correct rendering using classic theme *
+;b クラシックテーマを使用した正しいレンダリングのための高度な緩和策を有効にする *
 "ClassicThemeMitigations"=dword:00000000
 [-HKEY_CURRENT_USER\Software\Classes\CLSID\{1eeb5b5a-06fb-4732-96b3-975c0194eb39}\InprocServer32]
-;d Enable SysListView32 for Explorer views *
+;d エクスプローラのビューでSysListView32を有効にする *
 @=""
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Hide the program settings item ("Properties") from the taskbar context menu
+;b タスクバーのコンテキストメニューからプログラムの設定項目（"プロパティ")を非表示にする
 "NoPropertiesInContextMenu"=dword:00000000
-;b Enable symbols download *
+;b シンボルのダウンロードを有効化する *
 "EnableSymbolDownload"=dword:00000001
-;c 12 Supplementary delay at logon *
-;x 0 None (既定)
+;c 12 ログオン時の遅延時間の補助 *
+;x 0 なし (既定)
 ;x 300 300 ms
 ;x 600 600 ms
 ;x 1000 1 second
@@ -638,39 +638,39 @@
 ;x 10000 10 seconds
 "ExplorerReadyDelay"=dword:00000000
 ;t 以下の設定は、Windows 10のタスクバーだけに適用されます:                          
-;b Pinned items act as quick launch (don't group pinned items with active apps) *
+;b ピン留めされたアイテムはクイック起動として機能します（ピン留めされたアイテムをアクティブなアプリと一緒にしないでください） *
 "PinnedItemsActAsQuickLaunch"=dword:00000000
-;b When the taskbar shows button labels, remove the extra gap around pinned items *
+;b タスクバーにボタンラベルが表示されている場合、ピン留めされているアイテムの周りの余分な隙間を削除する *
 "RemoveExtraGapAroundPinnedItems"=dword:00000000
 
 
-;T About
+;T 私達について
 ;e ExplorerPatcher
-;e Version %VERSIONINFORMATIONSTRING%
-;t © 2006-2022 VALINET Solutions SRL. All rights reserved.
+;e バージョン %VERSIONINFORMATIONSTRING%
+;t © 2006-2022 VALINET Solutions SRL. 全著作権所有
 ;e 
-;e This project aims to enhance the working environment on Windows.
-;e Proudly engineered by Valentin-Gabriel Radu.
-;t Running on Windows 11, OS Build %OSVERSIONSTRING%
-;y Visit project GitHub (https://github.com/valinet) 🡕
+;e このプロジェクトは、Windows上での作業環境を改善することを目的としています。
+;e Valentin-Gabriel Raduによって設計されました。
+;t このアプリケーションはWindows11で動作しており、OSビルドは %OSVERSIONSTRING% です。
+;y プロジェクトのGithub (https://github.com/valinet) 🡕
 ;https://github.com/valinet
 ;q
-;y Visit web site (https://www.valinet.ro) 🡕
+;y Webサイト (https://www.valinet.ro) 🡕
 ;https://www.valinet.ro
-;y E-mail author (valentingabrielradu@gmail.com) 🡕
+;y 作者にメールを送る (valentingabrielradu@gmail.com) 🡕
 ;mailto:valentingabrielradu@gmail.com
-;y Donate (using PayPal) 🡕
+;y 寄付 (PayPalを利用します) 🡕
 ;https://www.paypal.com/donate?business=valentingabrielradu%40gmail.com&no_recurring=0&item_name=ExplorerPatcher&currency_code=EUR
-;y Frequently Asked Questions 🡕
+;y よくある質問 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Frequently-asked-questions
-;y Learn more managing these settings 🡕
+;y これらの設定の管理の詳細 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Settings-management
-;u Import settings
-;import
-;u Export current settings
-;export
-;u Restore default settings
-;reset
+;u 設定のインポート
+;インポート
+;u 現在の設定をエクスポートする
+;エクスポート
+;u デフォルトの設定を復元する
+;リセット
 
 
 

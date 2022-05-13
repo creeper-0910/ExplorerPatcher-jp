@@ -1,6 +1,18 @@
 # Explorer Patcher Change log
 
-This document includes the same release notes as in the [Releases](https://github.com/valinet/ExplorerPatcher/releases) section on GitHub.
+This document includes the same release notes as in the [Releases](https://github.com/creeper-0910/ExplorerPatcher-jp/releases) section on GitHub.
+
+## 22000.675.1
+
+OSビルド 22000.675 でテストされました。
+
+インストール中は、インターネットに接続されていることを確認してください。完全な機能を有効にするために、アプリケーションはいくつかのリソースの1回限りのダウンロードを実行する必要がある場合があります。
+
+#### 詳細
+
+##### 1
+
+* ほぼ日本語化が完了しました。
 
 ## 22000.613.44
 

@@ -56,12 +56,12 @@ int main(int argc, char** argv)
         }
         free(line);
         printf(
-            "Please consult the [README](https://github.com/valinet/ExplorerPatcher/blob/master/README.md) for more details.\n"
-            "A detailed change log is available [here](https://github.com/valinet/ExplorerPatcher/blob/master/CHANGELOG.md).\n"
-            "An archive containing all the files generated during the build process (including `dxgi.dll` and symbol files) is available [here](%s).\n\n"
-            "*This release has been published automatically from %s %s in branch [%s](https://github.com/valinet/ExplorerPatcher/tree/%s/).*",
-            argc == 4 ? argv[3] : "https://github.com/valinet/ExplorerPatcher/actions",
-            argc == 4 ? "commits up to and including" : "the latest commits",
+            "詳しくは [README](https://github.com/creeper-0910/ExplorerPatcher-jp/blob/master/README.md) を御覧ください。\n"
+            "詳細な変更ログは [ここ](https://github.com/creeper-0910/ExplorerPatcher-jp/blob/master/CHANGELOG.md)から入手できます。\n"
+            "ビルドプロセスで生成されたすべてのファイル (`dxgi.dll` とシンボルファイルを含む) は [ここ](%s)で確認できます。\n\n"
+            "*このリリースでは、 %s %s 。 [%s](https://github.com/creeper-0910/ExplorerPatcher-jp/tree/%s/)ブランチから自動的に公開されました。*",
+            argc == 4 ? argv[3] : "https://github.com/creeper-0910/ExplorerPatcher-jp/actions",
+            argc == 4 ? "までがコミットされます" : "最新までコミットされます",
             argc == 4 ? argv[1] : "",
             argc == 4 ? argv[2] : "master",
             argc == 4 ? argv[2] : "master"
