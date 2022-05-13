@@ -34,6 +34,10 @@ env:
   BUILD_CONFIGURATION: Release
 
 jobs:
+  permissions:
+      issues: write
+      pull-requests: write
+      contents: write
   build:
     runs-on: windows-latest
 
