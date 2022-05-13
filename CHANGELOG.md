@@ -2,7 +2,7 @@
 
 This document includes the same release notes as in the [Releases](https://github.com/creeper-0910/ExplorerPatcher-jp/releases) section on GitHub.
 
-## 22000.675.1
+## 22000.675.0.0
 
 OSビルド 22000.675 でテストされました。
 
