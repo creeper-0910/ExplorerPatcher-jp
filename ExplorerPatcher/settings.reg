@@ -675,9 +675,9 @@
 
 
 ;f
-;u Restart File Explorer (*)
-;restart
-;;u Restore default settings
-;;reset
-;;u About ExplorerPatcher
+;u ファイルエクスプローラーを再起動する (*)
+;再起動
+;;u デフォルトの設定を復元する
+;;リセット
+;;u ExplorerPatcherについて
 ;;about
