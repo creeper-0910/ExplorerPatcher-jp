@@ -59,3 +59,4 @@ Windows 10では、一部の機能が使用できない場合があります。
 * [仕組みについて](https://github.com/valinet/ExplorerPatcher/wiki/How-does-it-work)
 * [ウイルス対策ソフトの誤検知について](https://github.com/valinet/ExplorerPatcher/wiki/Antivirus-false-positives)
 * [コンパイル方法](https://github.com/valinet/ExplorerPatcher/wiki/Compiling)
+* [私が日本語化を始めた理由となる記事](https://www.naporitansushi.com/ep11-japanese/#)
