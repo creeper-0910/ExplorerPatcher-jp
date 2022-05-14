@@ -666,18 +666,18 @@
 ;y これらの設定の管理の詳細 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Settings-management
 ;u 設定のインポート
-;インポート
+;import
 ;u 現在の設定をエクスポートする
-;エクスポート
+;export
 ;u デフォルトの設定を復元する
-;リセット
+;reset
 
 
 
 ;f
 ;u ファイルエクスプローラーを再起動する (*)
-;再起動
+;restart
 ;;u デフォルトの設定を復元する
-;;リセット
+;;reset
 ;;u ExplorerPatcherについて
 ;;about
