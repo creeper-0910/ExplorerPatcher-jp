@@ -61,8 +61,8 @@ int main(int argc, char** argv)
             "ビルドプロセスで生成されたすべてのファイル (`dxgi.dll` とシンボルファイルを含む) は [ここ](%s)で確認できます。\n\n"
             "*このリリースでは、 %s %s 。 [%s](https://github.com/creeper-0910/ExplorerPatcher-jp/tree/%s/)ブランチから自動的に公開されました。*",
             argc == 4 ? argv[3] : "https://github.com/creeper-0910/ExplorerPatcher-jp/actions",
-            argc == 4 ? "までがコミットされます" : "最新までコミットされます",
             argc == 4 ? argv[1] : "",
+            argc == 4 ? "までがコミットされます" : "最新までコミットされます",
             argc == 4 ? argv[2] : "master",
             argc == 4 ? argv[2] : "master"
         );
