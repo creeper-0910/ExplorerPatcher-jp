@@ -639,8 +639,8 @@
 "ExplorerReadyDelay"=dword:00000000
 ;t 以下の設定は、Windows 10のタスクバーだけに適用されます:
 ;b ピン留めされたアイテムはクイック起動として機能します（ピン留めされたアイテムをアクティブなアプリと一緒にしないでください） *
-;t  （ピン留めされたアイテムをアクティブなアプリと一緒にしないでください）
 "PinnedItemsActAsQuickLaunch"=dword:00000000
+;e （ピン留めされたアイテムをアクティブなアプリと一緒にしないでください）
 ;b タスクバーにボタンラベルが表示されている場合、ピン留めされているアイテムの周りの余分な隙間を削除する *
 "RemoveExtraGapAroundPinnedItems"=dword:00000000
 
@@ -652,7 +652,7 @@
 ;e 
 ;e このプロジェクトは、Windows上での作業環境を改善することを目的としています。
 ;e Valentin-Gabriel Raduによって設計されました。
-;t このアプリケーションはWindows11で動作しており、OSビルドは %OSVERSIONSTRING% です。
+;t Windows11で動作しており、OSビルドは %OSVERSIONSTRING% です。
 ;y プロジェクトのGithub (https://github.com/valinet) 🡕
 ;https://github.com/valinet
 ;q
