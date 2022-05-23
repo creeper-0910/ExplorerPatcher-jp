@@ -582,11 +582,11 @@
 ;w リリース
 ;GitHub の releases API に準拠したリソースを提供する URL を指定します。独自のアップデートサーバーを設定する方法については、wiki をご参照ください。
 ;github.com/creeper-0910/ExplorerPatcher-jp/releases/latest
-"UpdateURL"="https://github.com/creeper-0910/ExplorerPatcher-jp/releases/latest"
+"UpdateURL"=""
 ;w プレリリース
 ;GitHub の pre-releases API に準拠したリソースを提供する URL を指定します。独自のアップデートサーバーを設定する方法については、wiki をご参照ください。
 ;api.github.com/repos/creeper-0910/ExplorerPatcher-jp/releases?per_page=1
-"UpdateURLStaging"="https://api.github.com/repos/creeper-0910/ExplorerPatcher-jp/releases?per_page=1"
+"UpdateURLStaging"=""
 ;y アップデートを確認する
 ;;;EP_CHECK_FOR_UPDATES
 ;y 更新し、ファイルエクスプローラを再起動する
@@ -640,7 +640,6 @@
 ;t 以下の設定は、Windows 10のタスクバーだけに適用されます:
 ;b ピン留めされたアイテムはクイック起動として機能します（ピン留めされたアイテムをアクティブなアプリと一緒にしないでください） *
 "PinnedItemsActAsQuickLaunch"=dword:00000000
-;e （ピン留めされたアイテムをアクティブなアプリと一緒にしないでください）
 ;b タスクバーにボタンラベルが表示されている場合、ピン留めされているアイテムの周りの余分な隙間を削除する *
 "RemoveExtraGapAroundPinnedItems"=dword:00000000
 

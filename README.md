@@ -27,7 +27,7 @@ Windows 10では、一部の機能が使用できない場合があります。
 
 ## 使用方法
 
-1. 最新版の[セットアップ用プログラム](https://github.com/valinet/ExplorerPatcher/releases/latest/download/ep_setup.exe)をダウンロードします。
+1. 最新版の[セットアップ用プログラム](https://github.com/creeper-0910/ExplorerPatcher-jp/releases/latest/download/ep_setup.exe)をダウンロードします。
 2. インストーラーを実行します。管理者での実行が要求され、その後必要なファイルがインストールされます。
 3. 完了すると、見慣れたWindows 10のタスクバーが表示されます。設定を変更するには、タスクバーを右クリックして「プロパティ」を選択します。
 

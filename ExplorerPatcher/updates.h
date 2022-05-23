@@ -28,7 +28,7 @@ extern HMODULE hModule;
 
 #define UPDATES_RELEASE_INFO_URL          "https://github.com/creeper-0910/ExplorerPatcher-jp"
 #define UPDATES_RELEASE_INFO_URL_STABLE   "https://github.com/creeper-0910/ExplorerPatcher-jp/releases/latest"
-#define UPDATES_RELEASE_INFO_URL_STAGING  "https://github.com/creeper-0910/ExplorerPatcher-jp/releases?per_page=1"
+#define UPDATES_RELEASE_INFO_URL_STAGING  "https://api.github.com/repos/creeper-0910/ExplorerPatcher-jp/releases?per_page=1"
 
 typedef struct IsUpdateAvailableParameters
 {
