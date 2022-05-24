@@ -3017,7 +3017,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                 1,
                                 0
                             );
-                            swprintf(text + 3, MAX_LINE_LENGTH, _T("繧｢繝励Μ繧ｱ繝ｼ繧ｷ繝ｧ繝ｳ縺斐→縺ｮ繧ｦ繧｣繝ｳ繝峨え繝ｪ繧ｹ繝医ｒ辟｡蜉ｹ縺ｫ縺吶ｋ ( Alt + %c )"), key);
+                            swprintf(text + 3, MAX_LINE_LENGTH, _T("アプリケーションごとのウィンドウリストを無効にする ( Alt + %c )"), key);
                         }
                         if (tabOrder == _this->tabOrder)
                         {
