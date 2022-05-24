@@ -1,4 +1,4 @@
-#include <initguid.h>
+ï»¿#include <initguid.h>
 DEFINE_GUID(LiveSetting_Property_GUID, 0xc12bcd8e, 0x2a8e, 0x4950, 0x8a, 0xe7, 0x36, 0x25, 0x11, 0x1d, 0x58, 0xeb);
 #include <oleacc.h>
 #include "GUI.h"
@@ -3017,7 +3017,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                 1,
                                 0
                             );
-                            swprintf(text + 3, MAX_LINE_LENGTH, _T("ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚²‚Æ‚ÌƒEƒBƒ“ƒhƒEƒŠƒXƒg‚ð–³Œø‚É‚·‚é ( Alt + %c )"), key);
+                            swprintf(text + 3, MAX_LINE_LENGTH, _T("ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã”ã¨ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒªã‚¹ãƒˆã‚’ç„¡åŠ¹ã«ã™ã‚‹ ( Alt + %c )"), key);
                         }
                         if (tabOrder == _this->tabOrder)
                         {
