@@ -2,7 +2,7 @@
 DEFINE_GUID(LiveSetting_Property_GUID, 0xc12bcd8e, 0x2a8e, 0x4950, 0x8a, 0xe7, 0x36, 0x25, 0x11, 0x1d, 0x58, 0xeb);
 #include <oleacc.h>
 #include "GUI.h"
-
+#define UNICODE
 TCHAR GUI_title[260];
 FILE* AuditFile = NULL;
 LANGID locale;
@@ -1046,7 +1046,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
         BOOL bWasSpecifiedSectionValid = FALSE;
         FILE* f = fmemopen(pRscr, cbRscr, "r");
         char* line = malloc(MAX_LINE_LENGTH * sizeof(char));
-        TCHAR* text = malloc((MAX_LINE_LENGTH + 3) * sizeof(wchar_t));
+        TCHAR* text = malloc((MAX_LINE_LENGTH + 3) * sizeof(TCHAR));
         wchar_t* name = malloc(MAX_LINE_LENGTH * sizeof(wchar_t));
         wchar_t* section = malloc(MAX_LINE_LENGTH * sizeof(wchar_t));
         size_t bufsiz = MAX_LINE_LENGTH, numChRd = 0, tabOrder = 1, currentSection = -1, topAdj = 0;
