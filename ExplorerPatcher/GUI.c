@@ -1046,7 +1046,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
         BOOL bWasSpecifiedSectionValid = FALSE;
         FILE* f = fmemopen(pRscr, cbRscr, "r");
         char* line = malloc(MAX_LINE_LENGTH * sizeof(char));
-        wchar_t* text = malloc((MAX_LINE_LENGTH + 3) * sizeof(wchar_t)); 
+        TCHAR* text = malloc((MAX_LINE_LENGTH + 3) * sizeof(wchar_t));
         wchar_t* name = malloc(MAX_LINE_LENGTH * sizeof(wchar_t));
         wchar_t* section = malloc(MAX_LINE_LENGTH * sizeof(wchar_t));
         size_t bufsiz = MAX_LINE_LENGTH, numChRd = 0, tabOrder = 1, currentSection = -1, topAdj = 0;
@@ -1064,7 +1064,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                 lastHeading[0] = 0;
                 continue;
             }
-            if (strcmp(line, "Windows Registry Editor Version 5.00\r\n") && 
+            if (strcmp(line, "Windows Registry Editor Version 5.00\r\n") &&
                 strcmp(line, "\r\n") && 
                 (currentSection == -1 || currentSection == _this->section || !strncmp(line, ";T ", 3) || !strncmp(line, ";f", 2) || AuditFile) &&
                 !((!IsThemeActive() || IsHighContrast() || !IsWindows11() || IsDwmExtendFrameIntoClientAreaBrokenInThisBuild()) && !strncmp(line, ";M ", 3))
@@ -3017,7 +3017,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                 1,
                                 0
                             );
-                            swprintf(text + 3, MAX_LINE_LENGTH, L"アプリケーションごとのウィンドウリストを無効にする ( Alt + %c )", key);
+                            swprintf(text + 3, MAX_LINE_LENGTH, _T("繧｢繝励Μ繧ｱ繝ｼ繧ｷ繝ｧ繝ｳ縺斐→縺ｮ繧ｦ繧｣繝ｳ繝峨え繝ｪ繧ｹ繝医ｒ辟｡蜉ｹ縺ｫ縺吶ｋ ( Alt + %c )"), key);
                         }
                         if (tabOrder == _this->tabOrder)
                         {

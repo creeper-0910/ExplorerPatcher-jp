@@ -1,7 +1,7 @@
 # ExplorerPatcher
 このプロジェクトは、Windows上での作業環境を改善することを目的としています。  
-これは日本語化されたExplorerPatcherのビルドです！公式のものではないことに注意してください。  
-製作者様への寄付: [paypal](https://www.paypal.com/donate?business=valentingabrielradu%40gmail.com&no_recurring=0&item_name=ExplorerPatcher&currency_code=EUR) もしくは[メール](valentingabrielradu@gmail.com) からお願いします。
+これは日本語化されたExplorerPatcherのビルドです！公式のものではありません。  
+製作者様への寄付: [paypal](https://www.paypal.com/donate?business=valentingabrielradu%40gmail.com&no_recurring=0&item_name=ExplorerPatcher&currency_code=EUR) もしくはメール(valentingabrielradu@gmail.com) からお願いします。
 
 ![Build status](https://github.com/valinet/ExplorerPatcher/actions/workflows/build.yml/badge.svg)
 
