@@ -933,7 +933,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
     GUI* _this;
     LONG_PTR ptr = GetWindowLongPtr(hwnd, GWLP_USERDATA);
     _this = (int*)(ptr);
-    double dx = _this->dpi.x / 96.0, dy = _this->dpi.y / 96.0;
+    double dx = _this->dpi.x / 48.0, dy = _this->dpi.y / 76.0;
     _this->padding.left = GUI_PADDING_LEFT * dx;
     _this->padding.right = GUI_PADDING_RIGHT * dx;
     _this->padding.top = GUI_PADDING_TOP * dy;
@@ -1435,7 +1435,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                         );
                         if (rcNew.right - rcNew.left > dwMaxWidth)
                         {
-                            dwMaxWidth = rcNew.right - rcNew.left + 50 * dx;
+                            dwMaxWidth = rcNew.right - rcNew.left + 120 * dx;
                         }
                         if (IsThemeActive() && !IsHighContrast())
                         {
@@ -3002,7 +3002,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                         );
                         if (rcNew.right - rcNew.left > dwMaxWidth)
                         {
-                            dwMaxWidth = rcNew.right - rcNew.left + 50 * dx;
+                            dwMaxWidth = rcNew.right - rcNew.left + 120 * dx;
                         }
                         if (!wcsncmp(text + 3, L"%PLACEHOLDER_0001%", 18))
                         {
