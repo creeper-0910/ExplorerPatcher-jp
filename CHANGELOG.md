@@ -17,11 +17,13 @@ OSビルド 22000.675 でテストされました。
 ##### 2
 
 * 更新用のurlにミスが有ったので修正しました。
+* 文字化けを修正しました。
+* ウィンドウサイズを修正しました。
 
-##### 2
+##### 3
 
-* libvalinet: Fixed a memory leak in `toast.h`
-* sws: Fixed a bug that caused the switcher to display non-responsive (hung) immersive (UWP) windows twice in the list
+* libvalinet: toast.h` のメモリリークを修正。
+* sws: スイッチャーが応答しない (ハングした) immersive (UWP) ウィンドウをリストに 2 回表示する原因となっていたバグを修正した
 
 ## 22000.613.44
 
