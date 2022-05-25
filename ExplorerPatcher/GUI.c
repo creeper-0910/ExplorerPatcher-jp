@@ -1248,7 +1248,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                         p = strstr(line, "%OSVERSIONSTRING%");
                         if (p)
                         {
-                            sprintf_s(p, MAX_PATH, "%d.%d.%d.%d.", global_rovi.dwMajorVersion, global_rovi.dwMinorVersion, global_rovi.dwBuildNumber, global_ubr);
+                            sprintf_s(p, MAX_PATH, "%d.%d.%d.%d", global_rovi.dwMajorVersion, global_rovi.dwMinorVersion, global_rovi.dwBuildNumber, global_ubr);
                         }
                     }
                     ZeroMemory(text, (MAX_LINE_LENGTH + 3) * sizeof(wchar_t));

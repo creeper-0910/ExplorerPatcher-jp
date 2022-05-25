@@ -651,7 +651,8 @@
 ;e 
 ;e このプロジェクトは、Windows上での作業環境を改善することを目的としています。
 ;e Valentin-Gabriel Raduによって設計されました。
-;t Windows11で動作しており、OSビルドは %OSVERSIONSTRING% です。
+;e 動作環境: Windows11
+;t OSビルド: %OSVERSIONSTRING%
 ;y プロジェクトのGithub (https://github.com/valinet) 🡕
 ;https://github.com/valinet
 ;q
