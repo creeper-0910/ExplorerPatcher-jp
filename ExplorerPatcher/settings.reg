@@ -674,7 +674,7 @@
 ;b クラシックテーマを使用した正しいレンダリングのための高度な緩和策を有効にする *
 "ClassicThemeMitigations"=dword:00000000
 [-HKEY_CURRENT_USER\Software\Classes\CLSID\{1eeb5b5a-06fb-4732-96b3-975c0194eb39}\InprocServer32]
-;d エクスプローラのビューでSysListView32を有効にする *
+;d エクスプローラーのビューでSysListView32を有効にする *
 @=""
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b タスク バーのコンテキストメニューからプログラムの設定項目("プロパティ")を非表示にする
