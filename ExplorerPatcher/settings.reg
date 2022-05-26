@@ -32,7 +32,7 @@
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 ;c 3 他のボタンの処理
 ;x 0 隠す (既定)
-;x 2 Cortanaを開く
+;x 2 Cortana を開く
 ;x 1 ウィジェットを開く
 "TaskbarDa"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
@@ -173,7 +173,7 @@
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;c 3 コントロールインターフェース *
 ;x 0 Windows 11 のコマンドバー (既定)
-;x 1 Windows 10 のリボンUI
+;x 1 Windows 10 のリボン UI
 ;x 2 Windows 7 のコマンドバー
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_FileExplorerCommandUI"=dword:00000000
 ;t 以下の設定は、新しく作成されたファイルエクスプローラーのウィンドウに適用されます:
@@ -580,7 +580,7 @@
 "LastSectionInProperties"=dword:00000000
 ;b Win+Cを押した時、Microsoft Teams の代わりに時計のフライアウトを開く *
 "ClockFlyoutOnWinC"=dword:00000000
-;b タスク バーのツールバー間にセパレーターを表示する *
+;b タスク バーのツールバーの間にセパレーターを表示する *
 "ToolbarSeparators"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 ;b Win+X メニューでPowerShell の代わりにコマンドプロンプトを表示する *
@@ -674,7 +674,7 @@
 ;b クラシックテーマを使用した正しいレンダリングのための高度な緩和策を有効にする *
 "ClassicThemeMitigations"=dword:00000000
 [-HKEY_CURRENT_USER\Software\Classes\CLSID\{1eeb5b5a-06fb-4732-96b3-975c0194eb39}\InprocServer32]
-;d エクスプローラーのビューでSysListView32を有効にする *
+;d エクスプローラーのビューでSysListView32 を有効にする *
 @=""
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b タスク バーのコンテキストメニューからプログラムの設定項目("プロパティ")を非表示にする
@@ -709,7 +709,7 @@
 ;t © 2006-2022 VALINET Solutions SRL. 全著作権所有
 ;e 
 ;e このプロジェクトは、Windows 上での作業環境を改善することを目的としています。
-;e Valentin-Gabriel Raduによって設計されました。
+;e Valentin-Gabriel Radu によって設計されました。
 ;e 動作環境: Windows 11
 ;t OSビルド: %OSVERSIONSTRING%
 ;y プロジェクトのGithub (https://github.com/valinet) 🡕
