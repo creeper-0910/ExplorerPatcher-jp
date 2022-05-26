@@ -47,7 +47,7 @@
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b 自動でタスクバーを隠す
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_AutoHideTaskbar"=dword:00000000
-;t 以下の設定は、Windows 10のタスクバーだけに適用されます:                                
+;s Taskbar_Windows10Section IsOldTaskbar
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;c 2 スタートボタンのスタイル
 ;x 0 Windows 10 (既定)
@@ -83,6 +83,7 @@
 ;x 0 大きい (既定)
 "TaskbarSmallIcons"=dword:00000000
 ;e 
+;g Taskbar_Windows10Section
 
 
 ;T システムトレイ
@@ -96,7 +97,7 @@
 [HKEY_CURRENT_USER\Software\Microsoft\TabletTip\1.7]
 ;b タッチキーボードボタンを表示する *
 "TipbandDesiredVisibility"=dword:00000000
-;t 以下の設定は、Windows 10のタスクバーだけに適用されます:
+;s SystemTray_Windows10Section IsOldTaskbar
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;p 2
 ;b システムトレイアイコンにWindows 11のスタイルを適用 *
@@ -147,6 +148,8 @@
 ;x 1 Windows 10 ("言語設定"にリンクされています)
 ;x 4 Windows 10
 "IMEStyle"=dword:00000000
+;g SystemTray_Windows10Section
+
 
 
 ;T ファイルエクスプローラー
@@ -252,14 +255,15 @@
 ;x 8 モニター #8
 ;x 9 モニター #9
 "MonitorOverride"=dword:00000001
-;t 以下の設定は、Windows 11のスタートメニューにのみ適用されます:
+;s StartMenu_Windows11 !IsWindows10StartMenu
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b "おすすめ"の項目を無効にする
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_StartDocked_DisableRecommendedSection"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage]
 ;b 既定で"すべてのアプリ"の状態でスタートを開く
 "MakeAllAppsDefault"=dword:00000000
-;t 以下の設定は、Windows 10のスタートメニューにのみ適用されます:
+;g StartMenu_Windows11
+;s StartMenu_Windows10 IsWindows10StartMenu
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b その他のタイルを表示する
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_StartUI_ShowMoreTiles"=dword:00000000
@@ -281,6 +285,7 @@
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_NoStartMenuMorePrograms"=dword:00000000
 ;u ファイルエクスプローラーからWindows 10のスタートメニューにタイルをピン留めする
 ;pin_tiles
+;g StartMenu_Windows10
 
 
 
@@ -292,7 +297,7 @@
 ;x 1 Windows NT
 ;x 2 Simple Window Switcher
 "AltTabSettings"=dword:00000000
-;t 以下の設定は、Simple Window Switcherにのみ適用されます:
+;s WindowSwitcher_SWS IsSWSEnabled
 [HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
 ;b デスクトップを含める
 "IncludeWallpaper"=dword:00000001
@@ -419,17 +424,19 @@
 ;q
 ;y Simple Window Switcherについての詳細はこちら 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Simple-Window-Switcher
+;g WindowSwitcher_SWS
 
 
 
-;T 天気
-;t 以下の設定は、Windows 10のタスクバーだけに適用されます:
+;s Weather_Windows10 IsOldTaskbar
+;T Weather
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b タスクバーに天気を表示する
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_PeopleBand"=dword:00000000
-;w 場所
-;都市または郵便番号を検索します。プログラムはGoogleで"/*あなたが入力した場所*/の天気"を検索します。デフォルト値（現在地）は空白のままにしておきます。
-;現在地 (既定)
+;s Weather_Section1 IsWeatherEnabled
+;w Location
+;Search City or Zip Code; the program looks up "weather in /* what you typed */" on Google. Leave blank for the default value (current location).
+;Current location (default)
 "WeatherLocation"=""
 ;c 5 レイアウト
 ;x 0 アイコンと概要 (既定)
@@ -506,13 +513,64 @@
 ;x 500 500 %
 "WeatherZoomFactor"=dword:00000000
 ;q
-;y 天気予報タスクバーウィジェットについてもっと知る 🡕
+;g Weather_Section1
+;y Learn more about the Weather taskbar widget 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Weather
+;s Weather_Section2 IsWeatherEnabled
 ;t %WEATHERLASTUPDATETEXT%
 ;u 天気予報を更新する
 ;update_weather
 ;u 天気予報ウィジェットのローカルデータをクリアする
 ;clear_data_weather
+;g Weather_Section2
+;g Weather_Windows10
+
+
+
+;s Spotlight_SpotlightOSCheck DoesOSBuildSupportSpotlight
+;s Spotlight_SpotlightEnabledCheck IsSpotlightEnabled
+;T Spotlight
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;b Hide the "Learn about this picture" icon
+"SpotlightDisableIcon"=dword:00000000
+;c 8 Desktop context menu items
+;x 0 No items
+;x 32 Switch to the next picture
+;x 48 Learn about and switch to next picture
+;x 288 Info and switch to next picture
+;x 800 Info, copyright, and switch to next picture
+;x 304 Info, learn about, and switch to next picture
+;x 816 Info, copyright, learn about, and switch to next picture
+;x 1008 All items
+"SpotlightDesktopMenuMask"=dword:00000000
+;c 11 Update frequency
+;x 0 Let Windows decide the best schedule (default)
+;x 60 Every minute
+;x 300 Every 5 minutes
+;x 900 Every 15 minutes
+;x 1200 Every 20 minutes
+;x 1800 Every half an hour
+;x 3600 Every hour
+;x 7200 Every couple of hours
+;x 21600 Every 6 hours
+;x 43200 Every 12 hours
+;x 86400 Once a day
+"SpotlightUpdateSchedule"=dword:00000000
+;u %SPOTLIGHTCLICK%
+;spotlight_click
+;t %SPOTLIGHTINFOTIP1%
+;t %SPOTLIGHTINFOTIP2%
+;u %SPOTLIGHTNEXT%
+;spotlight_next
+;u %SPOTLIGHTLIKE%
+;spotlight_like
+;u %SPOTLIGHTDISLIKE%
+;spotlight_dislike
+;;;u Show more options
+;;;spotlight_menu
+;g Spotlight_SpotlightEnabledCheck
+;g Spotlight_SpotlightOSCheck
+
 
 
 
@@ -623,8 +681,14 @@
 "NoPropertiesInContextMenu"=dword:00000000
 ;b シンボルのダウンロードを有効化する *
 "EnableSymbolDownload"=dword:00000001
-;c 12 ログオン時の遅延時間の補助 *
-;x 0 なし (既定)
+;s Advanced_Windows10 IsOldTaskbar
+;b Pinned items act as quick launch (don't group pinned items with active apps) *
+"PinnedItemsActAsQuickLaunch"=dword:00000000
+;b When the taskbar shows button labels, remove the extra gap around pinned items *
+"RemoveExtraGapAroundPinnedItems"=dword:00000000
+;g Advanced_Windows10
+;c 12 Supplementary delay at logon *
+;x 0 None (default)
 ;x 300 300 ms
 ;x 600 600 ms
 ;x 1000 1 second
@@ -637,11 +701,6 @@
 ;x 8000 8 seconds
 ;x 10000 10 seconds
 "ExplorerReadyDelay"=dword:00000000
-;t 以下の設定は、Windows 10のタスクバーだけに適用されます:
-;b ピン留めされたアイテムはクイック起動として機能します（ピン留めされたアイテムをアクティブなアプリと一緒にしないでください） *
-"PinnedItemsActAsQuickLaunch"=dword:00000000
-;b タスクバーにボタンラベルが表示されている場合、ピン留めされているアイテムの周りの余分な隙間を削除する *
-"RemoveExtraGapAroundPinnedItems"=dword:00000000
 
 
 ;T 私達について
