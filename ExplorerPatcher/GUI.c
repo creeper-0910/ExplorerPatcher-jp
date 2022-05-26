@@ -933,12 +933,12 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
     GUI* _this;
     LONG_PTR ptr = GetWindowLongPtr(hwnd, GWLP_USERDATA);
     _this = (int*)(ptr);
-    double dx = _this->dpi.x / 48.0, dy = _this->dpi.y / 76.0;
+    double dx = _this->dpi.x / 20.0, dy = _this->dpi.y / 76.0;
     _this->padding.left = GUI_PADDING_LEFT * dx;
     _this->padding.right = GUI_PADDING_RIGHT * dx;
     _this->padding.top = GUI_PADDING_TOP * dy;
     _this->padding.bottom = GUI_PADDING_BOTTOM * dy;
-    _this->sidebarWidth = GUI_SIDEBAR_WIDTH * dx;
+    _this->sidebarWidth = GUI_SIDEBAR_WIDTH + 10;
 
     RECT rc;
     GetClientRect(hwnd, &rc);
@@ -1240,8 +1240,8 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                 }
                 else if (!strncmp(line, ";M ", 3))
                 {
-                    UINT diff = (((_this->GUI_CAPTION_LINE_HEIGHT - 16) * dx) / 2.0);
-                    rcText.left = diff + (int)(16.0 * dx) + diff / 2;
+                    UINT diff = (((_this->GUI_CAPTION_LINE_HEIGHT - 16) * dx -50) / 2.0);
+                    rcText.left = diff + (int)(16.0 * dx) + diff / 2 - 30;//プロパティの文字
                     topAdj = dwMaxHeight + _this->GUI_CAPTION_LINE_HEIGHT * dy;
                     hOldFont = SelectObject(hdcPaint, hFontCaption);
                 }
@@ -1402,14 +1402,14 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                     {
                         if (hDC)
                         {
-                            UINT diff = (int)(((_this->GUI_CAPTION_LINE_HEIGHT - 16) * dx) / 2.0);
+                            UINT diff = (int)(((_this->GUI_CAPTION_LINE_HEIGHT - 16) * dx) / 2.0 - 25);//タイトルバーアイコン位置
                             //printf("!!! %d %d\n", (int)(16.0 * dx), diff);
                             DrawIconEx(
                                 hdcPaint,
                                 diff,
                                 diff,
                                 _this->hIcon,
-                                (int)(16.0 * dx),
+                                (int)(16.0 * dx - 40),
                                 (int)(16.0 * dy),
                                 0,
                                 NULL,
