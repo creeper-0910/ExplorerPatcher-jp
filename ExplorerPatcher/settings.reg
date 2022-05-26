@@ -197,7 +197,7 @@
 "HideIconAndTitleInExplorer"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;c 3 マイカ効果(透過ぼかし)を適用する範囲
-;x 0 ファイルエクスプローラに任せる (既定)
+;x 0 ファイルエクスプローラーに任せる (既定)
 ;x 1 タイトルバー、コマンドバー、ナビゲーションバーに適用
 ;x 2 使用しない
 "MicaEffectOnTitlebar"=dword:00000000
@@ -647,7 +647,7 @@
 "UpdateURLStaging"=""
 ;y アップデートを確認する
 ;;;EP_CHECK_FOR_UPDATES
-;y アップデートを行い、ファイルエクスプローラを再起動する
+;y アップデートを行い、ファイルエクスプローラーを再起動する
 ;;;EP_INSTALL_UPDATES
 ;y 最新リリースの変更点について 🡕
 ;https://github.com/valinet/ExplorerPatcher/blob/master/CHANGELOG.md
