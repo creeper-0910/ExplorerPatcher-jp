@@ -9183,6 +9183,7 @@ BOOL SHELL32_CanDisplayWin8CopyDialogHook()
 
 HKEY hKeySpotlight1 = NULL;
 HKEY hKeySpotlight2 = NULL;
+BOOL bSpotlightIsDesktopContextMenu = FALSE;
 
 LSTATUS shell32_RegCreateKeyExW(HKEY hKey, LPCWSTR lpSubKey, DWORD Reserved, LPWSTR lpClass, DWORD dwOptions, REGSAM samDesired, const LPSECURITY_ATTRIBUTES lpSecurityAttributes, PHKEY phkResult, LPDWORD lpdwDisposition)
 {
@@ -9214,12 +9215,19 @@ LSTATUS shell32_RegSetValueExW(HKEY hKey, LPCWSTR lpValueName, DWORD Reserved, D
     return RegSetValueExW(hKey, lpValueName, Reserved, dwType, lpData, cbData);
 }
 
+BOOL shell32_DeleteMenu(HMENU hMenu, UINT uPosition, UINT uFlags)
+{
+    if (uPosition == 0x7053 && IsSpotlightEnabled() && dwSpotlightDesktopMenuMask) bSpotlightIsDesktopContextMenu = TRUE;
+    return DeleteMenu(hMenu, uPosition, uFlags);
+}
+
 BOOL shell32_TrackPopupMenu(HMENU hMenu, UINT uFlags, int x, int y, int nReserved, HWND hWnd, const RECT* prcRect)
 {
-    if (IsSpotlightEnabled() && dwSpotlightDesktopMenuMask && RegisterWindowMessageW(L"WorkerW") == GetClassWord(GetParent(hWnd), GCW_ATOM))
+    if (IsSpotlightEnabled() && dwSpotlightDesktopMenuMask && RegisterWindowMessageW(L"WorkerW") == GetClassWord(GetParent(hWnd), GCW_ATOM) && bSpotlightIsDesktopContextMenu)
     {
         SpotlightHelper(dwSpotlightDesktopMenuMask, hWnd, hMenu, NULL);
     }
+    bSpotlightIsDesktopContextMenu = FALSE;
     BOOL bRet = TrackPopupMenuHook(hMenu, uFlags, x, y, nReserved, hWnd, prcRect);
     if (IsSpotlightEnabled() && dwSpotlightDesktopMenuMask)
     {
@@ -10123,6 +10131,7 @@ DWORD Inject(BOOL bIsExplorer)
         {
             VnPatchIAT(hShell32, "API-MS-WIN-CORE-REGISTRY-L1-1-0.DLL", "RegCreateKeyExW", shell32_RegCreateKeyExW);
             VnPatchIAT(hShell32, "API-MS-WIN-CORE-REGISTRY-L1-1-0.DLL", "RegSetValueExW", shell32_RegSetValueExW);
+            VnPatchIAT(hShell32, "user32.dll", "DeleteMenu", shell32_DeleteMenu);
         }
     }
     printf("Setup shell32 functions done\n");
