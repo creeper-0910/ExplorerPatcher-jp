@@ -39,7 +39,7 @@
 ;b 検索ボタンを表示
 "SearchboxTaskbarMode"=dword:00000001
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;b タスクビューボタンを表示
+;b タスク ビューボタンを表示
 "ShowTaskViewButton"=dword:00000001
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 ;b デスクトップボタンを表示
@@ -69,12 +69,12 @@
 "MMOldTaskbarAl"=dword:00000000
 ;c 3 プライマリタスク バーのアイコンを結合
 ;x 0 常に結合する
-;x 1 タスクバーがいっぱいのときに結合
+;x 1 タスク バーがいっぱいのときに結合
 ;x 2 結合しない (既定)
 "TaskbarGlomLevel"=dword:00000002
 ;c 3 セカンダリタスク バーのアイコン結合
 ;x 0 常に結合する
-;x 1 タスクバーがいっぱいのときに結合
+;x 1 タスク バーがいっぱいのときに結合
 ;x 2 結合しない (既定)
 "MMTaskbarGlomLevel"=dword:00000002
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
@@ -95,7 +95,7 @@
 ;b トレイアイコンのポップアップメニューのフライアウト動作
 "FlyoutMenus"=dword:00000001
 [HKEY_CURRENT_USER\Software\Microsoft\TabletTip\1.7]
-;b タッチキーボードボタンを表示する *
+;b タッチ キーボードボタンを表示する *
 "TipbandDesiredVisibility"=dword:00000000
 ;s SystemTray_Windows10Section IsOldTaskbar
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
@@ -431,7 +431,7 @@
 ;s Weather_Windows10 IsOldTaskbar
 ;T 天気
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b タスクバーに天気を表示する
+;b タスク バーに天気を表示する
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_PeopleBand"=dword:00000000
 ;s Weather_Section1 IsWeatherEnabled
 ;w 場所
@@ -514,7 +514,7 @@
 "WeatherZoomFactor"=dword:00000000
 ;q
 ;g Weather_Section1
-;y 天気予報タスクバーウィジェットについてもっと知る 🡕
+;y 天気予報タスク バーウィジェットについてもっと知る 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Weather
 ;s Weather_Section2 IsWeatherEnabled
 ;t %WEATHERLASTUPDATETEXT%
@@ -665,7 +665,7 @@
 "AllocConsole"=dword:00000000
 ;b メモリリークをダンプする
 "Memcheck"=dword:00000000
-;b タスクバーのダブルクリックで自動非表示（タスクバーがロックされている時のみ）
+;b タスク バーのダブルクリックで自動非表示（タスク バーがロックされている時のみ）
 "TaskbarAutohideOnDoubleClick"=dword:00000000
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 ;b Windows のビルド情報をデスクトップに表示 *
@@ -684,7 +684,7 @@
 ;s Advanced_Windows10 IsOldTaskbar
 ;b ピン留めされたアイテムはクイック起動として機能します（ピン留めされたアイテムをアクティブなアプリと一緒にしないでください） *
 "PinnedItemsActAsQuickLaunch"=dword:00000000
-;b タスクバーにボタンラベルが表示されている場合、ピン留めされているアイテムの周りの余分な隙間を削除する *
+;b タスク バーにボタンラベルが表示されている場合、ピン留めされているアイテムの周りの余分な隙間を削除する *
 "RemoveExtraGapAroundPinnedItems"=dword:00000000
 ;g Advanced_Windows10
 ;c 12 ログオン時の遅延時間の補助 *
