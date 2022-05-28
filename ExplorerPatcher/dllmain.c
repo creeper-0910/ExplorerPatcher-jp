@@ -5280,6 +5280,7 @@ INT64 ShowDesktopSubclassProc(
             {
                 lRes = 0;
             }
+            else if (dwVal) PostMessageW(hWnd, 794, 0, 0);
         }
         return lRes;
     }
@@ -7575,6 +7576,13 @@ HTHEME explorer_OpenThemeDataForDpi(
             }
         }
         return hTheme;
+    }
+    else if ((*((WORD*)&(pszClassList)+1)) && !wcscmp(pszClassList, L"TaskbarShowDesktop"))
+    {
+        DWORD dwVal = 0, dwSize = sizeof(DWORD);
+        RegGetValueW(HKEY_CURRENT_USER, L"Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced", L"TaskbarSD", RRF_RT_REG_DWORD, NULL, &dwVal, &dwSize);
+        if (dwVal == 2) return NULL;
+        return OpenThemeDataForDpi(hwnd, pszClassList, dpi);
     }
 
     // task list - Taskband2 from CTaskListWnd::_HandleThemeChanged
@@ -10594,7 +10602,8 @@ void StartMenu_LoadSettings(BOOL bRestartIfChanged)
         dwStartShowClassicMode = dwVal;
 
         dwSize = sizeof(DWORD);
-        dwVal = 1;
+        if (IsWindows11()) dwVal = 1;
+        else dwVal = 0;
         RegQueryValueExW(
             hKey,
             TEXT("TaskbarAl"),

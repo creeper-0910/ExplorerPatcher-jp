@@ -41,9 +41,6 @@
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 ;b タスクビューボタンを表示
 "ShowTaskViewButton"=dword:00000001
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;b デスクトップボタンを表示
-"TaskbarSD"=dword:00000001
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b 自動でタスク バーを隠す
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_AutoHideTaskbar"=dword:00000000
@@ -83,6 +80,7 @@
 ;x 0 大きい (既定)
 "TaskbarSmallIcons"=dword:00000000
 ;e 
+;e 
 ;g Taskbar_Windows10Section
 
 
@@ -97,17 +95,33 @@
 [HKEY_CURRENT_USER\Software\Microsoft\TabletTip\1.7]
 ;b タッチキーボードボタンを表示する *
 "TipbandDesiredVisibility"=dword:00000000
+;s SystemTray_Section98 IsOldTaskbar
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;b Show seconds in the clock
+"ShowSecondsInSystemClock"=dword:00000000
+;g SystemTray_Section98
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;i Control Center button *
+"HideControlCenterButton"=dword:00000000
+;s SystemTray_Section109 IsOldTaskbar
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;c 3 Show desktop button
+;x 1 Enabled (default)
+;x 0 Disabled
+;x 2 Hidden
+"TaskbarSD"=dword:00000001
+;g SystemTray_Section109
+;s SystemTray_Section117 !IsOldTaskbar
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;b Show desktop button
+"TaskbarSD"=dword:00000001
+;g SystemTray_Section117
 ;s SystemTray_Windows10Section IsOldTaskbar
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;p 2
 ;b システムトレイアイコンにWindows 11 のスタイルを適用 *
 "SkinIcons"=dword:00000001
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;b 時計に秒を表示する
-"ShowSecondsInSystemClock"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b コントロールセンターのボタンを隠す *
-"HideControlCenterButton"=dword:00000000
 ;a ネットワークアイコンを右クリックし、「ネットワークとインターネットの設定を開く」
 ;c 3 を選択した時開くウィンドウ
 ;x 0 設定アプリのネットワーク設定 (既定)
