@@ -39,7 +39,7 @@
 ;b 検索ボタンを表示
 "SearchboxTaskbarMode"=dword:00000001
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;b タスクビューボタンを表示
+;b タスク ビューボタンを表示
 "ShowTaskViewButton"=dword:00000001
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b 自動でタスク バーを隠す
@@ -66,12 +66,12 @@
 "MMOldTaskbarAl"=dword:00000000
 ;c 3 プライマリタスク バーのアイコンを結合
 ;x 0 常に結合する
-;x 1 タスクバーがいっぱいのときに結合
+;x 1 タスク バーがいっぱいのときに結合
 ;x 2 結合しない (既定)
 "TaskbarGlomLevel"=dword:00000002
 ;c 3 セカンダリタスク バーのアイコン結合
 ;x 0 常に結合する
-;x 1 タスクバーがいっぱいのときに結合
+;x 1 タスク バーがいっぱいのときに結合
 ;x 2 結合しない (既定)
 "MMTaskbarGlomLevel"=dword:00000002
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
@@ -93,7 +93,7 @@
 ;b トレイアイコンのポップアップメニューのフライアウト動作
 "FlyoutMenus"=dword:00000001
 [HKEY_CURRENT_USER\Software\Microsoft\TabletTip\1.7]
-;b タッチキーボードボタンを表示する *
+;b タッチ キーボードボタンを表示する *
 "TipbandDesiredVisibility"=dword:00000000
 ;s SystemTray_Section98 IsOldTaskbar
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
@@ -176,7 +176,7 @@
 ;b シェル拡張として登録する
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_RegisterAsShellExtension"=dword:00000000
 [-HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32]
-;d Windows11のコンテキストメニューを無効にする *
+;d Windows 11 のコンテキストメニューを無効にする *
 @=""
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b 常にレガシーなファイル転送ダイアログを使用する
@@ -231,7 +231,7 @@
 ;x 1 中央 (既定)
 "TaskbarAl"=dword:00000001
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 22 表示するよく使うアプリの最大数
+;c 22 よく使うアプリの最大表示数
 ;x 0 なし
 ;x 1 1
 ;x 2 2
@@ -258,23 +258,23 @@
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage]
 ;a マルチディスプレイの場合、キーボードを使用すると設定されたディスプレイで
 ;c 10 スタートが表示されます
-;x 1 プライマリモニター (既定)
-;x 0 カーソルがあるモニター
-;x 2 モニター #2
-;x 3 モニター #3
-;x 4 モニター #4
-;x 5 モニター #5
-;x 6 モニター #6
-;x 7 モニター #7
-;x 8 モニター #8
-;x 9 モニター #9
+;x 1 プライマリディスプレイ (既定)
+;x 0 カーソルがあるディスプレイ
+;x 2 ディスプレイ #2
+;x 3 ディスプレイ #3
+;x 4 ディスプレイ #4
+;x 5 ディスプレイ #5
+;x 6 ディスプレイ #6
+;x 7 ディスプレイ #7
+;x 8 ディスプレイ #8
+;x 9 ディスプレイ #9
 "MonitorOverride"=dword:00000001
 ;s StartMenu_Windows11 !IsWindows10StartMenu
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b "おすすめ"の項目を無効にする
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_StartDocked_DisableRecommendedSection"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage]
-;b 既定で"すべてのアプリ"を開いた状態でスタートを開く
+;b "すべてのアプリ"を展開した状態でスタートを開く
 "MakeAllAppsDefault"=dword:00000000
 ;g StartMenu_Windows11
 ;s StartMenu_Windows10 IsWindows10StartMenu
@@ -315,9 +315,9 @@
 [HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
 ;b デスクトップを含める
 "IncludeWallpaper"=dword:00000001
-;b 常にプライマリモニターに表示する
+;b 常にプライマリディスプレイに表示する
 "PrimaryOnly"=dword:00000000
-;b 現在のモニターで表示されているウィンドウのみを表示する
+;b 現在のディスプレイで表示されているウィンドウのみを表示する
 "PerMonitor"=dword:00000000
 ;b 直近のウィンドウのみ表示（アプリケーションスイッチャーごと）
 "SwitcherIsPerApplication"=dword:00000000
@@ -357,7 +357,7 @@
 ;x 2 ダーク
 "ColorScheme"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
-;c 3 コーナー設定
+;c 3 コーナーの設定
 ;x 2 丸める (既定)
 ;x 3 少しだけ丸める
 ;x 1 丸みなし
@@ -445,7 +445,7 @@
 ;s Weather_Windows10 IsOldTaskbar
 ;T 天気
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b タスクバーに天気を表示する
+;b タスク バーに天気を表示する
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_PeopleBand"=dword:00000000
 ;s Weather_Section1 IsWeatherEnabled
 ;w 場所
@@ -494,7 +494,7 @@
 ;x 1 ライト
 ;x 2 ダーク
 "WeatherTheme"=dword:00000000
-;c 3 コーナー設定
+;c 3 コーナーの設定
 ;x 2 丸める (既定)
 ;x 3 少しだけ丸める
 ;x 1 丸みなし
@@ -528,7 +528,7 @@
 "WeatherZoomFactor"=dword:00000000
 ;q
 ;g Weather_Section1
-;y 天気予報タスクバーウィジェットについてもっと知る 🡕
+;y 天気予報タスク バーウィジェットについてもっと知る 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Weather
 ;s Weather_Section2 IsWeatherEnabled
 ;t %WEATHERLASTUPDATETEXT%
@@ -600,7 +600,7 @@
 ;b Win+X メニューでPowerShell の代わりにコマンドプロンプトを表示する *
 "DontUsePowerShellOnWinX"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Win+X メニューにプログラムの設定へのショートカットを追加する
+;b Win+X メニューにプログラムの設定のショートカットを追加する
 "PropertiesInWinX"=dword:00000000
 ;b Win+X メニューのプログラム設定項目からショートカットキーを削除する
 "NoMenuAccelerator"=dword:00000000
@@ -641,7 +641,7 @@
 
 ;T アップデート
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;z 3 ファイルエクスプローラーを起動時
+;z 3 ファイルエクスプローラーの起動時
 ;x 1 利用可能なアップデートを通知する (既定)
 ;x 0 利用可能なアップデートをインストールするためのプロンプトを表示
 ;x 2 アップデートをチェックしない
@@ -679,7 +679,7 @@
 "AllocConsole"=dword:00000000
 ;b メモリリークをダンプする
 "Memcheck"=dword:00000000
-;b タスクバーのダブルクリックで自動非表示（タスクバーがロックされている時のみ）
+;b タスク バーのダブルクリックで自動非表示（タスク バーがロックされている時のみ）
 "TaskbarAutohideOnDoubleClick"=dword:00000000
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 ;b Windows のビルド情報をデスクトップに表示 *
@@ -698,7 +698,7 @@
 ;s Advanced_Windows10 IsOldTaskbar
 ;b ピン留めされたアイテムはクイック起動として機能します（ピン留めされたアイテムをアクティブなアプリと一緒にしないでください） *
 "PinnedItemsActAsQuickLaunch"=dword:00000000
-;b タスクバーにボタンラベルが表示されている場合、ピン留めされているアイテムの周りの余分な隙間を削除する *
+;b タスク バーにボタンラベルが表示されている場合、ピン留めされているアイテムの周りの余分な隙間を削除する *
 "RemoveExtraGapAroundPinnedItems"=dword:00000000
 ;g Advanced_Windows10
 ;c 12 ログオン時の遅延時間の補助 *
@@ -725,8 +725,8 @@
 ;e このプロジェクトは、Windows 上での作業環境を改善することを目的としています。
 ;e Valentin-Gabriel Radu によって設計されました。
 ;e 動作環境: Windows 11
-;t OSビルド: %OSVERSIONSTRING%
-;y プロジェクトのGithub (https://github.com/valinet) 🡕
+;t OS ビルド: %OSVERSIONSTRING%
+;y プロジェクトのGitHub (https://github.com/valinet) 🡕
 ;https://github.com/valinet
 ;q
 ;y Web サイト (https://www.valinet.ro) 🡕
@@ -739,11 +739,11 @@
 ;https://github.com/valinet/ExplorerPatcher/wiki/Frequently-asked-questions
 ;y これらの設定の管理の詳細 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Settings-management
-;u 設定のインポート
+;u 設定をインポートする
 ;import
 ;u 現在の設定をエクスポートする
 ;export
-;u デフォルトの設定を復元する
+;u デフォルトの設定に復元する
 ;reset
 
 
