@@ -97,11 +97,11 @@
 "TipbandDesiredVisibility"=dword:00000000
 ;s SystemTray_Section98 IsOldTaskbar
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;b Show seconds in the clock
+;b 時計に秒を表示する
 "ShowSecondsInSystemClock"=dword:00000000
 ;g SystemTray_Section98
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;i Control Center button *
+;i コントロールセンター ボタンを表示する *
 "HideControlCenterButton"=dword:00000000
 ;s SystemTray_Section109 IsOldTaskbar
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
