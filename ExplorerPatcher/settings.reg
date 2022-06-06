@@ -105,15 +105,15 @@
 "HideControlCenterButton"=dword:00000000
 ;s SystemTray_Section109 IsOldTaskbar
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;c 3 Show desktop button
-;x 1 Enabled (default)
-;x 0 Disabled
-;x 2 Hidden
+;c 3 デスクトップ ボタンを表示する
+;x 1 有効にする (既定)
+;x 0 無効にする
+;x 2 隠す
 "TaskbarSD"=dword:00000001
 ;g SystemTray_Section109
 ;s SystemTray_Section117 !IsOldTaskbar
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;b Show desktop button
+;b デスクトップ ボタンを表示する
 "TaskbarSD"=dword:00000001
 ;g SystemTray_Section117
 ;s SystemTray_Windows10Section IsOldTaskbar
