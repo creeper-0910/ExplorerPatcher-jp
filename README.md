@@ -3,6 +3,7 @@
 これは日本語化されたExplorerPatcherのビルドです！公式のものではありません。  
 製作者様への寄付: [paypal](https://www.paypal.com/donate?business=valentingabrielradu%40gmail.com&no_recurring=0&item_name=ExplorerPatcher&currency_code=EUR) もしくはメール(valentingabrielradu@gmail.com) からお願いします。
 
+翻訳者への寄付は[paypay](https://qr.paypay.ne.jp/mzqkGkRakAEqrSaw) か TwitterのDMへアマゾンギフト券を送っていただけると翻訳者が喜びます。
 ![Build status](https://github.com/valinet/ExplorerPatcher/actions/workflows/build.yml/badge.svg)
 
 ## お礼
