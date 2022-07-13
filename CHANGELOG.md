@@ -4,20 +4,20 @@ This document includes the same release notes as in the [Releases](https://githu
 
 ## 22000.778.47
 
-Tested on OS build 22000.778.
+OSビルド22000.778でテスト済みです。
 
-Please make sure you are connected to the Internet while installing, the application might need to perform one-time downloads for several resources in order to enable full functionality.
+インストール時にはインターネットに接続されていることを確認してください。完全な機能を有効にするために、いくつかのリソースを一度にダウンロードする必要がある場合があります。
 
-#### Details
+#### 詳細
 
 ##### 1
 
-* Built-in support for OS build 22000.778.
-* Fixed a bug that had the Start button context menu / Win-X menu / power user menu fail to display and potentially lock the shell on OS builds 22000.778+ and 22621+
+* OSビルド22000.778をビルトインしました。
+* OS ビルド 22000.778+ および 22621+ において、スタートボタンのコンテキストメニュー / Win-X メニュー / パワーユーザーメニューが表示されず、シェルがロックされる可能性があったバグを修正しました。
 
 ##### 2
 
-* Fixed a system high DPI-related bug that caused wide Windows 10 taskbar buttons and incorrect (desktop) icon spacing
+* Windows 10 のタスクバーボタンが広くなり、（デスクトップの）アイコンの間隔が不正になるシステムの高 DPIに関連するバグを修正しました。
 
 ## 22000.708.46
 
