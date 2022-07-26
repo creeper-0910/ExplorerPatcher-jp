@@ -385,7 +385,7 @@
 ;x 150 150 pt
 ;x 140 140 pt
 "RowHeight"=dword:000000e6
-;c 10 最大幅（画面幅に対する割合）
+;c 10 最大幅 (画面幅に対する割合)
 ;x 100 100 % (非推奨)
 ;x 95 95 %
 ;x 90 90 %
@@ -397,7 +397,7 @@
 ;x 60 60 %
 ;x 55 55 %
 "MaxWidth"=dword:00000050
-;c 10 高さの最大値（画面の高さに対する割合)
+;c 10 高さの最大値 (画面の高さに対する割合)
 ;x 100 100 % (非推奨)
 ;x 95 95 %
 ;x 90 90 %
@@ -460,8 +460,8 @@
 ;x 5 温度と概要
 "WeatherViewMode"=dword:00000000
 ;c 3 ウィジェットのサイズ
-;x 0 自動（内容に合わせて） (既定)
-;x 2 自動（内容に合わせて）しきい値あり
+;x 0 自動 (内容に合わせて) (既定)
+;x 2 自動 (内容に合わせて) しきい値あり
 ;x 1 固定
 "WeatherFixedSize"=dword:00000000
 ;c 2 ウィジェットの位置
@@ -482,11 +482,11 @@
 ;x 1 華氏
 "WeatherTemperatureUnit"=dword:00000000
 ;;;c 2 位置情報の精度
-;;;x 0 一般的（IPアドレスに基づく） (既定)
-;;;x 1 精密（位置情報を使用します）
+;;;x 0 一般的 (IPアドレスに基づく) (既定)
+;;;x 1 精密 (位置情報を使用します)
 ;;"WeatherLocationType"=dword:00000000
 ;w 言語
-;天気データを表示させたい言語のショートコードを入力します。（"en", "ro", "de", "fr "など）デフォルト値（Windows の言語）は空白にしてください。
+;天気データを表示させたい言語のショートコードを入力します。("en", "ro", "de", "fr "など) デフォルト値 (Windows の言語)は空白にしてください。
 ;システムの言語 (既定)
 "WeatherLanguage"=""
 ;c 3 配色
@@ -558,7 +558,7 @@
 ;x 1008 すべての項目
 "SpotlightDesktopMenuMask"=dword:00000000
 ;c 11 更新頻度
-;x 0 Windows に最適なスケジュールを決定させる（既定）
+;x 0 Windows に最適なスケジュールを決定させる (既定)
 ;x 60 毎分
 ;x 300 5 分毎
 ;x 900 15 分毎
@@ -604,9 +604,9 @@
 "PropertiesInWinX"=dword:00000000
 ;b Win+X メニューのプログラム設定項目からショートカットキーを削除する
 "NoMenuAccelerator"=dword:00000000
-;b Office ホットキー（Ctrl+Alt+Shift+Windows キーの組み合わせ）を無効化する *
+;b Office ホットキー (Ctrl+Alt+Shift+Windows キーの組み合わせ)を無効化する *
 "DisableOfficeHotkeys"=dword:00000000
-;b Win+F（フィードバック Hub）ホットキーを無効化する *
+;b Win+F (フィードバック Hub)ホットキーを無効化する *
 "DisableWinFHotkey"=dword:00000000
 ;b アプリケーションウィンドウの角の丸みを無効化する
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_DisableRoundedCorners"=dword:00000000
@@ -679,7 +679,7 @@
 "AllocConsole"=dword:00000000
 ;b メモリリークをダンプする
 "Memcheck"=dword:00000000
-;b タスク バーのダブルクリックで自動非表示（タスク バーがロックされている時のみ）
+;b タスク バーのダブルクリックで自動非表示 (タスク バーがロックされている時のみ)
 "TaskbarAutohideOnDoubleClick"=dword:00000000
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 ;b Windows のビルド情報をデスクトップに表示 *
@@ -696,7 +696,7 @@
 ;b シンボルのダウンロードを有効化する *
 "EnableSymbolDownload"=dword:00000001
 ;s Advanced_Windows10 IsOldTaskbar
-;b ピン留めされたアイテムはクイック起動として機能します（ピン留めされたアイテムをアクティブなアプリと一緒にしないでください） *
+;b ピン留めされたアイテムはクイック起動として機能します(ピン留めされたアイテムをアクティブなアプリと一緒にしないでください) *
 "PinnedItemsActAsQuickLaunch"=dword:00000000
 ;b タスク バーにボタンラベルが表示されている場合、ピン留めされているアイテムの周りの余分な隙間を削除する *
 "RemoveExtraGapAroundPinnedItems"=dword:00000000
@@ -718,22 +718,22 @@
 
 
 ;T 私達について
-;e ExplorerPatcher
+;e ExplorerPatcher-jp (Unofficial Japanese Build)
 ;e バージョン %VERSIONINFORMATIONSTRING%
 ;t © 2006-2022 VALINET Solutions SRL. 全著作権所有
 ;e 
 ;e このプロジェクトは、Windows 上での作業環境を改善することを目的としています。
-;e Valentin-Gabriel Radu によって設計されました。
+;e Valentin-Gabriel Radu によって設計されました。この非公式日本語版の作成は、creeper-0910 によって作成されています。
 ;e 動作環境: Windows 11
 ;t OS ビルド: %OSVERSIONSTRING%
-;y プロジェクトのGitHub (https://github.com/valinet) 🡕
+;y プロジェクトのGitHub (公式ビルド) (https://github.com/valinet) 🡕
 ;https://github.com/valinet
 ;q
-;y Web サイト (https://www.valinet.ro) 🡕
+;y 公式のWeb サイト (https://www.valinet.ro) 🡕
 ;https://www.valinet.ro
-;y 作者にメールを送る (valentingabrielradu@gmail.com) 🡕
+;y 公式の作者にメールを送る (valentingabrielradu@gmail.com) 🡕
 ;mailto:valentingabrielradu@gmail.com
-;y 寄付 (PayPal を利用します) 🡕
+;y 公式の作者に寄付をする (PayPal を利用します) 🡕
 ;https://www.paypal.com/donate?business=valentingabrielradu%40gmail.com&no_recurring=0&item_name=ExplorerPatcher&currency_code=EUR
 ;y よくある質問 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Frequently-asked-questions
@@ -743,7 +743,7 @@
 ;import
 ;u 現在の設定をエクスポートする
 ;export
-;u デフォルトの設定に復元する
+;u 既定の設定に復元する
 ;reset
 
 
@@ -751,7 +751,7 @@
 ;f
 ;u ファイルエクスプローラーを再起動する (*)
 ;restart
-;;u デフォルトの設定を復元する
+;;u 既定の設定を復元する
 ;;reset
-;;u ExplorerPatcher について
+;;u ExplorerPatcher-jp について
 ;;about
