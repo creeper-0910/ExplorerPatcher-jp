@@ -1119,7 +1119,7 @@ BOOL InstallUpdatesIfAvailable(
         }
         else
         {
-            printf("[Updates] No updates are available.\n");
+            printf("[更新] 更新はありません\n");
         }
         if (dwOperation == UPDATES_OP_CHECK || dwOperation == UPDATES_OP_INSTALL)
         {

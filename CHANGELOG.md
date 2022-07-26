@@ -1,4 +1,4 @@
-# Explorer Patcher Change log
+# ExplorerPatcher-jpの変更ログ
 
 This document includes the same release notes as in the [Releases](https://github.com/creeper-0910/ExplorerPatcher-jp/releases) section on GitHub.
 
