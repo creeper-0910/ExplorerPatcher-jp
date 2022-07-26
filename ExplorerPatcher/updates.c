@@ -1015,8 +1015,8 @@ BOOL InstallUpdatesIfAvailable(
                         L"activationType=\"protocol\" launch=\"" _T(UPDATES_RELEASE_INFO_URL) L"\" duration=\"short\">\r\n"
                         L"	<visual>\r\n"
                         L"		<binding template=\"ToastGeneric\">\r\n"
-                        L"			<text><![CDATA[Update failed]]></text>\r\n"
-                        L"			<text><![CDATA[The request was declined or an error has occured when attempting to install this update.]]></text>\r\n"
+                        L"			<text><![CDATA[アップデート失敗]]></text>\r\n"
+                        L"			<text><![CDATA[この更新プログラムをインストールしようとしたときに、要求が拒否されたか、エラーが発生しました。]]></text>\r\n"
                         L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
                         L"		</binding>\r\n"
                         L"	</visual>\r\n"
@@ -1115,7 +1115,7 @@ BOOL InstallUpdatesIfAvailable(
     {
         if (bFail)
         {
-            printf("[Updates] Unable to check for updates because the remote server is unavailable.\n");
+            printf("[更新] リモートサーバーが利用できないため、アップデートを確認できません\n");
         }
         else
         {
@@ -1128,8 +1128,8 @@ BOOL InstallUpdatesIfAvailable(
                 L"activationType=\"protocol\" launch=\"" _T(UPDATES_RELEASE_INFO_URL) L"\" duration=\"short\">\r\n"
                 L"	<visual>\r\n"
                 L"		<binding template=\"ToastGeneric\">\r\n"
-                L"			<text><![CDATA[No updates are available]]></text>\r\n"
-                L"			<text><![CDATA[Please check back later.]]></text>\r\n"
+                L"			<text><![CDATA[更新はありません]]></text>\r\n"
+                L"			<text><![CDATA[後ほど確認してください。]]></text>\r\n"
                 L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
                 L"		</binding>\r\n"
                 L"	</visual>\r\n"
@@ -1140,8 +1140,8 @@ BOOL InstallUpdatesIfAvailable(
                 L"activationType=\"protocol\" launch=\"" _T(UPDATES_RELEASE_INFO_URL) L"\" duration=\"short\">\r\n"
                 L"	<visual>\r\n"
                 L"		<binding template=\"ToastGeneric\">\r\n"
-                L"			<text><![CDATA[Unable to check for updates]]></text>\r\n"
-                L"			<text><![CDATA[Make sure that you are connected to the Internet and that the remote server is online.]]></text>\r\n"
+                L"			<text><![CDATA[アップデートの確認が出来ませんでした]]></text>\r\n"
+                L"			<text><![CDATA[インターネットに接続されていること、リモートサーバーがオンラインであることを確認してください。]]></text>\r\n"
                 L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
                 L"		</binding>\r\n"
                 L"	</visual>\r\n"
