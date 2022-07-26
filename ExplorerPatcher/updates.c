@@ -127,7 +127,7 @@ BOOL IsUpdateAvailableHelper(
                             if (a2)
                             {
                                 a2[0] = 0;
-                                printf("[Updates] Prerelease update URL: \"%s\"\n", a1 + 24);
+                                printf("[XV] ƒvƒŒƒŠƒŠ[ƒX‚ÌURL: \"%s\"\n", a1 + 24);
                                 url = a1 + 24;
                                 bUpdatePreferStaging = FALSE;
                                 if (wszInfoURL)
@@ -139,7 +139,7 @@ BOOL IsUpdateAvailableHelper(
                                         if (a4)
                                         {
                                             a4[0] = 0;
-                                            printf("[Updates] Release notes URL: \"%s\"\n", a3 + 12);
+                                            printf("[XV] ƒŠƒŠ[ƒXƒm[ƒg‚ÌURL: \"%s\"\n", a3 + 12);
                                             MultiByteToWideChar(
                                                 CP_UTF8,
                                                 MB_PRECOMPOSED,
@@ -199,7 +199,7 @@ BOOL IsUpdateAvailableHelper(
                 ) && dwRead == DOSMODE_OFFSET + UPDATES_HASH_SIZE)
                 {
 #ifdef UPDATES_VERBOSE_OUTPUT
-                    printf("[Updates] Hash of remote file is \"%s\" (%s).\n", DOSMODE_OFFSET + hash, (hash[0] == 0x4D && hash[1] == 0x5A) ? "valid" : "invalid");
+                    printf("[XV] ƒŠƒ‚[ƒgƒtƒ@ƒCƒ‹‚ÌƒnƒbƒVƒ…‚Í \"%s\" (%s)‚Å‚·B\n", DOSMODE_OFFSET + hash, (hash[0] == 0x4D && hash[1] == 0x5A) ? "valid" : "invalid");
 #endif
                     BOOL bOldType = TRUE;
                     char *szLeftMost = NULL, *szSecondLeft = NULL, *szSecondRight = NULL, *szRightMost = NULL, *szRealHash = NULL;
@@ -323,7 +323,7 @@ BOOL IsUpdateAvailableHelper(
                 else
                 {
 #ifdef UPDATES_VERBOSE_OUTPUT
-                    printf("[Updates] Failed. Read %d bytes.\n", dwRead);
+                    printf("[XV] Ž¸”s‚µ‚Ü‚µ‚½B“Ç‚Ýž‚Ý %d ƒoƒCƒg.\n", dwRead);
 #endif
                     if (lpFail) *lpFail = TRUE;
                 }
@@ -375,7 +375,7 @@ BOOL IsUpdateAvailableHelper(
                     }
                     wcscat_s(wszPath, MAX_PATH, wszURL);
 #ifdef UPDATES_VERBOSE_OUTPUT
-                    wprintf(L"[Updates] Download path is \"%s\".\n", wszPath);
+                    wprintf(L"[XV] ƒ_ƒEƒ“ƒ[ƒhƒpƒX‚Í \"%s\"‚Å‚·B\n", wszPath);
 #endif
 
                     BOOL bRet = DeleteFileW(wszPath);
@@ -404,12 +404,12 @@ BOOL IsUpdateAvailableHelper(
                                     {
                                         bIsUpdateAvailable = TRUE;
 #ifdef UPDATES_VERBOSE_OUTPUT
-                                        printf("[Updates] Downloaded finished.\n");
+                                        printf("[XV] ƒ_ƒEƒ“ƒ[ƒh‚ªŠ®—¹‚µ‚Ü‚µ‚½B\n");
 #endif
                                         break;
                                     }
 #ifdef UPDATES_VERBOSE_OUTPUT
-                                    printf("[Updates] Downloaded %d bytes.\n", dwRead);
+                                    printf("[XV] %d ƒoƒCƒg‚Ìƒ_ƒEƒ“ƒ[ƒh‚ªŠ®—¹‚µ‚Ü‚µ‚½B\n", dwRead);
 #endif
                                     fwrite(
                                         buffer,
@@ -836,7 +836,7 @@ BOOL ShowUpdateSuccessNotification(
         L"	<visual>\r\n"
         L"		<binding template=\"ToastGeneric\">\r\n"
         L"			<text><![CDATA[Update successful]]></text>\r\n"
-        L"			<text><![CDATA[Installed version: %d.%d.%d.%d]]></text>\r\n"
+        L"			<text><![CDATA[Œ»Ý‚Ìƒo[ƒWƒ‡ƒ“: %d.%d.%d.%d]]></text>\r\n"
         L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
         L"		</binding>\r\n"
         L"	</visual>\r\n"
@@ -926,8 +926,8 @@ BOOL InstallUpdatesIfAvailable(
             L"activationType=\"protocol\" launch=\"" _T(UPDATES_RELEASE_INFO_URL) L"\" duration=\"long\">\r\n"
             L"	<visual>\r\n"
             L"		<binding template=\"ToastGeneric\">\r\n"
-            L"			<text><![CDATA[Downloading and installing updates]]></text>\r\n"
-            L"			<text><![CDATA[Installed version: %d.%d.%d.%d]]></text>\r\n"
+            L"			<text><![CDATA[ƒAƒbƒvƒf[ƒg‚ðƒ_ƒEƒ“ƒ[ƒh‚µ‚ÄƒCƒ“ƒXƒg[ƒ‹]]></text>\r\n"
+            L"			<text><![CDATA[Œ»Ý‚Ìƒo[ƒWƒ‡ƒ“: %d.%d.%d.%d]]></text>\r\n"
             L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
             L"		</binding>\r\n"
             L"	</visual>\r\n"
@@ -948,8 +948,8 @@ BOOL InstallUpdatesIfAvailable(
             L"activationType=\"protocol\" launch=\"" _T(UPDATES_RELEASE_INFO_URL) L"\" duration=\"long\">\r\n"
             L"	<visual>\r\n"
             L"		<binding template=\"ToastGeneric\">\r\n"
-            L"			<text><![CDATA[Checking for updates]]></text>\r\n"
-            L"			<text><![CDATA[Installed version: %d.%d.%d.%d]]></text>\r\n"
+            L"			<text><![CDATA[XV‚ÌŠm”F]]></text>\r\n"
+            L"			<text><![CDATA[Œ»Ý‚Ìƒo[ƒWƒ‡ƒ“: %d.%d.%d.%d]]></text>\r\n"
             L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
             L"		</binding>\r\n"
             L"	</visual>\r\n"
@@ -1015,8 +1015,8 @@ BOOL InstallUpdatesIfAvailable(
                         L"activationType=\"protocol\" launch=\"" _T(UPDATES_RELEASE_INFO_URL) L"\" duration=\"short\">\r\n"
                         L"	<visual>\r\n"
                         L"		<binding template=\"ToastGeneric\">\r\n"
-                        L"			<text><![CDATA[ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆå¤±æ•—]]></text>\r\n"
-                        L"			<text><![CDATA[ã“ã®æ›´æ–°ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã‚ˆã†ã¨ã—ãŸã¨ãã«ã€è¦æ±‚ãŒæ‹’å¦ã•ã‚ŒãŸã‹ã€ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚]]></text>\r\n"
+                        L"			<text><![CDATA[ƒAƒbƒvƒf[ƒgŽ¸”s]]></text>\r\n"
+                        L"			<text><![CDATA[‚±‚ÌXVƒvƒƒOƒ‰ƒ€‚ðƒCƒ“ƒXƒg[ƒ‹‚µ‚æ‚¤‚Æ‚µ‚½‚Æ‚«‚ÉA—v‹‚ª‹‘”Û‚³‚ê‚½‚©AƒGƒ‰[‚ª”­¶‚µ‚Ü‚µ‚½B]]></text>\r\n"
                         L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
                         L"		</binding>\r\n"
                         L"	</visual>\r\n"
@@ -1062,8 +1062,8 @@ BOOL InstallUpdatesIfAvailable(
                 L"activationType=\"protocol\" launch=\"%s\" duration=\"long\">\r\n"
                 L"	<visual>\r\n"
                 L"		<binding template=\"ToastGeneric\">\r\n"
-                L"			<text><![CDATA[%s available]]></text>\r\n"
-                L"			<text><![CDATA[You can update by right clicking the taskbar, choosing \"Properties\", then \"Updates\". Click here to learn more about this update.]]></text>\r\n"
+                L"			<text><![CDATA[%s ‚ªŽg—p‰Â”\]]></text>\r\n"
+                L"			<text><![CDATA[ƒAƒbƒvƒf[ƒg‚·‚é‚É‚ÍAƒ^ƒXƒNƒo[‚ð‰EƒNƒŠƒbƒN‚µ‚Ä \"Properties\", \"Updates\"‚Ì‡‚É‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢B‚±‚ÌƒAƒbƒvƒf[ƒg‚É‚Â‚¢‚ÄÚ‚µ‚­‚ÍA‚±‚¿‚ç‚ð‚²——‚­‚¾‚³‚¢B]]></text>\r\n"
                 L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
                 L"		</binding>\r\n"
                 L"	</visual>\r\n"
@@ -1115,11 +1115,11 @@ BOOL InstallUpdatesIfAvailable(
     {
         if (bFail)
         {
-            printf("[æ›´æ–°] ãƒªãƒ¢ãƒ¼ãƒˆã‚µãƒ¼ãƒãƒ¼ãŒåˆ©ç”¨ã§ããªã„ãŸã‚ã€ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆã‚’ç¢ºèªã§ãã¾ã›ã‚“\n");
+            printf("[XV] ƒŠƒ‚[ƒgƒT[ƒo[‚ª—˜—p‚Å‚«‚È‚¢‚½‚ßAƒAƒbƒvƒf[ƒg‚ðŠm”F‚Å‚«‚Ü‚¹‚ñ\n");
         }
         else
         {
-            printf("[æ›´æ–°] æ›´æ–°ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+            printf("[XV] XV‚Í‚ ‚è‚Ü‚¹‚ñ\n");
         }
         if (dwOperation == UPDATES_OP_CHECK || dwOperation == UPDATES_OP_INSTALL)
         {
@@ -1128,8 +1128,8 @@ BOOL InstallUpdatesIfAvailable(
                 L"activationType=\"protocol\" launch=\"" _T(UPDATES_RELEASE_INFO_URL) L"\" duration=\"short\">\r\n"
                 L"	<visual>\r\n"
                 L"		<binding template=\"ToastGeneric\">\r\n"
-                L"			<text><![CDATA[æ›´æ–°ã¯ã‚ã‚Šã¾ã›ã‚“]]></text>\r\n"
-                L"			<text><![CDATA[å¾Œã»ã©ç¢ºèªã—ã¦ãã ã•ã„ã€‚]]></text>\r\n"
+                L"			<text><![CDATA[XV‚Í‚ ‚è‚Ü‚¹‚ñ]]></text>\r\n"
+                L"			<text><![CDATA[Œã‚Ù‚ÇŠm”F‚µ‚Ä‚­‚¾‚³‚¢B]]></text>\r\n"
                 L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
                 L"		</binding>\r\n"
                 L"	</visual>\r\n"
@@ -1140,8 +1140,8 @@ BOOL InstallUpdatesIfAvailable(
                 L"activationType=\"protocol\" launch=\"" _T(UPDATES_RELEASE_INFO_URL) L"\" duration=\"short\">\r\n"
                 L"	<visual>\r\n"
                 L"		<binding template=\"ToastGeneric\">\r\n"
-                L"			<text><![CDATA[ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆã®ç¢ºèªãŒå‡ºæ¥ã¾ã›ã‚“ã§ã—ãŸ]]></text>\r\n"
-                L"			<text><![CDATA[ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒƒãƒˆã«æŽ¥ç¶šã•ã‚Œã¦ã„ã‚‹ã“ã¨ã€ãƒªãƒ¢ãƒ¼ãƒˆã‚µãƒ¼ãƒãƒ¼ãŒã‚ªãƒ³ãƒ©ã‚¤ãƒ³ã§ã‚ã‚‹ã“ã¨ã‚’ç¢ºèªã—ã¦ãã ã•ã„ã€‚]]></text>\r\n"
+                L"			<text><![CDATA[ƒAƒbƒvƒf[ƒg‚ÌŠm”F‚ªo—ˆ‚Ü‚¹‚ñ‚Å‚µ‚½]]></text>\r\n"
+                L"			<text><![CDATA[ƒCƒ“ƒ^[ƒlƒbƒg‚ÉÚ‘±‚³‚ê‚Ä‚¢‚é‚±‚ÆAƒŠƒ‚[ƒgƒT[ƒo[‚ªƒIƒ“ƒ‰ƒCƒ“‚Å‚ ‚é‚±‚Æ‚ðŠm”F‚µ‚Ä‚­‚¾‚³‚¢B]]></text>\r\n"
                 L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
                 L"		</binding>\r\n"
                 L"	</visual>\r\n"
