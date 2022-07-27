@@ -751,7 +751,7 @@
 ;f
 ;u ファイルエクスプローラーを再起動する (*)
 ;restart
-;;u 既定の設定を復元する
+;;u 既定の設定に復元する
 ;;reset
 ;;u ExplorerPatcher-jp について
 ;;about
