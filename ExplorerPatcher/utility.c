@@ -185,7 +185,7 @@ L"activationType=\"protocol\" launch=\"https://github.com/creeper-0910/ExplorerP
 L"	<visual>\r\n"
 L"		<binding template=\"ToastGeneric\">\r\n"
 L"			<text><![CDATA[%s]]></text>\r\n"
-L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
+L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher-jp]]></text>\r\n"
 L"		</binding>\r\n"
 L"	</visual>\r\n"
 L"	<audio src=\"ms-winsoundevent:Notification.Default\" loop=\"false\" silent=\"false\"/>\r\n"
