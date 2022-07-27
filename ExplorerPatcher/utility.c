@@ -181,7 +181,7 @@ __declspec(dllexport) CALLBACK ZZTestBalloon(HWND hWnd, HINSTANCE hInstance, LPS
 
 const wchar_t TestToastXML[] =
 L"<toast scenario=\"reminder\" "
-L"activationType=\"protocol\" launch=\"https://github.com/valinet/ExplorerPatcher\" duration=\"%s\">\r\n"
+L"activationType=\"protocol\" launch=\"https://github.com/creeper-0910/ExplorerPatcher-jp\" duration=\"%s\">\r\n"
 L"	<visual>\r\n"
 L"		<binding template=\"ToastGeneric\">\r\n"
 L"			<text><![CDATA[%s]]></text>\r\n"

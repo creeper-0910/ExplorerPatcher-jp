@@ -24,7 +24,7 @@ const char* startui_SN[STARTUI_SB_CNT] = {
 
 const wchar_t DownloadSymbolsXML[] =
 L"<toast scenario=\"reminder\" "
-L"activationType=\"protocol\" launch=\"https://github.com/valinet/ExplorerPatcher\" duration=\"short\">\r\n"
+L"activationType=\"protocol\" launch=\"https://github.com/creeper-0910/ExplorerPatcher-jp\" duration=\"short\">\r\n"
 L"	<visual>\r\n"
 L"		<binding template=\"ToastGeneric\">\r\n"
 L"			<text><![CDATA[Unable to find symbols for OS build %s]]></text>\r\n"
@@ -37,7 +37,7 @@ L"</toast>\r\n";
 
 const wchar_t DownloadOKXML[] =
 L"<toast scenario=\"reminder\" "
-L"activationType=\"protocol\" launch=\"https://github.com/valinet/ExplorerPatcher\" duration=\"long\">\r\n"
+L"activationType=\"protocol\" launch=\"https://github.com/creeper-0910/ExplorerPatcher-jp\" duration=\"long\">\r\n"
 L"	<visual>\r\n"
 L"		<binding template=\"ToastGeneric\">\r\n"
 L"			<text><![CDATA[Successfully downloaded symbols for OS build %s]]></text>\r\n"
@@ -50,7 +50,7 @@ L"</toast>\r\n";
 
 const wchar_t InstallOK[] =
 L"<toast scenario=\"reminder\" "
-L"activationType=\"protocol\" launch=\"https://github.com/valinet/ExplorerPatcher\" duration=\"long\">\r\n"
+L"activationType=\"protocol\" launch=\"https://github.com/creeper-0910/ExplorerPatcher-jp\" duration=\"long\">\r\n"
 L"	<visual>\r\n"
 L"		<binding template=\"ToastGeneric\">\r\n"
 L"			<text><![CDATA[Installation succeeded!]]></text>\r\n"
