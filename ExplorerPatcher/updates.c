@@ -1063,7 +1063,7 @@ BOOL InstallUpdatesIfAvailable(
                 L"	<visual>\r\n"
                 L"		<binding template=\"ToastGeneric\">\r\n"
                 L"			<text><![CDATA[%s が使用可能]]></text>\r\n"
-                L"			<text><![CDATA[アップデートするには、タスクバーを右クリックして \"Properties\", \"Updates\"の順に選択してください。このアップデートについて詳しくは、こちらをご覧ください。]]></text>\r\n"
+                L"			<text><![CDATA[アップデートするには、タスクバーを右クリックして \"プロパティ\"、\"アップデート\"の順に選択してください。このアップデートについて詳しくは、こちらをご覧ください。]]></text>\r\n"
                 L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher-jp]]></text>\r\n"
                 L"		</binding>\r\n"
                 L"	</visual>\r\n"
@@ -1076,7 +1076,7 @@ BOOL InstallUpdatesIfAvailable(
             else
             {
                 WCHAR wszVersionInfo[100];
-                swprintf_s(wszVersionInfo, 100, L"Version %d.%d.%d.%d is", dwLeftMost, dwSecondLeft, dwSecondRight, dwRightMost);
+                swprintf_s(wszVersionInfo, 100, L"バージョン %d.%d.%d.%d ", dwLeftMost, dwSecondLeft, dwSecondRight, dwRightMost);
                 swprintf_s(buf, TOAST_BUFSIZ, text, wszInfoURL, wszVersionInfo);
             }
             __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument* inputXml = NULL;
