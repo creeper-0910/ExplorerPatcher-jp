@@ -428,9 +428,9 @@ BOOL IsUpdateAvailableHelper(
                             bIsUpdateAvailable = FALSE;
 #ifdef UPDATES_VERBOSE_OUTPUT
                             printf(
-                                "[Updates] In order to install this update for the product \""
+                                "[更新] アップデートをインストールするために \""
                                 PRODUCT_NAME
-                                "\", please allow the request.\n"
+                                "\" を許可してください。\n"
                             );
 #endif
 
@@ -505,7 +505,7 @@ BOOL IsUpdateAvailableHelper(
                                 );
 
                                 WCHAR wszMsg[500];
-                                swprintf_s(wszMsg, 500, L"Would you like to install an update for " _T(PRODUCT_NAME) L"?\n\nDownloaded from:\n%s", wszURL2);
+                                swprintf_s(wszMsg, 500, L"" _T(PRODUCT_NAME) L"のアップデートをインストールしますか？\n\nダウンロード元:\n%s", wszURL2);
                                 if (MessageBoxW(
                                     FindWindowW(L"ExplorerPatcher_GUI_" _T(EP_CLSID), NULL),
                                     wszMsg,
@@ -536,14 +536,14 @@ BOOL IsUpdateAvailableHelper(
                                 {
                                     bIsUpdateAvailable = TRUE;
 #ifdef UPDATES_VERBOSE_OUTPUT
-                                    printf("[Updates] Update successful, File Explorer will probably restart momentarly.\n");
+                                    printf("[更新] アップデートに成功後、Explorerが再起動します。\n");
 #endif
                                 }
                                 else
                                 {
                                     SetLastError(dwExitCode);
 #ifdef UPDATES_VERBOSE_OUTPUT
-                                    printf("[Updates] Update failed because the following error has occured: %d.\n", dwExitCode);
+                                    printf("[更新] 以下のエラーが発生したため、アップデートに失敗しました: %d.\n", dwExitCode);
 #endif
                                 }
                                 CloseHandle(ShExecInfo.hProcess);
@@ -554,13 +554,13 @@ BOOL IsUpdateAvailableHelper(
                                 if (dwError == ERROR_CANCELLED)
                                 {
 #ifdef UPDATES_VERBOSE_OUTPUT
-                                    printf("[Updates] Update failed because the request was denied.\n");
+                                    printf("[更新] 要求が拒否されたため、更新に失敗しました。\n");
 #endif
                                 }
                                 else
                                 {
 #ifdef UPDATES_VERBOSE_OUTPUT
-                                    printf("[Updates] Update failed because the following error has occured: %d.\n", GetLastError());
+                                    printf("[更新] 以下のエラーが発生したため、アップデートに失敗しました: %d.\n", GetLastError());
 #endif
                                 }
                             }
@@ -600,7 +600,7 @@ BOOL IsUpdateAvailable(LPCWSTR wszDataStore, char* szCheckAgainst, BOOL* lpFail,
     ZeroMemory(szUpdateURL, MAX_PATH * sizeof(CHAR));
     strcat_s(szUpdateURL, MAX_PATH, UPDATES_RELEASE_INFO_URL_STABLE);
 #ifdef UPDATES_VERBOSE_OUTPUT
-    printf("[Updates] Checking against hash \"%s\"\n", szCheckAgainst);
+    printf("[更新] ハッシュとの照合 \"%s\"\n", szCheckAgainst);
 #endif
     DWORD dwUpdateTimeout = UPDATES_DEFAULT_TIMEOUT;
     DWORD bUpdatePreferStaging = FALSE;
@@ -692,7 +692,7 @@ BOOL IsUpdateAvailable(LPCWSTR wszDataStore, char* szCheckAgainst, BOOL* lpFail,
         RegCloseKey(hKey);
     }
 #ifdef UPDATES_VERBOSE_OUTPUT
-    printf("[Updates] Update URL: %s\n", szUpdateURL);
+    printf("[更新] 更新URL: %s\n", szUpdateURL);
 #endif
     return IsUpdateAvailableHelper(
         szUpdateURL, 
@@ -798,7 +798,7 @@ BOOL UpdateProduct(
         RegCloseKey(hKey);
     }
 #ifdef UPDATES_VERBOSE_OUTPUT
-    printf("[Updates] Update URL: %s\n", szUpdateURL);
+    printf("[更新] 更新URL: %s\n", szUpdateURL);
 #endif
     return IsUpdateAvailableHelper(
         szUpdateURL, 
@@ -837,7 +837,7 @@ BOOL ShowUpdateSuccessNotification(
         L"		<binding template=\"ToastGeneric\">\r\n"
         L"			<text><![CDATA[Update successful]]></text>\r\n"
         L"			<text><![CDATA[現在のバージョン: %d.%d.%d.%d]]></text>\r\n"
-        L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
+        L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher-jp]]></text>\r\n"
         L"		</binding>\r\n"
         L"	</visual>\r\n"
         L"	<audio src=\"ms-winsoundevent:Notification.Default\" loop=\"false\" silent=\"false\"/>\r\n"
@@ -902,17 +902,17 @@ BOOL InstallUpdatesIfAvailable(
         case UPDATE_POLICY_AUTO:
         {
             dwUpdatePolicy = UPDATE_POLICY_AUTO;
-            printf("[Updates] Configured update policy on this system: \"Install updates automatically\".\n");
+            printf("[更新] このシステムで設定されたアップデートポリシー: \"アップデートの自動インストール\"。\n");
             break;
         }
         case UPDATE_POLICY_NOTIFY:
         {
-            printf("[Updates] Configured update policy on this system: \"Check for updates but let me choose whether to download and install them\".\n");
+            printf("[更新] このシステムで設定されたアップデートポリシー: \"アップデートを確認し、ダウンロードとインストールを選択\"。\n");
             break;
         }
         case UPDATE_POLICY_MANUAL:
         {
-            printf("[Updates] Configured update policy on this system: \"Manually check for updates\".\n");
+            printf("[更新] このシステムで設定されたアップデートポリシー: \"手動でアップデートを確認する\".\n");
             break;
         }
         }
@@ -928,7 +928,7 @@ BOOL InstallUpdatesIfAvailable(
             L"		<binding template=\"ToastGeneric\">\r\n"
             L"			<text><![CDATA[アップデートをダウンロードしてインストール]]></text>\r\n"
             L"			<text><![CDATA[現在のバージョン: %d.%d.%d.%d]]></text>\r\n"
-            L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
+            L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher-jp]]></text>\r\n"
             L"		</binding>\r\n"
             L"	</visual>\r\n"
             L"	<audio src=\"ms-winsoundevent:Notification.Default\" loop=\"false\" silent=\"false\"/>\r\n"
@@ -950,7 +950,7 @@ BOOL InstallUpdatesIfAvailable(
             L"		<binding template=\"ToastGeneric\">\r\n"
             L"			<text><![CDATA[更新の確認]]></text>\r\n"
             L"			<text><![CDATA[現在のバージョン: %d.%d.%d.%d]]></text>\r\n"
-            L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
+            L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher-jp]]></text>\r\n"
             L"		</binding>\r\n"
             L"	</visual>\r\n"
             L"	<audio src=\"ms-winsoundevent:Notification.Default\" loop=\"false\" silent=\"false\"/>\r\n"
@@ -991,7 +991,7 @@ BOOL InstallUpdatesIfAvailable(
 
     WCHAR dllName[MAX_PATH];
     GetModuleFileNameW(hModule, dllName, MAX_PATH);
-    wprintf(L"[Updates] Path to module: %s\n", dllName);
+    wprintf(L"[更新] モジュールへのパス: %s\n", dllName);
 
     CHAR hash[100];
     ZeroMemory(hash, 100 * sizeof(CHAR));
@@ -1001,7 +1001,7 @@ BOOL InstallUpdatesIfAvailable(
     dwLeftMost = 0; dwSecondLeft = 0; dwSecondRight = 0; dwRightMost = 0;
     if (IsUpdateAvailable(_T(REGPATH), hash, &bFail, wszInfoURL, MAX_PATH, hModule, &dwLeftMost, &dwSecondLeft, &dwSecondRight, &dwRightMost))
     {
-        printf("[Updates] An update is available.\n");
+        printf("[更新] アップデートが利用可能です。\n");
         if ((dwOperation == UPDATES_OP_DEFAULT && dwUpdatePolicy == UPDATE_POLICY_AUTO) || (dwOperation == UPDATES_OP_INSTALL))
         {
             __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument* inputXml = NULL;
@@ -1017,7 +1017,7 @@ BOOL InstallUpdatesIfAvailable(
                         L"		<binding template=\"ToastGeneric\">\r\n"
                         L"			<text><![CDATA[アップデート失敗]]></text>\r\n"
                         L"			<text><![CDATA[この更新プログラムをインストールしようとしたときに、要求が拒否されたか、エラーが発生しました。]]></text>\r\n"
-                        L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
+                        L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher-jp]]></text>\r\n"
                         L"		</binding>\r\n"
                         L"	</visual>\r\n"
                         L"	<audio src=\"ms-winsoundevent:Notification.Default\" loop=\"false\" silent=\"false\"/>\r\n"
@@ -1064,7 +1064,7 @@ BOOL InstallUpdatesIfAvailable(
                 L"		<binding template=\"ToastGeneric\">\r\n"
                 L"			<text><![CDATA[%s が使用可能]]></text>\r\n"
                 L"			<text><![CDATA[アップデートするには、タスクバーを右クリックして \"Properties\", \"Updates\"の順に選択してください。このアップデートについて詳しくは、こちらをご覧ください。]]></text>\r\n"
-                L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
+                L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher-jp]]></text>\r\n"
                 L"		</binding>\r\n"
                 L"	</visual>\r\n"
                 L"	<audio src=\"ms-winsoundevent:Notification.Default\" loop=\"false\" silent=\"false\"/>\r\n"
@@ -1130,7 +1130,7 @@ BOOL InstallUpdatesIfAvailable(
                 L"		<binding template=\"ToastGeneric\">\r\n"
                 L"			<text><![CDATA[更新はありません]]></text>\r\n"
                 L"			<text><![CDATA[後ほど確認してください。]]></text>\r\n"
-                L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
+                L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher-jp]]></text>\r\n"
                 L"		</binding>\r\n"
                 L"	</visual>\r\n"
                 L"	<audio src=\"ms-winsoundevent:Notification.Default\" loop=\"false\" silent=\"false\"/>\r\n"
@@ -1142,7 +1142,7 @@ BOOL InstallUpdatesIfAvailable(
                 L"		<binding template=\"ToastGeneric\">\r\n"
                 L"			<text><![CDATA[アップデートの確認が出来ませんでした]]></text>\r\n"
                 L"			<text><![CDATA[インターネットに接続されていること、リモートサーバーがオンラインであることを確認してください。]]></text>\r\n"
-                L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
+                L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher-jp]]></text>\r\n"
                 L"		</binding>\r\n"
                 L"	</visual>\r\n"
                 L"	<audio src=\"ms-winsoundevent:Notification.Default\" loop=\"false\" silent=\"false\"/>\r\n"
