@@ -48,7 +48,7 @@
 ;s Taskbar_CortanaButtonSection1 IsWindows11Version22H2OrHigher
 ;s Taskbar_CortanaButtonSection2 !IsOldTaskbar
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;b Show Widgets button
+;b ウィジェットのボタンを表示する
 "TaskbarDa"=dword:00000001
 ;g Taskbar_CortanaButtonSection2
 ;g Taskbar_CortanaButtonSection1
@@ -167,21 +167,13 @@
 ;x 0 Windows 10 のフライアウト (既定)
 ;x 1 Windows 7
 "UseWin32BatteryFlyout"=dword:00000000
-;s SystemTray_LanguageSwitcherBefore22H2 !IsWindows11Version22H2OrHigher
-[HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 3 言語設定 *
-;x 0 Windows 11 (既定)
-;x 1 Windows 10 ("言語設定"にリンクされています)
-;x 4 Windows 10
-"IMEStyle"=dword:00000000
-;g SystemTray_LanguageSwitcherBefore22H2
 ;s SystemTray_LanguageSwitcherAfter22H2 IsWindows11Version22H2OrHigher
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 4 Language switcher *
+;c 4 言語切り替え *
 ;x 0 Windows 11 (default)
 ;x 7 Windows 10
-;x 1 Windows 10 (with link to "Language Preferences") (no animation)
-;x 4 Windows 10 (no animation)
+;x 1 Windows 10 ("言語設定"にリンクされています) (アニメーションなし)
+;x 4 Windows 10 (アニメーションなし)
 "IMEStyle"=dword:00000000
 ;g SystemTray_LanguageSwitcherAfter22H2
 ;g SystemTray_Windows10Section
@@ -219,12 +211,6 @@
 [-HKEY_CURRENT_USER\Software\Classes\CLSID\{056440FD-8568-48e7-A632-72157243B55B}\InprocServer32]
 ;d ナビゲーションバーを無効にする **
 @=""
-[HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Disable modern search bar
-;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_DisableModernSearchBar"=dword:00000000
-[HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Shrink address bar height **
-"ShrinkExplorerAddressBar"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b モダンな検索バーを無効にする
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_DisableModernSearchBar"=dword:00000000
