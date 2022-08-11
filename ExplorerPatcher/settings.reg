@@ -16,6 +16,7 @@
 ;shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}
 ;y 通知領域のシステムアイコンをカスタマイズする 🡕
 ;shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}\SystemIcons
+;s Taskbar_LocationSection !(IsWindows11Version22H2OrHigher&&!IsOldTaskbar)
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;c 4 画面上のプライマリタスク バーの位置 *
 ;x 3 下 (既定)
@@ -29,24 +30,34 @@
 ;x 0 左
 ;x 2 右
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_MMTaskbarPosition"=dword:00000003
+;g Taskbar_LocationSection
+;s Taskbar_CortanaButtonSection !IsWindows11Version22H2OrHigher
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 ;c 3 他のボタンの処理
 ;x 0 隠す (既定)
 ;x 2 Cortana を開く
 ;x 1 ウィジェットを開く
 "TaskbarDa"=dword:00000000
+;g Taskbar_CortanaButtonSection
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
 ;b 検索ボタンを表示
 "SearchboxTaskbarMode"=dword:00000001
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 ;b タスク ビューボタンを表示
 "ShowTaskViewButton"=dword:00000001
+;s Taskbar_CortanaButtonSection1 IsWindows11Version22H2OrHigher
+;s Taskbar_CortanaButtonSection2 !IsOldTaskbar
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;b Show Widgets button
+"TaskbarDa"=dword:00000001
+;g Taskbar_CortanaButtonSection2
+;g Taskbar_CortanaButtonSection1
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b 自動でタスク バーを隠す
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_AutoHideTaskbar"=dword:00000000
 ;s Taskbar_Windows10Section IsOldTaskbar
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 2 スタートボタンのスタイル
+;c 2 スタートボタンのスタイル *
 ;x 0 Windows 10 (既定)
 ;x 1 Windows 11
 "OrbStyle"=dword:00000000
@@ -156,12 +167,23 @@
 ;x 0 Windows 10 のフライアウト (既定)
 ;x 1 Windows 7
 "UseWin32BatteryFlyout"=dword:00000000
+;s SystemTray_LanguageSwitcherBefore22H2 !IsWindows11Version22H2OrHigher
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;c 3 言語設定 *
 ;x 0 Windows 11 (既定)
 ;x 1 Windows 10 ("言語設定"にリンクされています)
 ;x 4 Windows 10
 "IMEStyle"=dword:00000000
+;g SystemTray_LanguageSwitcherBefore22H2
+;s SystemTray_LanguageSwitcherAfter22H2 IsWindows11Version22H2OrHigher
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;c 4 Language switcher *
+;x 0 Windows 11 (default)
+;x 7 Windows 10
+;x 1 Windows 10 (with link to "Language Preferences") (no animation)
+;x 4 Windows 10 (no animation)
+"IMEStyle"=dword:00000000
+;g SystemTray_LanguageSwitcherAfter22H2
 ;g SystemTray_Windows10Section
 
 
@@ -197,12 +219,17 @@
 [-HKEY_CURRENT_USER\Software\Classes\CLSID\{056440FD-8568-48e7-A632-72157243B55B}\InprocServer32]
 ;d ナビゲーションバーを無効にする **
 @=""
-[-HKEY_CURRENT_USER\Software\Classes\CLSID\{1d64637d-31e9-4b06-9124-e83fb178ac6e}\TreatAs]
-;d モダンな検索バーを無効にする
-@="{64bc32b5-4eec-4de7-972d-bd8bd0324537}"
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;b モダンな検索バーを無効にする
+;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_DisableModernSearchBar"=dword:00000000
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;b アドレスバーの高さを下げる **
+"ShrinkExplorerAddressBar"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b 検索バーを完全に隠す **
 "HideExplorerSearchBar"=dword:00000000
+;s Explorer_TitlebarSection !IsWindows11Version22H2OrHigher
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;c 4 タイトルバー
 ;x 0 アイコンとタイトルを表示 (既定)
 ;x 1 タイトルを隠してアイコンを表示
@@ -215,6 +242,7 @@
 ;x 1 タイトルバー、コマンドバー、ナビゲーションバーに適用
 ;x 2 使用しない
 "MicaEffectOnTitlebar"=dword:00000000
+;g Explorer_TitlebarSection
 
 
 ;T スタートメニュー
@@ -596,9 +624,6 @@
 "ClockFlyoutOnWinC"=dword:00000000
 ;b タスク バーのツールバーの間にセパレーターを表示する *
 "ToolbarSeparators"=dword:00000000
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;b Win+X メニューでPowerShell の代わりにコマンドプロンプトを表示する *
-"DontUsePowerShellOnWinX"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b Win+X メニューにプログラムの設定のショートカットを追加する
 "PropertiesInWinX"=dword:00000000
@@ -613,11 +638,13 @@
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b ウィンドウをスナップ時の象限を無効にする *
 "DisableAeroSnapQuadrants"=dword:00000000
+;s Other_SnapAssistStyle !IsWindows11Version22H2OrHigher
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;c 2 スナップアシストのスタイル
 ;x 0 Windows 11 (既定)
 ;x 3 Windows 10
 "SnapAssistSettings"=dword:00000000
+;g Other_SnapAssistStyle
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 ;c 6 デスクトップ上のAlt+F4 ダイアログのデフォルトの動作
 ;x 256 ユーザーの切り替え

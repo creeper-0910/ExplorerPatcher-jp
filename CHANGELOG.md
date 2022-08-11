@@ -2,6 +2,41 @@
 
 This document includes the same release notes as in the [Releases](https://github.com/creeper-0910/ExplorerPatcher-jp/releases) section on GitHub.
 
+## 22622.450.50
+
+Tested on OS build 22622.450.
+
+Please make sure you are connected to the Internet while installing, the application might need to perform one-time downloads for several resources in order to enable full functionality.
+
+#### Details
+
+##### 1
+
+* Support for OS builds 22621+. Read more [here](https://github.com/valinet/ExplorerPatcher/issues/1082#issuecomment-1206690333).
+* Added an option to shrink address bar height in File Explorer windows (thanks @krlvm).
+
+##### 2
+
+* Support for disabling the modern search bar in 32-bit applications as well (thanks @krlvm).
+* Fixed a bug that could prevent deleting registry keys when the application was supposed to (for example, when uninstalling or toggling certain settings).
+
+## 22000.795.48
+
+Tested on OS build 22000.795.
+
+Please make sure you are connected to the Internet while installing, the application might need to perform one-time downloads for several resources in order to enable full functionality.
+
+#### Details
+
+##### 1
+
+* Weather: Fixed a bug that could hang the widget and lead to an infinite loop with the program using an entire CPU core when the computer resumed from sleep or hibernation.
+* Weather: Fixed a bug that had the widget display the error page when the computer lost network connectivity; instead, now the widget continues to display the cached data from the previous refresh (if any).
+
+##### 2
+
+* Weather: Fixed a bug that could hang explorer and the weather widget host process under certain circumstances, for example, when explorer restarted.
+
 ## 22000.778.47
 
 OSビルド22000.778でテスト済みです。
