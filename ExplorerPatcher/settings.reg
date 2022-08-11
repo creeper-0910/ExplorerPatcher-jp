@@ -220,6 +220,12 @@
 ;d ナビゲーションバーを無効にする **
 @=""
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;b Disable modern search bar
+;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_DisableModernSearchBar"=dword:00000000
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;b Shrink address bar height **
+"ShrinkExplorerAddressBar"=dword:00000000
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b モダンな検索バーを無効にする
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_DisableModernSearchBar"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
