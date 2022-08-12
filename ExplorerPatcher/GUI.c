@@ -1343,7 +1343,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                         if (GetTimeFormatEx(wszWeatherLanguage[0] ? wszWeatherLanguage : wszLanguage, TIME_NOSECONDS, &stLastUpdate, NULL, wszTime, MAX_PATH))
                                         {
                                             bOk = TRUE;
-                                            swprintf_s(text, MAX_LINE_LENGTH, L"Last updated on: %s, %s.", wszDate, wszTime);
+                                            swprintf_s(text, MAX_LINE_LENGTH, L"最終更新日時: %s, %s.", wszDate, wszTime);
                                         }
                                     }
                                 }

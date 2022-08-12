@@ -696,7 +696,7 @@
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b コンソールを有効にする
 "AllocConsole"=dword:00000000
-;b メモリリークをダンプする
+;b メモリリークをダンプする(デバッグビルドのみ)
 "Memcheck"=dword:00000000
 ;b タスク バーのダブルクリックで自動非表示 (タスク バーがロックされている時のみ)
 "TaskbarAutohideOnDoubleClick"=dword:00000000
@@ -737,7 +737,7 @@
 
 
 ;T 私達について
-;e ExplorerPatcher-jp (Unofficial Japanese Build)
+;e ExplorerPatcher-jp (非公式日本語版ビルド)
 ;e バージョン %VERSIONINFORMATIONSTRING%
 ;t © 2006-2022 VALINET Solutions SRL. 全著作権所有
 ;e 
@@ -747,6 +747,8 @@
 ;t OS ビルド: %OSVERSIONSTRING%
 ;y プロジェクトのGitHub (公式ビルド) (https://github.com/valinet) 🡕
 ;https://github.com/valinet
+;y プロジェクトのGitHub (非公式日本語版ビルド) (https://github.com/creeper-0910/ExplorerPatcher-jp) 🡕
+;https://github.com/creeper-0910/ExplorerPatcher-jp
 ;q
 ;y 公式のWeb サイト (https://www.valinet.ro) 🡕
 ;https://www.valinet.ro
