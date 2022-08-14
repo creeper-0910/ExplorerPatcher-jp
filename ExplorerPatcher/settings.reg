@@ -691,7 +691,7 @@
 ;T 高度な設定
 ;e これらの設定は、それに関するドキュメントを読んだ後にのみ変更してください。
 ;y 詳しく見る 🡕
-;https://github.com/valinet/ExplorerPatcher/wiki/About-advanced-settings
+;https://github.com/creeper-0910/ExplorerPatcher-jp/wiki/About-advanced-settings
 ;q
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b コンソールを有効にする
@@ -742,7 +742,7 @@
 ;t © 2006-2022 VALINET Solutions SRL. 全著作権所有
 ;e 
 ;e このプロジェクトは、Windows 上での作業環境を改善することを目的としています。
-;e Valentin-Gabriel Radu によって設計されました。この非公式日本語版の作成は、creeper-0910 によって作成されています。
+;e Valentin-Gabriel Radu によって設計されました。この非公式日本語版は、creeper-0910 によって作成されています。
 ;e 動作環境: Windows 11
 ;t OS ビルド: %OSVERSIONSTRING%
 ;y プロジェクトのGitHub (公式ビルド) (https://github.com/valinet) 🡕

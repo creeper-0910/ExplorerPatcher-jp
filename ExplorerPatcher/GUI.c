@@ -125,13 +125,13 @@ void PlayHelpMessage(GUI* _this)
     swprintf_s(
         wszAccText,
         1000,
-        L"Welcome to ExplorerPatcher. "
-        L"Selected page is: %s: %d of %d. "
-        L"To switch pages, press the Left or Right arrow keys or press a number (%d to %d). "
-        L"To select an item, press the Up or Down arrow keys or Shift+Tab and Tab. "
-        L"To interact with the selected item, press Space or Return. "
-        L"To close this window, press Escape. "
-        L"Press a number to switch to the corresponding page: ",
+        L"ExplorerPatcher-jpへようこそ。 "
+        L"選択されたページは: %s: %d の %dです。 "
+        L"ページを切り替えるには、左または右の矢印キーを押すか、数字 (%d ~ %d)を押します。 "
+        L"項目を選択するには、上または下矢印キー、またはShift+TabとTabを押します。 "
+        L"選択した項目を操作するには、スペースキーまたはリターンキーを押します。 "
+        L"このウィンドウを閉じるには、Escキーを押します。 "
+        L"数字を押すと、対応するページに切り替わります: ",
         _this->sectionNames[_this->section],
         _this->section + 1,
         max_section + 1,
@@ -148,7 +148,7 @@ void PlayHelpMessage(GUI* _this)
         swprintf_s(wszAdd, 100, L"%d: %s, ", i + 1, _this->sectionNames[i]);
         wcscat_s(wszAccText, 1000, wszAdd);
     }
-    wcscat_s(wszAccText, 1000, L"\nTo listen to this message again, press the F1 key at any time.\n");
+    wcscat_s(wszAccText, 1000, L"\nこのメッセージをもう一度聞くには、いつでもF1キーを押してください。\n");
     SetWindowTextW(_this->hAccLabel, wszAccText);
     NotifyWinEvent(
         EVENT_OBJECT_LIVEREGIONCHANGED,
@@ -1501,11 +1501,11 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                 swprintf_s(
                                     accText, 
                                     1000, 
-                                    L"%s %s - Button.",
+                                    L"%s %s - ボタンです。",
                                     (_this->dwPageLocation < 0 ?
-                                    L"Reached end of the page." :
+                                    L"ページの最後に到達しました。" :
                                     (_this->dwPageLocation > 0 ?
-                                    L"Reached beginning of the page." : L"")),
+                                    L"ページの先頭に到達しました。" : L"")),
                                     text
                                 );
                                 _this->dwPageLocation = 0;
@@ -1995,7 +1995,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                         GUI_Build(0, hwnd, pt);
                                         fclose(AuditFile);
                                         AuditFile = NULL;
-                                        MessageBoxW(hwnd, L"Settings have been exported successfully.", GUI_title, MB_ICONINFORMATION);
+                                        MessageBoxW(hwnd, L"設定のエクスポートに成功しました。", GUI_title, MB_ICONINFORMATION);
                                     }
                                 }
                             }
@@ -2198,10 +2198,10 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                             {
                                 if (MessageBoxW(
                                     hwnd,
-                                    L"Are you sure you want to permanently clear the weather widget's local data?\n\n"
-                                    L"This will reset the internal components to their default state, but will preserve "
-                                    L"your preferences. This may fix the widget not loading the data properly, or "
-                                    L"having layout issues etc.",
+                                    L"天気予報ウィジェットのローカルデータを永久にクリアしてもよろしいですか？\n\n"
+                                    L"これは内部コンポーネントをデフォルトの状態にリセットしますが、あなたの設定は保持されます。 "
+                                    L"これにより、ウィジェットがデータを正しくロードしない、 "
+                                    L"または、レイアウトの問題があるなどの問題が解決されるかもしれません。",
                                     _T(PRODUCT_NAME),
                                     MB_ICONQUESTION | MB_YESNO) == IDYES)
                                 {
@@ -2215,7 +2215,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                         PleaseWaitCallbackData = &res;
                                         PleaseWaitCallbackFunc = GUI_Internal_DeleteWeatherFolder;
                                         PleaseWaitHook = SetWindowsHookExW(WH_CALLWNDPROC, PleaseWait_HookProc, NULL, GetCurrentThreadId());
-                                        MessageBoxW(hwnd, L"Please wait...", _T(PRODUCT_NAME), 0);
+                                        MessageBoxW(hwnd, L"しばらくお待ち下さい...", _T(PRODUCT_NAME), 0);
                                     }
                                     else
                                     {
@@ -2223,13 +2223,13 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                     }
                                     if (res == IDOK)
                                     {
-                                        MessageBoxW(hwnd, L"Weather widget data cleared successfully.", _T(PRODUCT_NAME), MB_ICONINFORMATION);
+                                        MessageBoxW(hwnd, L"天気予報ウィジェットのデータが正常にクリアされました。", _T(PRODUCT_NAME), MB_ICONINFORMATION);
                                     }
                                     else
                                     {
                                         if (res == IDABORT)
                                         {
-                                            MessageBoxW(hwnd, L"An error has occured while clearing the data.", _T(PRODUCT_NAME), MB_ICONERROR);
+                                            MessageBoxW(hwnd, L"データのクリア中にエラーが発生しました。", _T(PRODUCT_NAME), MB_ICONERROR);
                                         }
                                     }
                                     if (dwData)
