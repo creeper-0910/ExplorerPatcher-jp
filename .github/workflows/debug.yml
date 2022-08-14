@@ -4,19 +4,9 @@
 # https://github.com/Speedy37/sws/blob/444c67157a98652c4e7ffd3b6d6bbfb664071926/.github/workflows/msbuild.yml
 # https://stackoverflow.com/questions/58886293/getting-current-branch-and-commit-hash-in-github-action
 
-name: Build
+name: Debug
 
 on:
-  push:
-    branches:
-      - '**'
-    tags-ignore:
-      - '**'
-  pull_request:
-    branches:
-      - '**'
-    tags-ignore:
-      - '**'
   workflow_dispatch:
     inputs:
       ref:
