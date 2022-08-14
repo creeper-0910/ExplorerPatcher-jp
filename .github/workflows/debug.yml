@@ -1,0 +1,210 @@
+# references:
+# https://trstringer.com/github-actions-multiline-strings/
+# https://trstringer.com/github-actions-create-release-upload-artifacts/
+# https://github.com/Speedy37/sws/blob/444c67157a98652c4e7ffd3b6d6bbfb664071926/.github/workflows/msbuild.yml
+# https://stackoverflow.com/questions/58886293/getting-current-branch-and-commit-hash-in-github-action
+
+name: Build
+
+on:
+  push:
+    branches:
+      - '**'
+    tags-ignore:
+      - '**'
+  pull_request:
+    branches:
+      - '**'
+    tags-ignore:
+      - '**'
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Commit'
+        required: true
+      config:
+        description: 'Configuration'
+        required: false
+      build_dir:
+        description: 'Build dir'
+        required: false
+
+env:
+  SOLUTION_FILE_PATH: .
+  BUILD_CONFIGURATION: Debug
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Print inputs
+      shell: bash
+      run: |
+        echo "ref: ${{ github.event.inputs.ref }}"
+        echo "config: ${{ github.event.inputs.config }}"
+        echo "build_dir: ${{ github.event.inputs.build_dir }}"
+
+    - name: Checkout latest build and submodules
+      uses: actions/checkout@v2
+      if: github.event.inputs.ref == ''
+      with:
+        submodules: recursive
+    
+    - name: Checkout specific build and submodules
+      uses: actions/checkout@v2
+      if: github.event.inputs.ref != ''
+      with:
+        ref: ${{ github.event.inputs.ref }}
+        submodules: recursive
+
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.2
+      
+    - name: Declare some variables
+      id: vars
+      shell: bash
+      run: |
+        echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      
+    - name: Enable SimpleWindowSwitcher support for newer Windows SDKs
+      shell: cmd
+      run: |
+        cd libs/sws
+        C:\msys64\usr\bin\wget.exe https://github.com/valinet/sws/commit/972acb76d1e6429133c92ed7cdefd29b9a2c6179.patch
+        C:\msys64\usr\bin\dos2unix.exe 972acb76d1e6429133c92ed7cdefd29b9a2c6179.patch
+        C:\msys64\usr\bin\dos2unix.exe SimpleWindowSwitcher/sws_def.h
+        C:\msys64\usr\bin\patch.exe -N SimpleWindowSwitcher/sws_def.h 972acb76d1e6429133c92ed7cdefd29b9a2c6179.patch
+        C:\msys64\usr\bin\unix2dos.exe SimpleWindowSwitcher/sws_def.h
+        exit /b 0
+        
+    - name: Setup NuGet
+      uses: nuget/setup-nuget@v1
+      
+    - name: Restore NuGet packages
+      run: |
+        nuget restore ExplorerPatcher.sln
+      
+    - name: Build funchook
+      shell: powershell
+      run: |
+        cd libs/funchook
+        md build
+        cd build
+        cmake -G "Visual Studio 17 2022" -A x64 ..
+        (gc .\funchook-static.vcxproj) -replace '<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>', '<RuntimeLibrary>MultiThreaded</RuntimeLibrary>' | Out-File .\funchook-static.vcxproj
+        cmake --build . --config Debug
+        
+    - name: Build EP IA-32
+      if: github.event.inputs.config == ''
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: |
+        msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:Platform=IA-32 ${{env.SOLUTION_FILE_PATH}}
+
+    - name: Build EP amd64
+      if: github.event.inputs.config == ''
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: |
+        msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:Platform=amd64 ${{env.SOLUTION_FILE_PATH}}
+
+    - name: Build EP custom
+      if: github.event.inputs.config != ''
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: |
+        msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:Platform=${{ github.event.inputs.config }} ${{env.SOLUTION_FILE_PATH}}
+
+    - name: Create expected build directory
+      if: github.event.inputs.build_dir != ''
+      shell: bash
+      run: |
+        mkdir build
+        cp -r ${{ github.event.inputs.build_dir }}/Debug build/Release
+    
+    - name: Generate dxgi.dll
+      shell: bash
+      working-directory: build/Debug
+      run: |
+        if [[ -f "ExplorerPatcher.amd64.dll" ]]; then cp ExplorerPatcher.amd64.dll dxgi.dll; fi
+        
+    - name: Patch setup
+      shell: cmd
+      working-directory: build/Debug
+      run: |
+        ep_setup_patch.exe
+        exit /b 0
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: ep_bin_multi_${{ steps.vars.outputs.sha_short }}_${{ steps.vars.outputs.branch }}
+        path: |
+          build/Debug/
+
+    - name: Generate release name
+      shell: bash
+      working-directory: build/Debug
+      if: github.ref == 'refs/heads/master' && github.event.inputs.ref == ''
+      run: |
+        echo "::set-output name=data::$(./ep_generate_release_name.exe)"
+      id: release_name
+      
+    - name: Generate release notes
+      shell: bash
+      working-directory: build/Debug
+      if: github.ref == 'refs/heads/master' && github.event.inputs.ref == ''
+      run: |
+        MY_STRING=$(./ep_generate_release_description.exe ${{ steps.vars.outputs.sha_short }} ${{ steps.vars.outputs.branch }} ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+        MY_STRING="${MY_STRING//'%'/'%25'}"
+        MY_STRING="${MY_STRING//$'\n'/'%0A'}"
+        MY_STRING="${MY_STRING//$'\r'/'%0D'}"
+        echo "::set-output name=data::$MY_STRING"
+      id: release_description
+      
+    - name: Create/update release (valinet)
+      uses: actions/create-release@v1
+      if: github.repository_owner == 'valinet' && github.ref == 'refs/heads/master' && github.event.inputs.ref == ''
+      id: create_release
+      with:
+        draft: false
+        prerelease: ${{ !startsWith(github.event.head_commit.message, 'rel_') }}
+        release_name: ${{ steps.release_name.outputs.data }}
+        tag_name: ${{ steps.release_name.outputs.data }}_${{ steps.vars.outputs.sha_short }}
+        body: ${{ steps.release_description.outputs.data }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.PAT }}
+
+    - name: Upload setup (valinet)
+      uses: actions/upload-release-asset@v1
+      if: github.repository_owner == 'valinet' && github.ref == 'refs/heads/master' && github.event.inputs.ref == ''
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./build/Debug/ep_setup.exe
+        asset_name: ep_setup.exe
+        asset_content_type: application/x-msdownload
+      env:
+        GITHUB_TOKEN: ${{ secrets.PAT }}
+        
+    - name: Create/update release (forks)
+      uses: actions/create-release@v1
+      if: github.repository_owner != 'valinet' && github.ref == 'refs/heads/master' && github.event.inputs.ref == ''
+      id: create_release_fork
+      with:
+        draft: false
+        prerelease: ${{ !startsWith(github.event.head_commit.message, 'rel_') }}
+        release_name: ${{ steps.release_name.outputs.data }}
+        tag_name: ${{ steps.release_name.outputs.data }}_${{ steps.vars.outputs.sha_short }}
+        body: ${{ steps.release_description.outputs.data }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Upload setup (forks)
+      uses: actions/upload-release-asset@v1
+      if: github.repository_owner != 'valinet' && github.ref == 'refs/heads/master' && github.event.inputs.ref == ''
+      with:
+        upload_url: ${{ steps.create_release_fork.outputs.upload_url }}
+        asset_path: ./build/Debug/ep_setup.exe
+        asset_name: debug-ep_setup.exe
+        asset_content_type: application/x-msdownload
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
