@@ -1,76 +1,76 @@
 # ExplorerPatcher-jpの変更ログ
 
-This document includes the same release notes as in the [Releases](https://github.com/creeper-0910/ExplorerPatcher-jp/releases) section on GitHub.
+本書には、GitHub の [Releases](https://github.com/creeper-0910/ExplorerPatcher-jp/releases) に掲載されているものと同じリリースノートが含まれています。
 
 ## 22622.450.50
 
-Tested on OS build 22622.450.
+OSビルド22622.450でテストしています。
 
-Please make sure you are connected to the Internet while installing, the application might need to perform one-time downloads for several resources in order to enable full functionality.
+インストール中はインターネットに接続されていることを確認してください。完全な機能を有効にするために、アプリケーションはいくつかのリソースを一度にダウンロードする必要がある場合があります。
 
-#### Details
+#### 詳細
 
 ##### 1
 
-* Support for OS builds 22621+. Read more [here](https://github.com/valinet/ExplorerPatcher/issues/1082#issuecomment-1206690333).
-* Added an option to shrink address bar height in File Explorer windows (thanks @krlvm).
+* OS ビルド 22621+ に対応しました。詳しくは[こちら](https://github.com/valinet/ExplorerPatcher/issues/1082#issuecomment-1206690333)をご覧ください。
+* ファイルエクスプローラーのアドレスバーの高さを縮小するオプションを追加した。
 
 ##### 2
 
-* Support for disabling the modern search bar in 32-bit applications as well (thanks @krlvm).
-* Fixed a bug that could prevent deleting registry keys when the application was supposed to (for example, when uninstalling or toggling certain settings).
+* 32ビットアプリケーションでもモダン検索バーを無効にできるようになりました（@krlvm に感謝します）。
+* アプリケーションがレジストリキーを削除するはずなのに、削除されないことがあるバグを修正しました（例えば、アンインストール時や特定の設定を切り替える時など）。
 
 ## 22000.795.48
 
-Tested on OS build 22000.795.
+OSビルド22000.795でテスト済みです。
 
-Please make sure you are connected to the Internet while installing, the application might need to perform one-time downloads for several resources in order to enable full functionality.
+インストール時には、インターネットに接続されていることを確認してください。
 
-#### Details
+#### 詳細
 
 ##### 1
 
-* Weather: Fixed a bug that could hang the widget and lead to an infinite loop with the program using an entire CPU core when the computer resumed from sleep or hibernation.
-* Weather: Fixed a bug that had the widget display the error page when the computer lost network connectivity; instead, now the widget continues to display the cached data from the previous refresh (if any).
+* 天気予報 コンピュータがスリープまたは休止状態から復帰したときに、ウィジェットがハングし、プログラムが CPU コア全体を使用する無限ループになる可能性があるバグを修正しました。
+* 天気予報。Weather: コンピュータがネットワーク接続を失ったときに、ウィジェットがエラーページを表示するバグを修正しました。
 
 ##### 2
 
-* Weather: Fixed a bug that could hang explorer and the weather widget host process under certain circumstances, for example, when explorer restarted.
+* 天気予報 エクスプローラの再起動など、特定の状況下でエクスプローラと天気予報ウィジェットホストプロセスがハングアップすることがあるバグを修正しました。
 
 ## 22622.450.50
 
-Tested on OS build 22622.450.
+OSビルド22622.450でテストしています。
 
-Please make sure you are connected to the Internet while installing, the application might need to perform one-time downloads for several resources in order to enable full functionality.
+インストール中はインターネットに接続されていることを確認してください。完全な機能を有効にするために、アプリケーションはいくつかのリソースを一度にダウンロードする必要がある場合があります。
 
-#### Details
+#### 詳細
 
 ##### 1
 
-* Support for OS builds 22621+. Read more [here](https://github.com/valinet/ExplorerPatcher/issues/1082#issuecomment-1206690333).
-* Added an option to shrink address bar height in File Explorer windows (thanks @krlvm).
+* OS ビルド 22621+ に対応しました。詳しくは[こちら](https://github.com/valinet/ExplorerPatcher/issues/1082#issuecomment-1206690333)をご覧ください。
+* ファイルエクスプローラーのアドレスバーの高さを縮小するオプションを追加した。
 
 ##### 2
 
-* Support for disabling the modern search bar in 32-bit applications as well (thanks @krlvm).
-* Fixed a bug that could prevent deleting registry keys when the application was supposed to (for example, when uninstalling or toggling certain settings).
+* 32ビットアプリケーションでもモダン検索バーを無効にできるようになりました（@krlvm に感謝します）。
+* アプリケーションがレジストリキーを削除するはずなのに、削除されないことがあるバグを修正しました（例えば、アンインストール時や特定の設定を切り替える時など）。
 
 ## 22000.795.48
 
-Tested on OS build 22000.795.
+OSビルド22000.795でテスト済みです。
 
-Please make sure you are connected to the Internet while installing, the application might need to perform one-time downloads for several resources in order to enable full functionality.
+インストール時には、インターネットに接続されていることを確認してください。
 
-#### Details
+#### 詳細
 
 ##### 1
 
-* Weather: Fixed a bug that could hang the widget and lead to an infinite loop with the program using an entire CPU core when the computer resumed from sleep or hibernation.
-* Weather: Fixed a bug that had the widget display the error page when the computer lost network connectivity; instead, now the widget continues to display the cached data from the previous refresh (if any).
+* 天気予報 コンピュータがスリープまたは休止状態から復帰したときに、ウィジェットがハングし、プログラムが CPU コア全体を使用する無限ループになる可能性があるバグを修正しました。
+* 天気予報。Weather: コンピュータがネットワーク接続を失ったときに、ウィジェットがエラーページを表示するバグを修正しました。
 
 ##### 2
 
-* Weather: Fixed a bug that could hang explorer and the weather widget host process under certain circumstances, for example, when explorer restarted.
+* 天気予報 エクスプローラの再起動など、特定の状況下でエクスプローラと天気予報ウィジェットホストプロセスがハングアップすることがあるバグを修正しました。
 
 ## 22000.778.47
 

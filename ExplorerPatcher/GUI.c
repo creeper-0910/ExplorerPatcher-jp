@@ -1294,7 +1294,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
 
                             sprintf_s(p, MAX_PATH, "%d.%d.%d.%d%s", dwLeftMost, dwSecondLeft, dwSecondRight, dwRightMost, 
 #if defined(DEBUG) | defined(_DEBUG)
-                                " (Debug)"
+                                " (デバッグ)"
 #else
                                 ""
 #endif
@@ -3216,11 +3216,11 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                 }
                                 if (dwTypeRepl == 1)
                                 {
-                                    swprintf_s(accText, 1000, accText2, L" - Requires registration as shell extension to work in Open or Save file dialogs - ");
+                                    swprintf_s(accText, 1000, accText2, L" - 'ファイルを開く''ファイルを保存'ダイアログで動作させるには、シェル拡張機能として登録する必要があります - ");
                                 }
                                 else
                                 {
-                                    swprintf_s(accText, 1000, accText2, L" - Requires File Explorer restart to apply - ");
+                                    swprintf_s(accText, 1000, accText2, L" - 適用にはファイルエクスプローラーの再起動が必要です - ");
                                 }
                                 //wprintf(L">>> %s\n", accText);
                                 SetWindowTextW(_this->hAccLabel, accText);
@@ -3318,7 +3318,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
             swprintf_s(
                 wszAccText,
                 100,
-                L"Selected page: %s: %d of %d.",
+                L"選択されたページ: %s: %d の %dです。",
                 _this->sectionNames[_this->section],
                 _this->section + 1,
                 max_section + 1
@@ -4018,7 +4018,7 @@ __declspec(dllexport) int ZZGUI(HWND hWnd, HINSTANCE hInstance, LPSTR lpszCmdLin
         }
     }
 
-    wprintf(L"Running on Windows %d, OS Build %d.%d.%d.%d.\n", IsWindows11() ? 11 : 10, global_rovi.dwMajorVersion, global_rovi.dwMinorVersion, global_rovi.dwBuildNumber, global_ubr);
+    wprintf(L"Windows %d で動作しており、 OS Buildは %d.%d.%d.%dです。\n", IsWindows11() ? 11 : 10, global_rovi.dwMajorVersion, global_rovi.dwMinorVersion, global_rovi.dwBuildNumber, global_ubr);
 
     locale = GetUserDefaultUILanguage();
     dwSize = LOCALE_NAME_MAX_LENGTH;
