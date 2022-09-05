@@ -137,7 +137,7 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: ep_bin_multi_${{ steps.vars.outputs.sha_short }}_${{ steps.vars.outputs.branch }}
+        name: ep_bin_multi_${{ steps.vars.outputs.sha_short }}
         path: |
           build/Release/
 
