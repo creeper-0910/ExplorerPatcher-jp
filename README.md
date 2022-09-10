@@ -73,6 +73,6 @@ Windows 10では、一部の機能が使用できない場合があります。
 * [私がExplorerPatcher-jpの開発とリリースをする理由となる記事](https://www.naporitansushi.com/ep11-japanese/)
 
 ## 寄付について
-valinet氏 (ExplorerPatcher公式の作者)へ寄付は、Github Sponsor(準備中)、または[PayPal](https://www.paypal.com/donate?business=valentingabrielradu%40gmail.com&no_recurring=0&item_name=ExplorerPatcher&currency_code=EUR) もしくはメール(valentingabrielradu@gmail.com) からお願いします。
+valinet氏 (ExplorerPatcher公式の作者)へ寄付は、[PayPal](https://www.paypal.com/donate?business=valentingabrielradu%40gmail.com&no_recurring=0&item_name=ExplorerPatcher&currency_code=EUR) もしくはメール(valentingabrielradu@gmail.com) からお願いします。
 
-creeper-0910 (ExplorerPatcher-jpの作者)へ寄付は、TwitterのDMからAmazonギフト券を送っていただけるとめちゃくちゃ喜びます。
+creeper-0910 (ExplorerPatcher-jpの作者)へ寄付は、[Github Sponsor](https://github.com/sponsors/creeper-0910)かTwitterのDMからAmazonギフト券を送っていただけるとめちゃくちゃ喜びます。
