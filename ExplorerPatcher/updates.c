@@ -1063,7 +1063,7 @@ BOOL InstallUpdatesIfAvailable(
                 L"	<visual>\r\n"
                 L"		<binding template=\"ToastGeneric\">\r\n"
                 L"			<text><![CDATA[%s が利用可能です。]]></text>\r\n"
-                L"			<text><![CDATA[アップデートするには、タスクバーを右クリックして \"プロパティ\"、\"アップデート\"の順に選択してください。このアップデートについて詳しくは、こちらをご覧ください。]]></text>\r\n"
+                L"			<text><![CDATA[アップデートをするには、タスクバーを右クリックして \"プロパティ\"、\"アップデート\"の順に選択してください。このアップデートについて詳しくは、こちらをご覧ください。]]></text>\r\n"
                 L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher-jp]]></text>\r\n"
                 L"		</binding>\r\n"
                 L"	</visual>\r\n"
@@ -1115,7 +1115,7 @@ BOOL InstallUpdatesIfAvailable(
     {
         if (bFail)
         {
-            printf("[更新] リモートサーバーが利用できないため、アップデートを確認できません\n");
+            printf("[更新] リモートサーバーが利用できないため、アップデートを確認できません。\n");
         }
         else
         {
