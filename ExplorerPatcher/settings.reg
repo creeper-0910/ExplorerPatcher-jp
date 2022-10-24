@@ -339,7 +339,7 @@
 "PrimaryOnly"=dword:00000000
 ;b 現在のディスプレイで表示されているウィンドウのみを表示する
 "PerMonitor"=dword:00000000
-;b 直近のウィンドウのみ表示（アプリケーションスイッチャーごと）
+;b 直近のウィンドウのみ表示 (アプリケーションスイッチャーごと)
 "SwitcherIsPerApplication"=dword:00000000
 ;b %PLACEHOLDER_0001%
 "NoPerApplicationList"=dword:00000000
