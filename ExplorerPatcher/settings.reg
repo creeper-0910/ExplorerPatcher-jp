@@ -140,7 +140,7 @@
 ;x 2 コントロールパネルのネットワーク接続
 "ReplaceNetwork"=dword:00000000
 ;q
-;t Windows 10 のシステムトレイにあるアイコンをクリックした時:
+;t Windows 10 のシステムトレイ上のアイコンをクリック時:
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Control Panel\Settings\Network]
 ;c 7 ネットワーク
 ;x 6 コントロールセンター
@@ -169,11 +169,11 @@
 "UseWin32BatteryFlyout"=dword:00000000
 ;s SystemTray_LanguageSwitcherAfter22H2 IsWindows11Version22H2OrHigher
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 4 言語切り替え *
-;x 0 Windows 11 (default)
-;x 7 Windows 10
-;x 1 Windows 10 ("言語設定"にリンクされています) (アニメーションなし)
-;x 4 Windows 10 (アニメーションなし)
+;c 4 キーボードレイアウト(IME) の切り替え *
+;x 0 Windows 11 のフライアウト (既定)
+;x 7 Windows 10 のフライアウト
+;x 1 Windows 10 のフライアウト (言語設定の項目あり / アニメーションなし)
+;x 4 Windows 10 のフライアウト (言語設定の項目なし / アニメーションなし)
 "IMEStyle"=dword:00000000
 ;g SystemTray_LanguageSwitcherAfter22H2
 ;g SystemTray_Windows10Section
@@ -200,16 +200,16 @@
 "UseClassicDriveGrouping"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;c 3 コントロールインターフェース *
-;x 0 Windows 11 のコマンドバー (既定)
+;x 0 Windows 11 のコマンド バー (既定)
 ;x 1 Windows 10 のリボン UI
-;x 2 Windows 7 のコマンドバー
+;x 2 Windows 7 のコマンド バー
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_FileExplorerCommandUI"=dword:00000000
 ;t 以下の設定は、新しく作成されたファイルエクスプローラーのウィンドウに適用されます:
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;i Windows 10 のコンテキストメニューの表示時、没入型メニューを使用する **
 "DisableImmersiveContextMenu"=dword:00000000
 [-HKEY_CURRENT_USER\Software\Classes\CLSID\{056440FD-8568-48e7-A632-72157243B55B}\InprocServer32]
-;d ナビゲーションバーを無効にする **
+;d ナビゲーション バーを無効にする **
 @=""
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b モダンな検索バーを無効にする
@@ -222,7 +222,7 @@
 "HideExplorerSearchBar"=dword:00000000
 ;s Explorer_TitlebarSection !IsWindows11Version22H2OrHigher
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 4 タイトルバー
+;c 4 タイトル バー
 ;x 0 アイコンとタイトルを表示 (既定)
 ;x 1 タイトルを隠してアイコンを表示
 ;x 2 アイコンを隠してタイトルを表示
@@ -231,7 +231,7 @@
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;c 3 マイカ効果(透過ぼかし)を適用する範囲
 ;x 0 ファイルエクスプローラーに任せる (既定)
-;x 1 タイトルバー、コマンドバー、ナビゲーションバーに適用
+;x 1 タイトル バー、コマンド バー、ナビゲーション バーに適用
 ;x 2 使用しない
 "MicaEffectOnTitlebar"=dword:00000000
 ;g Explorer_TitlebarSection
@@ -455,10 +455,10 @@
 ;x 400 400 ミリ秒
 ;x 500 500 ミリ秒
 "ShowDelay"=dword:00000064
-;c 3 Use the scroll wheel to change selection
-;x 0 Never (default)
-;x 1 When cursor is over the switcher
-;x 2 Always
+;c 3 ホイールスクロールで選択項目を変更
+;x 0 しない (既定)
+;x 1 カーソルが選択項目上にある場合
+;x 2 常に
 "ScrollWheelBehavior"=dword:00000000
 ;q
 ;y Simple Window Switcher についての詳細はこちら 🡕
@@ -474,7 +474,7 @@
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_PeopleBand"=dword:00000000
 ;s Weather_Section1 IsWeatherEnabled
 ;w 場所
-;都市または郵便番号を検索します。プログラムはGoogleで"/*あなたが入力した場所*/の天気"を検索します。デフォルト値（現在地）は空白のままにしておきます。
+;都市または郵便番号を検索します。プログラムはGoogleで"/*あなたが入力した場所*/の天気"を検索します。規定値(現在地)は空白のままにしておきます。
 ;現在地 (既定)
 "WeatherLocation"=""
 ;c 5 レイアウト
@@ -643,7 +643,7 @@
 "SnapAssistSettings"=dword:00000000
 ;g Other_SnapAssistStyle
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;c 6 デスクトップ上のAlt+F4 ダイアログのデフォルトの動作
+;c 6 デスクトップ上のAlt+F4 ダイアログの既定の動作
 ;x 256 ユーザーの切り替え
 ;x 1 サインアウト
 ;x 16 スリープ
