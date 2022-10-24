@@ -243,7 +243,7 @@ Windows Registry Editor Version 5.00
 ;x 3 隠す
 ;x 1 無効にする 
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_NoStartMenuMorePrograms"=dword:00000000
-;t 古いバージョンのWindows 10では一部の設定が使用できない可能性があります。
+;t 古いバージョンのWindows 10 では一部の設定が使用できない可能性があります。
 
 
 ;T ウィンドウの切り替え
@@ -378,7 +378,7 @@ Windows Registry Editor Version 5.00
 ;q
 ;y Simple Window Switcher についての詳細はこちら 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Simple-Window-Switcher
-;t 古いバージョンのWindows 10では一部の設定が使用できない可能性があります。
+;t 古いバージョンのWindows 10 では一部の設定が使用できない可能性があります。
 
 
 ;T 天気
@@ -414,8 +414,8 @@ Windows Registry Editor Version 5.00
 ;x 0 摂氏 (既定)
 ;x 1 華氏
 "WeatherTemperatureUnit"=dword:00000000
-;w 位置情報
-;Search City or Zip Code; the program looks up "weather in /* what you typed */" on Google. Leave blank for the default value (current location).
+;w 場所
+;都市または郵便番号を検索します。プログラムはGoogleで"/*あなたが入力した場所*/の天気"を検索します。規定値(現在地)は空白のままにしておきます。
 ;現在地 (既定)
 "WeatherLocation"=""
 ;;;c 2 位置情報の精度
