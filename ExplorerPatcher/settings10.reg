@@ -236,7 +236,7 @@ Windows Registry Editor Version 5.00
 ;z 3 表示方法
 ;x 0 既定
 ;x 1 スタートメニュー
-;x 2 フルスクリーンのスタートメニューt
+;x 2 フルスクリーンのスタートメニュー
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_ForceStartSize"=dword:00000000
 ;z 3 アプリ一覧
 ;x 0 表示
