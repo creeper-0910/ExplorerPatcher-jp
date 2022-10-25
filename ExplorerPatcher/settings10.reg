@@ -1,7 +1,621 @@
 Windows Registry Editor Version 5.00
 
 
+;M 設定Windows Registry Editor Version 5.00
+
+
 ;M 設定
+;q
+
+;T タスク バー
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;y 設定アプリにタスク バーオプションを追加する 🡕                                                       
+;ms-settings:taskbar
+;y 通知領域のアイコンをカスタマイズする 🡕
+;shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}
+;y 通知領域のアイコンをカスタマイズする 🡕
+;shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}\SystemIcons
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;c 4 画面上のプライマリ タスク バーの位置 *
+;x 3 下 (既定)
+;x 1 上
+;x 0 左
+;x 2 右
+;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_TaskbarPosition"=dword:00000003
+;c 4 画面上のセカンダリ タスク バーの位置
+;x 3 下 (既定)
+;x 1 上
+;x 0 左
+;x 2 右
+;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_MMTaskbarPosition"=dword:00000003
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
+;c 3 検索
+;x 0 隠す
+;x 1 検索アイコンを表示
+;x 2 検索ボックスを表示
+"SearchboxTaskbarMode"=dword:00000001
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;b Cortana ボタンを表示
+"ShowCortanaButton"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;b タスク ビュー ボタンを表示
+"ShowTaskViewButton"=dword:00000001
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;b 自動でタスク バーを隠す
+;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_AutoHideTaskbar"=dword:00000000
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;c 2 スタートボタンのスタイル *
+;x 0 Windows 10 (既定)
+;x 1 Windows 11
+"OrbStyle"=dword:00000000
+;c 5 プライマリ タスク バーの配置
+;x 0 画面端 (既定)
+;x 1 中央
+;x 5 中央、フルスクリーン時画面端
+;x 3 スタートボタンを中心に
+;x 7 スタートボタンを中心に、フルスクリーン時は画面端に配置
+"OldTaskbarAl"=dword:00000000
+;c 5 プライマリ タスク バーの配置
+;x 0 画面端 (既定)
+;x 1 中央
+;x 5 中央、フルスクリーン時画面端
+;x 3 スタートボタンを中心に
+;x 7 スタートボタンを中心に、フルスクリーン時は画面端に配置
+"MMOldTaskbarAl"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;c 3 プライマリ タスク バーのアイコンを結合
+;x 0 常に結合する
+;x 1 タスクバーがいっぱいのときに結合
+;x 2 結合しない (既定)
+"TaskbarGlomLevel"=dword:00000000
+;c 3 セカンダリ タスク バーのアイコン結合
+;x 0 常に結合する
+;x 1 タスク バーがいっぱいのときに結合
+;x 2 結合しない (既定)
+"MMTaskbarGlomLevel"=dword:00000000
+;c 2 タスク バーのアイコンサイズ
+;x 1 小さい
+;x 0 大きい (既定)
+"TaskbarSmallIcons"=dword:00000000
+;e 
+;e 
+;e 
+;e 
+
+;T システムトレイ
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;b タスク バーとトレイのポップアップメニューのスキン
+"SkinMenus"=dword:00000001
+;b センタートレイのアイコンのポップアップメニュー
+"CenterMenus"=dword:00000001
+;b トレイアイコンのポップアップメニューのフライアウト動作
+"FlyoutMenus"=dword:00000001
+[HKEY_CURRENT_USER\Software\Microsoft\TabletTip\1.7]
+;b タッチ キーボード ボタンを表示する *
+"TipbandDesiredVisibility"=dword:00000000
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;p 2
+;b Windows 11 スタイルのシステムアイコンを適用する *
+"SkinIcons"=dword:00000001
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;b 時計に秒を表示する
+"ShowSecondsInSystemClock"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;c 3 デスクトップ ボタンを表示する
+;x 1 有効にする (既定)
+;x 0 無効にする
+;x 2 隠す
+"TaskbarSD"=dword:00000001
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;a ネットワークアイコンを右クリックし、「ネットワークとインターネットの設定を開く」
+;c 3 を選択した時開くウィンドウ
+;x 0 設定アプリのネットワーク設定 (既定)
+;x 1 コントロールパネルのネットワークと共有
+;x 2 コントロールパネルのネットワーク接続
+"ReplaceNetwork"=dword:00000000
+;q
+;t システムトレイ上のアイコンをクリック時:
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Control Panel\Settings\Network]
+;c 5 ネットワーク
+;x 0 Windows 10 のフライアウト (既定)
+;x 2 Windows 8 のフライアウト
+;x 1 設定アプリのネットワーク設定
+;x 3 コントロールパネルのネットワークと共有
+;x 4 コントロールパネルのネットワーク接続
+"ReplaceVan"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\MTCUVC]
+;c 2 サウンド
+;x 1 Windows 10 のフライアウト (既定)
+;x 0 Windows 7 のフライアウト
+"EnableMtcUvc"=dword:00000001
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell]
+;c 3 時計
+;x 0 Windows 10 のフライアウト (既定)
+;x 1 Windows 7
+;x 2 アクションセンター
+"UseWin32TrayClockExperience"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell]
+;c 2 バッテリー
+;x 0 Windows 10 のフライアウト (既定)
+;x 1 Windows 7
+"UseWin32BatteryFlyout"=dword:00000000
+
+
+;T ファイルエクスプローラー
+;e (**) の付いた設定が"ファイルを開く"または"ファイルを保存する"ダイアログで機能するには、
+;e 以下のオプションを利用してこのプログラムをシェル拡張として登録します。
+;y 詳しく見る 🡕
+;https://github.com/valinet/ExplorerPatcher/wiki/Using-ExplorerPatcher-as-shell-extension
+;q
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;b シェル拡張として登録する
+;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_RegisterAsShellExtension"=dword:00000000
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;b 常にレガシーなファイル転送ダイアログを使用する
+"LegacyFileTransferDialog"=dword:00000000
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;b クラシックなドライブグループを使用する
+"UseClassicDriveGrouping"=dword:00000000
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;c 2 コントロールインターフェース
+;x 0 Windows 10 のリボン UI (既定)
+;x 2 Windows 7 のコマンドバー
+"FileExplorerCommandUI"=dword:00000000
+;t 以下の設定は、新しく作成されたファイルエクスプローラーのウィンドウに適用されます:
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;i Windows 10 のコンテキストメニューの表示時、没入型メニューを使用する **
+"DisableImmersiveContextMenu"=dword:00000000
+[-HKEY_CURRENT_USER\Software\Classes\CLSID\{056440FD-8568-48e7-A632-72157243B55B}\InprocServer32]
+;d ナビゲーションバーを無効にする **
+@=""
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;b モダンな検索バーを無効にする
+;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_DisableModernSearchBar"=dword:00000000
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;b アドレスバーの高さを下げる **
+"ShrinkExplorerAddressBar"=dword:00000000
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;b 検索バーを完全に隠す **
+"HideExplorerSearchBar"=dword:00000000
+;p 2
+;b マイカ効果タイトルバー
+"MicaEffectOnTitlebar"=dword:00000000
+
+
+;T スタートメニュー
+;y 設定アプリのその他のスタートメニューオプション 🡕
+;ms-settings:personalization-start
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;z 2 画面上の位置
+;x 0 画面端 (既定)
+;x 1 中央
+"TaskbarAl"=dword:00000000
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;z 22 よく使うアプリの最大表示数
+;x 0 なし
+;x 1 1
+;x 2 2
+;x 3 3
+;x 4 4
+;x 5 5
+;x 6 6 (既定)
+;x 7 7
+;x 8 8
+;x 9 9
+;x 10 10
+;x 11 11
+;x 12 12
+;x 13 13
+;x 14 14
+;x 15 15
+;x 16 16
+;x 17 17
+;x 18 18
+;x 19 19
+;x 20 20
+;x 99999 無制限
+;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_Start_MaximumFrequentApps"=dword:00000006
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage]
+;e マルチ ディスプレイの場合、キーボードを使用すると設定されたディスプレイで
+;z 10 スタートが表示されます
+;x 1 プライマリ ディスプレイ (既定)
+;x 0 カーソルがあるディスプレイ
+;x 2 ディスプレイ #2
+;x 3 ディスプレイ #3
+;x 4 ディスプレイ #4
+;x 5 ディスプレイ #5
+;x 6 ディスプレイ #6
+;x 7 ディスプレイ #7
+;x 8 ディスプレイ #8
+;x 9 ディスプレイ #9
+"MonitorOverride"=dword:00000001
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;z 3 コーナーの設定
+;x 1 丸みを帯びた角、フローティングメニュー
+;x 2 丸みを帯びた角、ドッキングメニュー
+;x 0 丸みなし
+;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_StartUI_EnableRoundedCorners"=dword:00000000
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;z 3 表示方法
+;x 0 既定
+;x 1 スタートメニュー
+;x 2 フルスクリーンのスタートメニュー
+;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_ForceStartSize"=dword:00000000
+;z 3 アプリ一覧
+;x 0 表示
+;x 3 隠す
+;x 1 無効にする 
+;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_NoStartMenuMorePrograms"=dword:00000000
+;t 古いバージョンのWindows 10 では一部の設定が使用できない可能性があります。
+
+
+;T ウィンドウの切り替え
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+;z 3 ウィンドウの切り替え (Alt+Tab) のスタイルを変更 *
+;x 0 Windows 10 (既定)
+;x 1 Windows NT
+;x 2 Simple Window Switcher
+"AltTabSettings"=dword:00000000
+;t 以下の設定はSimple Window Switcher のみ適用されます:
+[HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
+;b デスクトップを含める
+"IncludeWallpaper"=dword:00000001
+;b 常にプライマリ ディスプレイに表示する
+"PrimaryOnly"=dword:00000000
+;b 現在のディスプレイで表示されているウィンドウのみを表示する
+"PerMonitor"=dword:00000000
+;b 直近のウィンドウのみ表示 (アプリケーションスイッチャーごと)
+"SwitcherIsPerApplication"=dword:00000000
+;b %PLACEHOLDER_0001%
+"NoPerApplicationList"=dword:00000000
+;c 2 テーマ
+;x 0 既定
+;x 1 アクリル
+"Theme"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MultitaskingView\AltTabViewHost]
+;c 19 不透明度
+;x 100 不透明
+;x 98 98 %
+;x 96 96 %
+;x 95 95 % (既定)
+;x 94 94 %
+;x 92 92 %
+;x 90 90 %
+;x 85 85 %
+;x 80 80 %
+;x 75 75 %
+;x 70 70 %
+;x 65 65 %
+;x 60 60 %
+;x 55 55 %
+;x 50 50 %
+;x 45 45 %
+;x 40 40 %
+;x 35 35 %
+;x 30 30 %
+"Grid_backgroundPercent"=dword:0000005F
+[HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
+;c 3 配色
+;x 0 システムの設定に従う (既定)
+;x 1 ライト
+;x 2 ダーク
+"ColorScheme"=dword:00000000
+[HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
+;c 20 列の高さ
+;x 330 330 pt
+;x 320 320 pt
+;x 310 310 pt
+;x 300 300 pt
+;x 290 290 pt
+;x 280 280 pt
+;x 270 270 pt
+;x 260 260 pt
+;x 250 250 pt
+;x 240 240 pt
+;x 230 230 pt (既定)
+;x 220 220 pt
+;x 210 210 pt
+;x 200 200 pt
+;x 190 190 pt
+;x 180 180 pt
+;x 170 170 pt
+;x 160 160 pt
+;x 150 150 pt
+;x 140 140 pt
+"RowHeight"=dword:000000e6
+;c 10 最大幅 (画面幅に対する割合)
+;x 100 100 % (非推奨)
+;x 95 95 %
+;x 90 90 %
+;x 85 85 %
+;x 80 80 % (既定)
+;x 75 75 %
+;x 70 70 %
+;x 65 65 %
+;x 60 60 %
+;x 55 55 %
+"MaxWidth"=dword:00000050
+;c 10 高さの最大値 (画面の高さに対する割合)
+;x 100 100 % (非推奨)
+;x 95 95 %
+;x 90 90 %
+;x 85 85 %
+;x 80 80 % (既定)
+;x 75 75 %
+;x 70 70 %
+;x 65 65 %
+;x 60 60 %
+;x 55 55 %
+"MaxHeight"=dword:00000050
+;c 11 ウィンドウの余白
+;x 50 50 pt
+;x 45 45 pt
+;x 40 40 pt (既定)
+;x 35 30 pt
+;x 30 30 pt
+;x 25 25 pt
+;x 20 20 pt
+;x 15 15 pt
+;x 10 10 pt
+;x 5 5 pt
+;x 0 なし
+"MasterPadding"=dword:00000028
+;c 11 表示の遅延
+;x 0 なし
+;x 25 25 ミリ秒
+;x 50 50 ミリ秒
+;x 75 75 ミリ秒
+;x 100 100 ミリ秒 (既定)
+;x 125 125 ミリ秒
+;x 150 150 ミリ秒
+;x 200 200 ミリ秒
+;x 300 300 ミリ秒
+;x 400 400 ミリ秒
+;x 500 500 ミリ秒
+"ShowDelay"=dword:00000064
+;c 3 ホイールスクロールで選択項目を変更
+;x 0 しない (既定)
+;x 1 カーソルが選択項目上にある場合
+;x 2 常に
+"ScrollWheelBehavior"=dword:00000000
+;q
+;y Simple Window Switcher についての詳細はこちら 🡕
+;https://github.com/valinet/ExplorerPatcher/wiki/Simple-Window-Switcher
+;t 古いバージョンのWindows 10 では一部の設定が使用できない可能性があります。
+
+
+;T 天気
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;b タスクバーに天気を表示する
+;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_PeopleBand"=dword:00000000
+;c 5 レイアウト
+;x 0 アイコンと概要 (既定)
+;x 3 アイコンと温度
+;x 1 アイコンのみ
+;x 4 温度のみ
+;x 5 温度と概要
+"WeatherViewMode"=dword:00000000
+;c 3 ウィジェットのサイズ
+;x 0 自動 (内容に合わせて) (既定)
+;x 2 自動 (内容に合わせて) しきい値あり
+;x 1 固定
+"WeatherFixedSize"=dword:00000000
+;c 2 ウィジェットの位置
+;x 0 右 / 下部 (既定)
+;x 1 左 / 上部
+"WeatherToLeft"=dword:00000000
+;c 7 更新頻度
+;x 60 毎分
+;x 300 5 分ごと
+;x 900 15 分ごと
+;x 1200 20 分ごと (既定)
+;x 1800 30 分ごと
+;x 3600 毎時間おき
+;x 7200 数時間おき
+"WeatherContentUpdateMode"=dword:000004B0
+;c 2 温度単位
+;x 0 摂氏 (既定)
+;x 1 華氏
+"WeatherTemperatureUnit"=dword:00000000
+;w 場所
+;都市または郵便番号を検索します。プログラムはGoogleで"/*あなたが入力した場所*/の天気"を検索します。規定値(現在地)は空白のままにしておきます。
+;現在地 (既定)
+"WeatherLocation"=""
+;;;c 2 位置情報の精度
+;;;x 0 一般的 (IPアドレスに基づく) (既定)
+;;;x 1 精密 (位置情報を使用します)
+;;"WeatherLocationType"=dword:00000000
+;w 言語
+;天気データを表示させたい言語のショートコードを入力します。("en", "ro", "de", "fr "など) デフォルト値 (Windows の言語)は空白にしてください。
+;システムの言語 (既定)
+"WeatherLanguage"=""
+;c 3 配色
+;x 0 システムの設定に従う (既定)
+;x 1 ライト
+;x 2 ダーク
+"WeatherTheme"=dword:00000000
+;c 2 アイコンパック
+;x 0 Microsoft (既定)
+;x 1 Google
+"WeatherIconPack"=dword:00000000
+;c 2 ウィジェットの内容を表示する
+;x 0 1 行で表示 (既定)
+;x 1 可能であれば2 行で表示
+"WeatherContentsMode"=dword:00000000
+;c 17 拡大率
+;x 25 25 %
+;x 33 33 %
+;x 50 50 %
+;x 67 67 %
+;x 75 75 %
+;x 80 80 %
+;x 90 90 %
+;x 0 100 % (既定)
+;x 110 110 %
+;x 125 125 %
+;x 150 150 %
+;x 175 175 %
+;x 200 200 %
+;x 250 250 %
+;x 300 300 %
+;x 400 400 %
+;x 500 500 %
+"WeatherZoomFactor"=dword:00000000
+;q
+;y 天気予報タスクバーウィジェットについてもっと知る 🡕
+;https://github.com/valinet/ExplorerPatcher/wiki/Weather
+;t %WEATHERLASTUPDATETEXT%
+;u 天気予報を更新する
+;update_weather
+;u 天気予報ウィジェットのローカルデータをクリアする
+;clear_data_weather
+
+
+
+;T その他
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;b このウィンドウで最後に使用したセクションを記憶する
+"LastSectionInProperties"=dword:00000000
+;b Win+Cを押した時、Microsoft Teams の代わりに時計のフライアウトを開く *
+"ClockFlyoutOnWinC"=dword:00000000
+;b タスクバーのツールバーの間にセパレーターを表示する *
+"ToolbarSeparators"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;b Win+X メニューのPowerShell の代わりにコマンドプロンプトを開く *
+"DontUsePowerShellOnWinX"=dword:00000000
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;b Win+X メニューのプログラム設定項目からショートカットキーを削除する
+"NoMenuAccelerator"=dword:00000000
+;b Office ホットキー (Ctrl+Alt+Shift+Windows キーの組み合わせ)を無効化する *
+"DisableOfficeHotkeys"=dword:00000000
+;b Win+F (フィードバック Hub)ホットキーを無効化する *
+"DisableWinFHotkey"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;c 6 デスクトップ上のAlt+F4 ダイアログの既定の動作
+;x 256 ユーザーの切り替え
+;x 1 サインアウト
+;x 16 スリープ
+;x 64 休止状態
+;x 2 シャットダウン (既定)
+;x 4 再起動
+"Start_PowerButtonAction"=dword:00000002
+;t 以下のコントロールパネルのリンクが設定アプリにリダイレクトされないようにします:
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;b システム / このページについて
+"DoNotRedirectSystemToSettingsApp"=dword:00000000
+;b プログラムと機能
+"DoNotRedirectProgramsAndFeaturesToSettingsApp"=dword:00000000
+;b 日付と時刻の調整
+"DoNotRedirectDateAndTimeToSettingsApp"=dword:00000000
+;b 通知アイコンのカスタマイズ
+"DoNotRedirectNotificationIconsToSettingsApp"=dword:00000000
+
+
+;T アップデート
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;z 3 ファイルエクスプローラーの起動時
+;x 1 利用可能なアップデートを通知する (既定)
+;x 0 利用可能なアップデートをインストールするためのプロンプトを表示
+;x 2 アップデートをチェックしない
+"UpdatePolicy"=dword:00000001
+;b プレリリースのバージョンがある場合は、それを受け取る (非推奨)
+"UpdatePreferStaging"=dword:00000000
+;b 古いバージョンでも、サーバー上の最新バージョンを提案する (非推奨)
+"UpdateAllowDowngrades"=dword:00000000
+;t アップデートサーバー:
+;w リリース
+;GitHub の releases API に準拠したリソースを提供する URL を指定します。独自のアップデートサーバーを設定する方法については、wiki をご参照ください。
+;github.com/creeper-0910/ExplorerPatcher-jp/releases/latest
+"UpdateURL"=""
+;w プレリリース
+;GitHub の releases API に準拠したリソースを提供する URL を指定します。独自のアップデートサーバーを設定する方法については、wiki をご参照ください。
+;api.github.com/repos/creeper-0910/ExplorerPatcher-jp/releases?per_page=1
+"UpdateURLStaging"=""
+;y Check for updates
+;;;EP_CHECK_FOR_UPDATES
+;y アップデートを確認する
+;;;EP_CHECK_FOR_UPDATES
+;y アップデートを行い、ファイルエクスプローラーを再起動する
+;;;EP_INSTALL_UPDATES
+;y 最新リリースの変更点について 🡕
+;https://github.com/valinet/ExplorerPatcher/blob/master/CHANGELOG.md
+;y 詳しく見る 🡕
+;https://github.com/valinet/ExplorerPatcher/wiki/Configure-updates
+
+
+;T 高度な設定
+;e これらの設定は、それに関するドキュメントを読んだ後にのみ変更してください。
+;y 詳しく見る 🡕
+;https://github.com/valinet/ExplorerPatcher/wiki/About-advanced-settings
+;q
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;b コンソールを有効にする
+"AllocConsole"=dword:00000000
+;b メモリリークをダンプする
+"Memcheck"=dword:00000000
+;b タスクバーのダブルクリックで自動非表示 (タスク バーがロックされている時のみ)
+"TaskbarAutohideOnDoubleClick"=dword:00000000
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+;b Windows のビルド情報をデスクトップに表示 *
+"PaintDesktopVersion"=dword:00000000
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;b クラシックテーマを使用した正しいレンダリングのための高度な緩和策を有効にする *
+"ClassicThemeMitigations"=dword:00000000
+[-HKEY_CURRENT_USER\Software\Classes\CLSID\{1eeb5b5a-06fb-4732-96b3-975c0194eb39}\InprocServer32]
+;d エクスプローラーのビューでSysListView32 を有効にする *
+@=""
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;b タスク バーのコンテキストメニューからプログラムの設定項目("プロパティ")を非表示にする
+"NoPropertiesInContextMenu"=dword:00000000
+;b シンボルのダウンロードを有効化する *
+"EnableSymbolDownload"=dword:00000001
+;b ピン留めされたアイテムはクイック起動として機能します(ピン留めされたアイテムをアクティブなアプリと一緒にしないでください) *
+"PinnedItemsActAsQuickLaunch"=dword:00000000
+;b タスクバーにボタンラベルが表示されている場合、ピン留めされているアイテムの周りの余分な隙間を削除する *
+"RemoveExtraGapAroundPinnedItems"=dword:00000000
+
+
+;T 私達について
+;e ExplorerPatcher-jp (非公式日本語版ビルド)
+;e バージョン %VERSIONINFORMATIONSTRING%
+;t © 2006-2022 VALINET Solutions SRL. 全著作権所有
+;e 
+;e このプロジェクトは、Windows 上での作業環境を改善することを目的としています。
+;e Valentin-Gabriel Radu によって設計されました。この非公式日本語版は、creeper-0910 によって作成されています。
+;e 動作環境: Windows 11
+;t OS ビルド: %OSVERSIONSTRING%
+;y プロジェクトのGitHub (公式ビルド) (https://github.com/valinet) 🡕
+;https://github.com/valinet
+;y プロジェクトのGitHub (非公式日本語版ビルド) (https://github.com/creeper-0910/ExplorerPatcher-jp) 🡕
+;https://github.com/creeper-0910/ExplorerPatcher-jp
+;q
+;y 公式のWeb サイト (https://www.valinet.ro) 🡕
+;https://www.valinet.ro
+;y 公式の作者にメールを送る (valentingabrielradu@gmail.com) 🡕
+;mailto:valentingabrielradu@gmail.com
+;y 公式の作者に寄付をする (PayPal を利用します) 🡕
+;https://www.paypal.com/donate?business=valentingabrielradu%40gmail.com&no_recurring=0&item_name=ExplorerPatcher&currency_code=EUR
+;y よくある質問 🡕
+;https://github.com/valinet/ExplorerPatcher/wiki/Frequently-asked-questions
+;y これらの設定の管理の詳細 🡕
+;https://github.com/valinet/ExplorerPatcher/wiki/Settings-management
+;u 設定をインポートする
+;import
+;u 現在の設定をエクスポートする
+;export
+;u 既定の設定に復元する
+;reset
+
+
+
+;f
+;u ファイルエクスプローラーを再起動する (*)
+;restart
+;;u 既定の設定に復元する
+;;reset
+;;u ExplorerPatcher-jp について
+;;about
+
 ;q
 
 ;T タスクバー
