@@ -703,7 +703,7 @@ Windows Registry Editor Version 5.00
 "AllocConsole"=dword:00000000
 ;b メモリリークをダンプする(デバッグビルドのみ)
 "Memcheck"=dword:00000000
-;b タスク バーのダブルクリックで自動的に非表示にする (タスク バーが固定されている時のみ)
+;b タスク バーをダブルクリックで自動的に非表示にする (タスク バーが固定されている時のみ)
 "TaskbarAutohideOnDoubleClick"=dword:00000000
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 ;b Windows のビルド情報をデスクトップに表示 *
