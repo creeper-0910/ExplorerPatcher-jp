@@ -4,22 +4,22 @@ Windows Registry Editor Version 5.00
 ;M 設定
 ;q
 
-;T タスクバー
+;T タスク バー
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;y 設定アプリにタスクバーオプションを追加する 🡕                                                       
+;y 設定アプリにタスク バーオプションを追加する 🡕                                                       
 ;ms-settings:taskbar
 ;y 通知領域のアイコンをカスタマイズする 🡕
 ;shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}
 ;y 通知領域のアイコンをカスタマイズする 🡕
 ;shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}\SystemIcons
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 4 画面上のプライマリタスクバーの位置 *
+;c 4 画面上のプライマリ タスク バーの位置 *
 ;x 3 下 (既定)
 ;x 1 上
 ;x 0 左
 ;x 2 右
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_TaskbarPosition"=dword:00000003
-;c 4 画面上のセカンダリタスクバーの位置
+;c 4 画面上のセカンダリ タスク バーの位置
 ;x 3 下 (既定)
 ;x 1 上
 ;x 0 左
@@ -35,24 +35,24 @@ Windows Registry Editor Version 5.00
 ;b Cortana ボタンを表示
 "ShowCortanaButton"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;b タスクビューボタンを表示
+;b タスク ビュー ボタンを表示
 "ShowTaskViewButton"=dword:00000001
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b 自動でタスクバーを隠す
+;b 自動でタスク バーを隠す
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_AutoHideTaskbar"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;c 2 スタートボタンのスタイル *
 ;x 0 Windows 10 (既定)
 ;x 1 Windows 11
 "OrbStyle"=dword:00000000
-;c 5 プライマリタスクバーの配置
+;c 5 プライマリ タスク バーの配置
 ;x 0 画面端 (既定)
 ;x 1 中央
 ;x 5 中央、フルスクリーン時画面端
 ;x 3 スタートボタンを中心に
 ;x 7 スタートボタンを中心に、フルスクリーン時は画面端に配置
 "OldTaskbarAl"=dword:00000000
-;c 5 プライマリタスクバーの配置
+;c 5 プライマリ タスク バーの配置
 ;x 0 画面端 (既定)
 ;x 1 中央
 ;x 5 中央、フルスクリーン時画面端
@@ -60,12 +60,12 @@ Windows Registry Editor Version 5.00
 ;x 7 スタートボタンを中心に、フルスクリーン時は画面端に配置
 "MMOldTaskbarAl"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;c 3 プライマリタスクバーのアイコンを結合
+;c 3 プライマリ タスク バーのアイコンを結合
 ;x 0 常に結合する
 ;x 1 タスクバーがいっぱいのときに結合
 ;x 2 結合しない (既定)
 "TaskbarGlomLevel"=dword:00000000
-;c 3 セカンダリタスクバーのアイコン結合
+;c 3 セカンダリ タスク バーのアイコン結合
 ;x 0 常に結合する
 ;x 1 タスク バーがいっぱいのときに結合
 ;x 2 結合しない (既定)
@@ -81,14 +81,14 @@ Windows Registry Editor Version 5.00
 
 ;T システムトレイ
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b タスクバーとトレイのポップアップメニューのスキン
+;b タスク バーとトレイのポップアップメニューのスキン
 "SkinMenus"=dword:00000001
 ;b センタートレイのアイコンのポップアップメニュー
 "CenterMenus"=dword:00000001
 ;b トレイアイコンのポップアップメニューのフライアウト動作
 "FlyoutMenus"=dword:00000001
 [HKEY_CURRENT_USER\Software\Microsoft\TabletTip\1.7]
-;b タッチ キーボードボタンを表示する *
+;b タッチ キーボード ボタンを表示する *
 "TipbandDesiredVisibility"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;p 2
@@ -213,9 +213,9 @@ Windows Registry Editor Version 5.00
 ;x 99999 無制限
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_Start_MaximumFrequentApps"=dword:00000006
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage]
-;e マルチディスプレイの場合、キーボードを使用すると設定されたディスプレイで
+;e マルチ ディスプレイの場合、キーボードを使用すると設定されたディスプレイで
 ;z 10 スタートが表示されます
-;x 1 プライマリディスプレイ (既定)
+;x 1 プライマリ ディスプレイ (既定)
 ;x 0 カーソルがあるディスプレイ
 ;x 2 ディスプレイ #2
 ;x 3 ディスプレイ #3
@@ -257,7 +257,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
 ;b デスクトップを含める
 "IncludeWallpaper"=dword:00000001
-;b 常にプライマリディスプレイに表示する
+;b 常にプライマリ ディスプレイに表示する
 "PrimaryOnly"=dword:00000000
 ;b 現在のディスプレイで表示されているウィンドウのみを表示する
 "PerMonitor"=dword:00000000
@@ -383,7 +383,7 @@ Windows Registry Editor Version 5.00
 
 ;T 天気
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b タスクバーに天気を表示する
+;b タスク バーに天気を表示する
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_PeopleBand"=dword:00000000
 ;c 5 レイアウト
 ;x 0 アイコンと概要 (既定)
@@ -550,7 +550,7 @@ Windows Registry Editor Version 5.00
 "AllocConsole"=dword:00000000
 ;b メモリリークをダンプする
 "Memcheck"=dword:00000000
-;b タスクバーのダブルクリックで自動非表示 (タスク バーがロックされている時のみ)
+;b タスク バーをダブルクリックで自動的に非表示にする (タスク バーが固定されている時のみ)
 "TaskbarAutohideOnDoubleClick"=dword:00000000
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 ;b Windows のビルド情報をデスクトップに表示 *

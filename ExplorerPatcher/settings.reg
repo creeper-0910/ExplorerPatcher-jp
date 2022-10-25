@@ -18,13 +18,13 @@
 ;shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}\SystemIcons
 ;s Taskbar_LocationSection !(IsWindows11Version22H2OrHigher&&!IsOldTaskbar)
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 4 画面上のプライマリタスク バーの位置 *
+;c 4 画面上のプライマリ タスク バーの位置 *
 ;x 3 下 (既定)
 ;x 1 上
 ;x 0 左
 ;x 2 右
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_TaskbarPosition"=dword:00000003
-;c 4 画面上のセカンダリタスク バーの位置
+;c 4 画面上のセカンダリ タスク バーの位置
 ;x 3 下 (既定)
 ;x 1 上
 ;x 0 左
@@ -43,7 +43,7 @@
 ;b 検索ボタンを表示
 "SearchboxTaskbarMode"=dword:00000001
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;b タスク ビューボタンを表示
+;b タスク ビュー ボタンを表示
 "ShowTaskViewButton"=dword:00000001
 ;s Taskbar_CortanaButtonSection1 IsWindows11Version22H2OrHigher
 ;s Taskbar_CortanaButtonSection2 !IsOldTaskbar
@@ -61,26 +61,26 @@
 ;x 0 Windows 10 (既定)
 ;x 1 Windows 11
 "OrbStyle"=dword:00000000
-;c 5 プライマリタスク バーの配置
+;c 5 プライマリ タスク バーの配置
 ;x 0 画面端 (既定)
 ;x 1 中央
 ;x 5 中央、フルスクリーン時画面端
 ;x 3 スタートボタンを中心に
 ;x 7 スタートボタンを中心に、フルスクリーン時は画面端に配置
 "OldTaskbarAl"=dword:00000000
-;c 5 セカンダリタスク バーの配置
+;c 5 セカンダリ タスク バーの配置
 ;x 0 画面端 (既定)
 ;x 1 中央
 ;x 5 中央、フルスクリーン時画面端
 ;x 3 スタートボタンを中心に
 ;x 7 スタートボタンを中心に、フルスクリーン時は画面端に配置
 "MMOldTaskbarAl"=dword:00000000
-;c 3 プライマリタスク バーのアイコンを結合
+;c 3 プライマリ タスク バーのアイコンを結合
 ;x 0 常に結合する
 ;x 1 タスク バーがいっぱいのときに結合
 ;x 2 結合しない (既定)
 "TaskbarGlomLevel"=dword:00000002
-;c 3 セカンダリタスク バーのアイコン結合
+;c 3 セカンダリ タスク バーのアイコン結合
 ;x 0 常に結合する
 ;x 1 タスク バーがいっぱいのときに結合
 ;x 2 結合しない (既定)
@@ -104,7 +104,7 @@
 ;b トレイアイコンのポップアップメニューのフライアウト動作
 "FlyoutMenus"=dword:00000001
 [HKEY_CURRENT_USER\Software\Microsoft\TabletTip\1.7]
-;b タッチ キーボードボタンを表示する *
+;b タッチ キーボード ボタンを表示する *
 "TipbandDesiredVisibility"=dword:00000000
 ;s SystemTray_Section98 IsOldTaskbar
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
@@ -276,9 +276,9 @@
 ;x 99999 無制限
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_Start_MaximumFrequentApps"=dword:00000006
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage]
-;a マルチディスプレイの場合、キーボードを使用すると設定されたディスプレイで
+;a マルチ ディスプレイの場合、キーボードを使用すると設定されたディスプレイで
 ;c 10 スタートが表示されます
-;x 1 プライマリディスプレイ (既定)
+;x 1 プライマリ ディスプレイ (既定)
 ;x 0 カーソルがあるディスプレイ
 ;x 2 ディスプレイ #2
 ;x 3 ディスプレイ #3
@@ -335,7 +335,7 @@
 [HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
 ;b デスクトップを含める
 "IncludeWallpaper"=dword:00000001
-;b 常にプライマリディスプレイに表示する
+;b 常にプライマリ ディスプレイに表示する
 "PrimaryOnly"=dword:00000000
 ;b 現在のディスプレイで表示されているウィンドウのみを表示する
 "PerMonitor"=dword:00000000
@@ -553,7 +553,7 @@
 "WeatherZoomFactor"=dword:00000000
 ;q
 ;g Weather_Section1
-;y 天気予報タスク バーウィジェットについてもっと知る 🡕
+;y 天気予報タスク バー ウィジェットについてもっと知る 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Weather
 ;s Weather_Section2 IsWeatherEnabled
 ;t %WEATHERLASTUPDATETEXT%
@@ -619,7 +619,7 @@
 "LastSectionInProperties"=dword:00000000
 ;b Win+Cを押した時、Microsoft Teams の代わりに時計のフライアウトを開く *
 "ClockFlyoutOnWinC"=dword:00000000
-;b タスク バーのツールバーの間にセパレーターを表示する *
+;b タスク バーのツール バーの間にセパレーターを表示する *
 "ToolbarSeparators"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;b Win+X メニューにプログラムの設定のショートカットを追加する
@@ -703,7 +703,7 @@
 "AllocConsole"=dword:00000000
 ;b メモリリークをダンプする(デバッグビルドのみ)
 "Memcheck"=dword:00000000
-;b タスク バーのダブルクリックで自動非表示 (タスク バーがロックされている時のみ)
+;b タスク バーのダブルクリックで自動的に非表示にする (タスク バーが固定されている時のみ)
 "TaskbarAutohideOnDoubleClick"=dword:00000000
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 ;b Windows のビルド情報をデスクトップに表示 *
