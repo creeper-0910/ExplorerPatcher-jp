@@ -715,7 +715,7 @@
 ;d エクスプローラーのビューでSysListView32 を有効にする *
 @=""
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b タスク バーのコンテキストメニューからプログラムの設定項目("プロパティ")を非表示にする
+;b タスク バーのコンテキストメニューを変更しない（例："プロパティ"項目を非表示にする）
 "NoPropertiesInContextMenu"=dword:00000000
 ;b シンボルのダウンロードを有効化する *
 "EnableSymbolDownload"=dword:00000001
