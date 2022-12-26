@@ -199,7 +199,7 @@ BOOL IsUpdateAvailableHelper(
                 ) && dwRead == DOSMODE_OFFSET + UPDATES_HASH_SIZE)
                 {
 #ifdef UPDATES_VERBOSE_OUTPUT
-                    printf("[更新] リモートファイルのハッシュは \"%s\" (%s)です。\n", DOSMODE_OFFSET + hash, (hash[0] == 0x4D && hash[1] == 0x5A) ? "valid" : "invalid");
+                    printf("[更新] リモート ファイルのハッシュは \"%s\" (%s)です。\n", DOSMODE_OFFSET + hash, (hash[0] == 0x4D && hash[1] == 0x5A) ? "valid" : "invalid");
 #endif
                     BOOL bOldType = TRUE;
                     char *szLeftMost = NULL, *szSecondLeft = NULL, *szSecondRight = NULL, *szRightMost = NULL, *szRealHash = NULL;
@@ -545,7 +545,7 @@ BOOL IsUpdateAvailableHelper(
                                 );
 
                                 WCHAR wszMsg[500];
-                                swprintf_s(wszMsg, 500, L"" _T(PRODUCT_NAME) L"のアップデートをインストールしますか？\n\nダウンロード元:\n%s", wszURL2);
+                                swprintf_s(wszMsg, 500, L"" _T(PRODUCT_NAME) L"のアップデートをインストールしますか?\n\nダウンロード元:\n%s", wszURL2);
                                 if (MessageBoxW(
                                     FindWindowW(L"ExplorerPatcher_GUI_" _T(EP_CLSID), NULL),
                                     wszMsg,
@@ -576,7 +576,7 @@ BOOL IsUpdateAvailableHelper(
                                 {
                                     bIsUpdateAvailable = TRUE;
 #ifdef UPDATES_VERBOSE_OUTPUT
-                                    printf("[更新] アップデートに成功後、Explorerが再起動します。\n");
+                                    printf("[更新] アップデートに成功後、エクスプローラー が再起動します。\n");
 #endif
                                 }
                                 else
@@ -732,7 +732,7 @@ BOOL IsUpdateAvailable(LPCWSTR wszDataStore, char* szCheckAgainst, BOOL* lpFail,
         RegCloseKey(hKey);
     }
 #ifdef UPDATES_VERBOSE_OUTPUT
-    printf("[更新] 更新URL: %s\n", szUpdateURL);
+    printf("[更新] 更新 URL: %s\n", szUpdateURL);
 #endif
     return IsUpdateAvailableHelper(
         szUpdateURL, 
@@ -838,7 +838,7 @@ BOOL UpdateProduct(
         RegCloseKey(hKey);
     }
 #ifdef UPDATES_VERBOSE_OUTPUT
-    printf("[更新] 更新URL: %s\n", szUpdateURL);
+    printf("[更新] 更新 URL: %s\n", szUpdateURL);
 #endif
     return IsUpdateAvailableHelper(
         szUpdateURL, 
@@ -942,12 +942,12 @@ BOOL InstallUpdatesIfAvailable(
         case UPDATE_POLICY_AUTO:
         {
             dwUpdatePolicy = UPDATE_POLICY_AUTO;
-            printf("[更新] このシステムで設定されたアップデートポリシー: \"アップデートの自動インストール\"。\n");
+            printf("[更新] このシステムで設定されたアップデート ポリシー: \"アップデートの自動インストール\"。\n");
             break;
         }
         case UPDATE_POLICY_NOTIFY:
         {
-            printf("[更新] このシステムで設定されたアップデートポリシー: \"アップデートを確認し、ダウンロードとインストールを選択\"。\n");
+            printf("[更新] このシステムで設定されたアップデート ポリシー: \"アップデートを確認し、ダウンロードとインストールを選択\"。\n");
             break;
         }
         case UPDATE_POLICY_MANUAL:
@@ -1103,7 +1103,7 @@ BOOL InstallUpdatesIfAvailable(
                 L"	<visual>\r\n"
                 L"		<binding template=\"ToastGeneric\">\r\n"
                 L"			<text><![CDATA[%s が利用可能です。]]></text>\r\n"
-                L"			<text><![CDATA[アップデートをするには、タスクバーを右クリックして \"プロパティ\"、\"アップデート\"の順に選択してください。このアップデートについて詳しくは、こちらをご覧ください。]]></text>\r\n"
+                L"			<text><![CDATA[アップデートをするには、タスク バーを右クリックして \"プロパティ\"、\"アップデート\"の順に選択してください。このアップデートについて詳しくは、こちらをご覧ください。]]></text>\r\n"
                 L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher-jp]]></text>\r\n"
                 L"		</binding>\r\n"
                 L"	</visual>\r\n"
@@ -1155,7 +1155,7 @@ BOOL InstallUpdatesIfAvailable(
     {
         if (bFail)
         {
-            printf("[更新] リモートサーバーが利用できないため、アップデートを確認できません。\n");
+            printf("[更新] リモート サーバーが利用できないため、アップデートを確認できません。\n");
         }
         else
         {
@@ -1181,7 +1181,7 @@ BOOL InstallUpdatesIfAvailable(
                 L"	<visual>\r\n"
                 L"		<binding template=\"ToastGeneric\">\r\n"
                 L"			<text><![CDATA[アップデートの確認が出来ませんでした]]></text>\r\n"
-                L"			<text><![CDATA[インターネットに接続されていること、リモートサーバーがオンラインであることを確認してください。]]></text>\r\n"
+                L"			<text><![CDATA[インターネットに接続されていること、リモート サーバーがオンラインであることを確認してください。]]></text>\r\n"
                 L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher-jp]]></text>\r\n"
                 L"		</binding>\r\n"
                 L"	</visual>\r\n"

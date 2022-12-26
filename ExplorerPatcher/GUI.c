@@ -2198,7 +2198,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                             {
                                 if (MessageBoxW(
                                     hwnd,
-                                    L"天気予報ウィジェットのローカルデータを永久にクリアしてもよろしいですか？\n\n"
+                                    L"天気予報ウィジェットのローカル データを永久にクリアしてもよろしいですか?\n\n"
                                     L"これは内部コンポーネントをデフォルトの状態にリセットしますが、あなたの設定は保持されます。 "
                                     L"これにより、ウィジェットがデータを正しくロードしない、 "
                                     L"または、レイアウトの問題があるなどの問題が解決されるかもしれません。",
@@ -4018,7 +4018,7 @@ __declspec(dllexport) int ZZGUI(HWND hWnd, HINSTANCE hInstance, LPSTR lpszCmdLin
         }
     }
 
-    wprintf(L"Windows %d で動作しており、 OS Buildは %d.%d.%d.%dです。\n", IsWindows11() ? 11 : 10, global_rovi.dwMajorVersion, global_rovi.dwMinorVersion, global_rovi.dwBuildNumber, global_ubr);
+    wprintf(L"Windows %d で動作しており、OS Build は %d.%d.%d.%d です。\n", IsWindows11() ? 11 : 10, global_rovi.dwMajorVersion, global_rovi.dwMinorVersion, global_rovi.dwBuildNumber, global_ubr);
 
     locale = GetUserDefaultUILanguage();
     dwSize = LOCALE_NAME_MAX_LENGTH;
