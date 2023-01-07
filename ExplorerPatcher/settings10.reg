@@ -1,4 +1,4 @@
-Windows Registry Editor Version 5.00
+﻿Windows Registry Editor Version 5.00
 
 
 ;M 設定
@@ -528,11 +528,11 @@ Windows Registry Editor Version 5.00
 ;GitHub の releases API に準拠したリソースを提供する URL を指定します。独自のアップデート サーバーを設定する方法については、wiki をご参照ください。
 ;api.github.com/repos/creeper-0910/ExplorerPatcher-jp/releases?per_page=1
 "UpdateURLStaging"=""
-;y Check for updates
-;;;EP_CHECK_FOR_UPDATES
 ;y アップデートを確認
 ;;;EP_CHECK_FOR_UPDATES
 ;y アップデートを行い、ファイル エクスプローラーを再起動
+
+
 ;;;EP_INSTALL_UPDATES
 ;y 最新リリースの変更点について 🡕
 ;https://github.com/valinet/ExplorerPatcher/blob/master/CHANGELOG.md

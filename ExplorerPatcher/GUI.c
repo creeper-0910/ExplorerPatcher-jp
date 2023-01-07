@@ -1,8 +1,8 @@
-Ôªø#include <initguid.h>
+#include <initguid.h>
 DEFINE_GUID(LiveSetting_Property_GUID, 0xc12bcd8e, 0x2a8e, 0x4950, 0x8a, 0xe7, 0x36, 0x25, 0x11, 0x1d, 0x58, 0xeb);
 #include <oleacc.h>
 #include "GUI.h"
-#define UNICODE
+
 TCHAR GUI_title[260];
 FILE* AuditFile = NULL;
 LANGID locale;
@@ -125,13 +125,13 @@ void PlayHelpMessage(GUI* _this)
     swprintf_s(
         wszAccText,
         1000,
-        L"ExplorerPatcher-jp„Å∏„Çà„ÅÜ„Åì„Åù„ÄÇ "
-        L"ÈÅ∏Êäû„Åï„Çå„Åü„Éö„Éº„Ç∏„ÅØ: %s: %d „ÅÆ %d„Åß„Åô„ÄÇ "
-        L"„Éö„Éº„Ç∏„ÇíÂàá„ÇäÊõø„Åà„Çã„Å´„ÅØ„ÄÅÂ∑¶„Åæ„Åü„ÅØÂè≥„ÅÆÁü¢Âç∞„Ç≠„Éº„ÇíÊäº„Åô„Åã„ÄÅÊï∞Â≠ó (%d ~ %d)„ÇíÊäº„Åó„Åæ„Åô„ÄÇ "
-        L"È†ÖÁõÆ„ÇíÈÅ∏Êäû„Åô„Çã„Å´„ÅØ„ÄÅ‰∏ä„Åæ„Åü„ÅØ‰∏ãÁü¢Âç∞„Ç≠„Éº„ÄÅ„Åæ„Åü„ÅØShift+Tab„Å®Tab„ÇíÊäº„Åó„Åæ„Åô„ÄÇ "
-        L"ÈÅ∏Êäû„Åó„ÅüÈ†ÖÁõÆ„ÇíÊìç‰Ωú„Åô„Çã„Å´„ÅØ„ÄÅ„Çπ„Éö„Éº„Çπ„Ç≠„Éº„Åæ„Åü„ÅØ„É™„Çø„Éº„É≥„Ç≠„Éº„ÇíÊäº„Åó„Åæ„Åô„ÄÇ "
-        L"„Åì„ÅÆ„Ç¶„Ç£„É≥„Éâ„Ç¶„ÇíÈñâ„Åò„Çã„Å´„ÅØ„ÄÅEsc„Ç≠„Éº„ÇíÊäº„Åó„Åæ„Åô„ÄÇ "
-        L"Êï∞Â≠ó„ÇíÊäº„Åô„Å®„ÄÅÂØæÂøú„Åô„Çã„Éö„Éº„Ç∏„Å´Âàá„ÇäÊõø„Çè„Çä„Åæ„Åô: ",
+        L"ExplorerPatcher-jpÇ÷ÇÊÇ§Ç±ÇªÅB "
+        L"ëIëÇ≥ÇÍÇΩÉyÅ[ÉWÇÕ: %s: %d ÇÃ %dÇ≈Ç∑ÅB "
+        L"ÉyÅ[ÉWÇêÿÇËë÷Ç¶ÇÈÇ…ÇÕÅAç∂Ç‹ÇΩÇÕâEÇÃñÓàÛÉLÅ[ÇâüÇ∑Ç©ÅAêîéö (%d ~ %d)ÇâüÇµÇ‹Ç∑ÅB "
+        L"çÄñ⁄ÇëIëÇ∑ÇÈÇ…ÇÕÅAè„Ç‹ÇΩÇÕâ∫ñÓàÛÉLÅ[ÅAÇ‹ÇΩÇÕShift+TabÇ∆TabÇâüÇµÇ‹Ç∑ÅB "
+        L"ëIëÇµÇΩçÄñ⁄ÇëÄçÏÇ∑ÇÈÇ…ÇÕÅAÉXÉyÅ[ÉXÉLÅ[Ç‹ÇΩÇÕÉäÉ^Å[ÉìÉLÅ[ÇâüÇµÇ‹Ç∑ÅB "
+        L"Ç±ÇÃÉEÉBÉìÉhÉEÇï¬Ç∂ÇÈÇ…ÇÕÅAEscÉLÅ[ÇâüÇµÇ‹Ç∑ÅB "
+        L"êîéöÇâüÇ∑Ç∆ÅAëŒâûÇ∑ÇÈÉyÅ[ÉWÇ…êÿÇËë÷ÇÌÇËÇ‹Ç∑: ",
         _this->sectionNames[_this->section],
         _this->section + 1,
         max_section + 1,
@@ -148,7 +148,7 @@ void PlayHelpMessage(GUI* _this)
         swprintf_s(wszAdd, 100, L"%d: %s, ", i + 1, _this->sectionNames[i]);
         wcscat_s(wszAccText, 1000, wszAdd);
     }
-    wcscat_s(wszAccText, 1000, L"\n„Åì„ÅÆ„É°„ÉÉ„Çª„Éº„Ç∏„Çí„ÇÇ„ÅÜ‰∏ÄÂ∫¶ËÅû„Åè„Å´„ÅØ„ÄÅ„ÅÑ„Å§„Åß„ÇÇF1„Ç≠„Éº„ÇíÊäº„Åó„Å¶„Åè„Å†„Åï„ÅÑ„ÄÇ\n");
+    wcscat_s(wszAccText, 1000, L"\nÇ±ÇÃÉÅÉbÉZÅ[ÉWÇÇ‡Ç§àÍìxï∑Ç≠Ç…ÇÕÅAÇ¢Ç¬Ç≈Ç‡F1ÉLÅ[ÇâüÇµÇƒÇ≠ÇæÇ≥Ç¢ÅB\n");
     SetWindowTextW(_this->hAccLabel, wszAccText);
     NotifyWinEvent(
         EVENT_OBJECT_LIVEREGIONCHANGED,
@@ -1120,7 +1120,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                 lastHeading[0] = 0;
                 continue;
             }
-            if (strcmp(line, "Windows Registry Editor Version 5.00\r\n") &&
+            if (strcmp(line, "Windows Registry Editor Version 5.00\r\n") && 
                 strcmp(line, "\r\n") && 
                 (currentSection == -1 || currentSection == _this->section || !strncmp(line, ";T ", 3) || !strncmp(line, ";f", 2) || AuditFile) &&
                 !((!IsThemeActive() || IsHighContrast() || !IsWindows11() || IsDwmExtendFrameIntoClientAreaBrokenInThisBuild()) && !strncmp(line, ";M ", 3))
@@ -1265,7 +1265,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                 else if (!strncmp(line, ";M ", 3))
                 {
                     UINT diff = (((_this->GUI_CAPTION_LINE_HEIGHT - 16) * dx -50) / 2.0);
-                    rcText.left = diff + (int)(16.0 * dx) + diff / 2 - 30;//„Éó„É≠„Éë„ÉÜ„Ç£„ÅÆÊñáÂ≠ó
+                    rcText.left = diff + (int)(16.0 * dx) + diff / 2 - 30;//ÉvÉçÉpÉeÉBÇÃï∂éö
                     topAdj = dwMaxHeight + _this->GUI_CAPTION_LINE_HEIGHT * dy;
                     hOldFont = SelectObject(hdcPaint, hFontCaption);
                 }
@@ -1294,7 +1294,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
 
                             sprintf_s(p, MAX_PATH, "%d.%d.%d.%d%s", dwLeftMost, dwSecondLeft, dwSecondRight, dwRightMost, 
 #if defined(DEBUG) | defined(_DEBUG)
-                                " („Éá„Éê„ÉÉ„Ç∞)"
+                                " (Debug)"
 #else
                                 ""
 #endif
@@ -1343,7 +1343,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                         if (GetTimeFormatEx(wszWeatherLanguage[0] ? wszWeatherLanguage : wszLanguage, TIME_NOSECONDS, &stLastUpdate, NULL, wszTime, MAX_PATH))
                                         {
                                             bOk = TRUE;
-                                            swprintf_s(text, MAX_LINE_LENGTH, L"ÊúÄÁµÇÊõ¥Êñ∞Êó•ÊôÇ: %s, %s.", wszDate, wszTime);
+                                            swprintf_s(text, MAX_LINE_LENGTH, L"ç≈èIçXêVì˙éû: %s, %s.", wszDate, wszTime);
                                         }
                                     }
                                 }
@@ -1426,7 +1426,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                     {
                         if (hDC)
                         {
-                            UINT diff = (int)(((_this->GUI_CAPTION_LINE_HEIGHT - 16) * dx) / 2.0 - 25);//„Çø„Ç§„Éà„É´„Éê„Éº„Ç¢„Ç§„Ç≥„É≥‰ΩçÁΩÆ
+                            UINT diff = (int)(((_this->GUI_CAPTION_LINE_HEIGHT - 16) * dx) / 2.0 - 25);//É^ÉCÉgÉãÉoÅ[ÉAÉCÉRÉìà íu
                             //printf("!!! %d %d\n", (int)(16.0 * dx), diff);
                             DrawIconEx(
                                 hdcPaint,
@@ -1501,11 +1501,11 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                 swprintf_s(
                                     accText, 
                                     1000, 
-                                    L"%s %s - „Éú„Çø„É≥„Åß„Åô„ÄÇ",
+                                    L"%s %s - É{É^ÉìÇ≈Ç∑ÅB",
                                     (_this->dwPageLocation < 0 ?
-                                    L"„Éö„Éº„Ç∏„ÅÆÊúÄÂæå„Å´Âà∞ÈÅî„Åó„Åæ„Åó„Åü„ÄÇ" :
+                                    L"ÉyÅ[ÉWÇÃç≈å„Ç…ìûíBÇµÇ‹ÇµÇΩÅB" :
                                     (_this->dwPageLocation > 0 ?
-                                    L"„Éö„Éº„Ç∏„ÅÆÂÖàÈ†≠„Å´Âà∞ÈÅî„Åó„Åæ„Åó„Åü„ÄÇ" : L"")),
+                                    L"ÉyÅ[ÉWÇÃêÊì™Ç…ìûíBÇµÇ‹ÇµÇΩÅB" : L"")),
                                     text
                                 );
                                 _this->dwPageLocation = 0;
@@ -1995,7 +1995,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                         GUI_Build(0, hwnd, pt);
                                         fclose(AuditFile);
                                         AuditFile = NULL;
-                                        MessageBoxW(hwnd, L"Ë®≠ÂÆö„ÅÆ„Ç®„ÇØ„Çπ„Éù„Éº„Éà„Å´ÊàêÂäü„Åó„Åæ„Åó„Åü„ÄÇ", GUI_title, MB_ICONINFORMATION);
+                                        MessageBoxW(hwnd, L"ê›íËÇÃÉGÉNÉXÉ|Å[ÉgÇ…ê¨å˜ÇµÇ‹ÇµÇΩÅB", GUI_title, MB_ICONINFORMATION);
                                     }
                                 }
                             }
@@ -2198,10 +2198,10 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                             {
                                 if (MessageBoxW(
                                     hwnd,
-                                    L"Â§©Ê∞ó‰∫àÂ†±„Ç¶„Ç£„Ç∏„Çß„ÉÉ„Éà„ÅÆ„É≠„Éº„Ç´„É´ „Éá„Éº„Çø„ÇíÊ∞∏‰πÖ„Å´„ÇØ„É™„Ç¢„Åó„Å¶„ÇÇ„Çà„Çç„Åó„ÅÑ„Åß„Åô„Åã?\n\n"
-                                    L"„Åì„Çå„ÅØÂÜÖÈÉ®„Ç≥„É≥„Éù„Éº„Éç„É≥„Éà„Çí„Éá„Éï„Ç©„É´„Éà„ÅÆÁä∂ÊÖã„Å´„É™„Çª„ÉÉ„Éà„Åó„Åæ„Åô„Åå„ÄÅ„ÅÇ„Å™„Åü„ÅÆË®≠ÂÆö„ÅØ‰øùÊåÅ„Åï„Çå„Åæ„Åô„ÄÇ "
-                                    L"„Åì„Çå„Å´„Çà„Çä„ÄÅ„Ç¶„Ç£„Ç∏„Çß„ÉÉ„Éà„Åå„Éá„Éº„Çø„ÇíÊ≠£„Åó„Åè„É≠„Éº„Éâ„Åó„Å™„ÅÑ„ÄÅ "
-                                    L"„Åæ„Åü„ÅØ„ÄÅ„É¨„Ç§„Ç¢„Ç¶„Éà„ÅÆÂïèÈ°å„Åå„ÅÇ„Çã„Å™„Å©„ÅÆÂïèÈ°å„ÅåËß£Ê±∫„Åï„Çå„Çã„Åã„ÇÇ„Åó„Çå„Åæ„Åõ„Çì„ÄÇ",
+                                    L"ìVãCó\ïÒÉEÉBÉWÉFÉbÉgÇÃÉçÅ[ÉJÉã ÉfÅ[É^ÇâiãvÇ…ÉNÉäÉAÇµÇƒÇ‡ÇÊÇÎÇµÇ¢Ç≈Ç∑Ç©?\n\n"
+                                    L"Ç±ÇÍÇÕì‡ïîÉRÉìÉ|Å[ÉlÉìÉgÇÉfÉtÉHÉãÉgÇÃèÛë‘Ç…ÉäÉZÉbÉgÇµÇ‹Ç∑Ç™ÅAÇ†Ç»ÇΩÇÃê›íËÇÕï€éùÇ≥ÇÍÇ‹Ç∑ÅB "
+                                    L"Ç±ÇÍÇ…ÇÊÇËÅAÉEÉBÉWÉFÉbÉgÇ™ÉfÅ[É^Çê≥ÇµÇ≠ÉçÅ[ÉhÇµÇ»Ç¢ÅA "
+                                    L"Ç‹ÇΩÇÕÅAÉåÉCÉAÉEÉgÇÃñ‚ëËÇ™Ç†ÇÈÇ»Ç«ÇÃñ‚ëËÇ™âåàÇ≥ÇÍÇÈÇ©Ç‡ÇµÇÍÇ‹ÇπÇÒÅB",
                                     _T(PRODUCT_NAME),
                                     MB_ICONQUESTION | MB_YESNO) == IDYES)
                                 {
@@ -2215,7 +2215,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                         PleaseWaitCallbackData = &res;
                                         PleaseWaitCallbackFunc = GUI_Internal_DeleteWeatherFolder;
                                         PleaseWaitHook = SetWindowsHookExW(WH_CALLWNDPROC, PleaseWait_HookProc, NULL, GetCurrentThreadId());
-                                        MessageBoxW(hwnd, L"„Åó„Å∞„Çâ„Åè„ÅäÂæÖ„Å°‰∏ã„Åï„ÅÑ...", _T(PRODUCT_NAME), 0);
+                                        MessageBoxW(hwnd, L"ÇµÇŒÇÁÇ≠Ç®ë“Çøâ∫Ç≥Ç¢...", _T(PRODUCT_NAME), 0);
                                     }
                                     else
                                     {
@@ -2223,13 +2223,13 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                     }
                                     if (res == IDOK)
                                     {
-                                        MessageBoxW(hwnd, L"Â§©Ê∞ó‰∫àÂ†±„Ç¶„Ç£„Ç∏„Çß„ÉÉ„Éà„ÅÆ„Éá„Éº„Çø„ÅåÊ≠£Â∏∏„Å´„ÇØ„É™„Ç¢„Åï„Çå„Åæ„Åó„Åü„ÄÇ", _T(PRODUCT_NAME), MB_ICONINFORMATION);
+                                        MessageBoxW(hwnd, L"ìVãCó\ïÒÉEÉBÉWÉFÉbÉgÇÃÉfÅ[É^Ç™ê≥èÌÇ…ÉNÉäÉAÇ≥ÇÍÇ‹ÇµÇΩÅB", _T(PRODUCT_NAME), MB_ICONINFORMATION);
                                     }
                                     else
                                     {
                                         if (res == IDABORT)
                                         {
-                                            MessageBoxW(hwnd, L"„Éá„Éº„Çø„ÅÆ„ÇØ„É™„Ç¢‰∏≠„Å´„Ç®„É©„Éº„ÅåÁô∫Áîü„Åó„Åæ„Åó„Åü„ÄÇ", _T(PRODUCT_NAME), MB_ICONERROR);
+                                            MessageBoxW(hwnd, L"ÉfÅ[É^ÇÃÉNÉäÉAíÜÇ…ÉGÉâÅ[Ç™î≠ê∂ÇµÇ‹ÇµÇΩÅB", _T(PRODUCT_NAME), MB_ICONERROR);
                                         }
                                     }
                                     if (dwData)
@@ -3143,7 +3143,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                 1,
                                 0
                             );
-                            swprintf(text + 3, MAX_LINE_LENGTH, _T("„Ç¢„Éó„É™„Ç±„Éº„Ç∑„Éß„É≥„Åî„Å®„ÅÆ„Ç¶„Ç£„É≥„Éâ„Ç¶„É™„Çπ„Éà„ÇíÁÑ°Âäπ„Å´„Åô„Çã ( Alt + %c )"), key);
+                            swprintf(text + 3, MAX_LINE_LENGTH, _T("ÉAÉvÉäÉPÅ[ÉVÉáÉìÇ≤Ç∆ÇÃÉEÉBÉìÉhÉEÉäÉXÉgÇñ≥å¯Ç…Ç∑ÇÈ ( Alt + %c )"), key);
                         }
                         if (tabOrder == _this->tabOrder)
                         {
@@ -3216,11 +3216,11 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                 }
                                 if (dwTypeRepl == 1)
                                 {
-                                    swprintf_s(accText, 1000, accText2, L" - '„Éï„Ç°„Ç§„É´„ÇíÈñã„Åè''„Éï„Ç°„Ç§„É´„Çí‰øùÂ≠ò'„ÉÄ„Ç§„Ç¢„É≠„Ç∞„ÅßÂãï‰Ωú„Åï„Åõ„Çã„Å´„ÅØ„ÄÅ„Ç∑„Çß„É´Êã°ÂºµÊ©üËÉΩ„Å®„Åó„Å¶ÁôªÈå≤„Åô„ÇãÂøÖË¶Å„Åå„ÅÇ„Çä„Åæ„Åô - ");
+                                    swprintf_s(accText, 1000, accText2, L" - 'ÉtÉ@ÉCÉãÇäJÇ≠''ÉtÉ@ÉCÉãÇï€ë∂'É_ÉCÉAÉçÉOÇ≈ìÆçÏÇ≥ÇπÇÈÇ…ÇÕÅAÉVÉFÉãägí£ã@î\Ç∆ÇµÇƒìoò^Ç∑ÇÈïKóvÇ™Ç†ÇËÇ‹Ç∑ - ");
                                 }
                                 else
                                 {
-                                    swprintf_s(accText, 1000, accText2, L" - ÈÅ©Áî®„Å´„ÅØ„Éï„Ç°„Ç§„É´„Ç®„ÇØ„Çπ„Éó„É≠„Éº„É©„Éº„ÅÆÂÜçËµ∑Âãï„ÅåÂøÖË¶Å„Åß„Åô - ");
+                                    swprintf_s(accText, 1000, accText2, L" - ìKópÇ…ÇÕÉtÉ@ÉCÉãÉGÉNÉXÉvÉçÅ[ÉâÅ[ÇÃçƒãNìÆÇ™ïKóvÇ≈Ç∑ - ");
                                 }
                                 //wprintf(L">>> %s\n", accText);
                                 SetWindowTextW(_this->hAccLabel, accText);
@@ -3318,7 +3318,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
             swprintf_s(
                 wszAccText,
                 100,
-                L"ÈÅ∏Êäû„Åï„Çå„Åü„Éö„Éº„Ç∏: %s: %d „ÅÆ %d„Åß„Åô„ÄÇ",
+                L"ëIëÇ≥ÇÍÇΩÉyÅ[ÉW: %s: %d ÇÃ %dÇ≈Ç∑ÅB",
                 _this->sectionNames[_this->section],
                 _this->section + 1,
                 max_section + 1
@@ -4018,7 +4018,7 @@ __declspec(dllexport) int ZZGUI(HWND hWnd, HINSTANCE hInstance, LPSTR lpszCmdLin
         }
     }
 
-    wprintf(L"Windows %d „ÅßÂãï‰Ωú„Åó„Å¶„Åä„Çä„ÄÅOS Build „ÅØ %d.%d.%d.%d „Åß„Åô„ÄÇ\n", IsWindows11() ? 11 : 10, global_rovi.dwMajorVersion, global_rovi.dwMinorVersion, global_rovi.dwBuildNumber, global_ubr);
+    wprintf(L"Windows %d Ç≈ìÆçÏÇµÇƒÇ®ÇËÅAOS Build ÇÕ %d.%d.%d.%d Ç≈Ç∑ÅB\n", IsWindows11() ? 11 : 10, global_rovi.dwMajorVersion, global_rovi.dwMinorVersion, global_rovi.dwBuildNumber, global_ubr);
 
     locale = GetUserDefaultUILanguage();
     dwSize = LOCALE_NAME_MAX_LENGTH;

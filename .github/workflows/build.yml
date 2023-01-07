@@ -100,6 +100,7 @@ jobs:
       if: github.event.inputs.config == ''
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
+        chcp
         msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:Platform=IA-32 ${{env.SOLUTION_FILE_PATH}}
 
     - name: Build EP amd64
