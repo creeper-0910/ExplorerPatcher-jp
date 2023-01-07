@@ -167,6 +167,14 @@
 ;x 0 Windows 10 のフライアウト (デフォルト)
 ;x 1 Windows 7
 "UseWin32BatteryFlyout"=dword:00000000
+;s SystemTray_LanguageSwitcherBefore22H2 !IsWindows11Version22H2OrHigher
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;c 3 言語 スイッチャー *
+;x 0 Windows 11 (デフォルト)
+;x 1 Windows 10 (言語設定の項目あり)
+;x 4 Windows 10
+"IMEStyle"=dword:00000000
+;g SystemTray_LanguageSwitcherBefore22H2
 ;s SystemTray_LanguageSwitcherAfter22H2 IsWindows11Version22H2OrHigher
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;c 4 キーボード レイアウト (IME) の切り替え *
@@ -235,6 +243,7 @@
 ;x 2 使用しない
 "MicaEffectOnTitlebar"=dword:00000000
 ;g Explorer_TitlebarSection
+
 
 
 ;T スタート メニュー
@@ -663,6 +672,7 @@
 "DoNotRedirectNotificationIconsToSettingsApp"=dword:00000000
 
 
+
 ;T アップデート
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;z 3 ファイル エクスプローラーの起動時
@@ -739,6 +749,7 @@
 ;x 8000 8 秒
 ;x 10000 10 秒
 "ExplorerReadyDelay"=dword:00000000
+
 
 
 ;T 私達について

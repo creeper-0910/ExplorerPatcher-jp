@@ -71,6 +71,7 @@ jobs:
     - name: Enable SimpleWindowSwitcher support for newer Windows SDKs
       shell: cmd
       run: |
+        chcp 932
         cd libs/sws
         C:\msys64\usr\bin\wget.exe https://github.com/valinet/sws/commit/972acb76d1e6429133c92ed7cdefd29b9a2c6179.patch
         C:\msys64\usr\bin\dos2unix.exe 972acb76d1e6429133c92ed7cdefd29b9a2c6179.patch
@@ -89,6 +90,7 @@ jobs:
     - name: Build funchook
       shell: powershell
       run: |
+        chcp 932
         cd libs/funchook
         md build
         cd build
