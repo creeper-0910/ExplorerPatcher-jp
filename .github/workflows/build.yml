@@ -71,6 +71,7 @@ jobs:
     - name: Enable SimpleWindowSwitcher support for newer Windows SDKs
       shell: cmd
       run: |
+        chcp 65001
         cd libs/sws
         C:\msys64\usr\bin\wget.exe https://github.com/valinet/sws/commit/972acb76d1e6429133c92ed7cdefd29b9a2c6179.patch
         C:\msys64\usr\bin\dos2unix.exe 972acb76d1e6429133c92ed7cdefd29b9a2c6179.patch
@@ -89,6 +90,7 @@ jobs:
     - name: Build funchook
       shell: powershell
       run: |
+        chcp 65001
         cd libs/funchook
         md build
         cd build
@@ -100,18 +102,21 @@ jobs:
       if: github.event.inputs.config == ''
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
+        chcp 65001
         msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:Platform=IA-32 ${{env.SOLUTION_FILE_PATH}}
 
     - name: Build EP amd64
       if: github.event.inputs.config == ''
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
+        chcp 65001
         msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:Platform=amd64 ${{env.SOLUTION_FILE_PATH}}
 
     - name: Build EP custom
       if: github.event.inputs.config != ''
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
+        chcp 65001
         msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:Platform=${{ github.event.inputs.config }} ${{env.SOLUTION_FILE_PATH}}
 
     - name: Create expected build directory
