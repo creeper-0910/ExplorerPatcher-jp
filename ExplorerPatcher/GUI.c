@@ -2,7 +2,7 @@
 DEFINE_GUID(LiveSetting_Property_GUID, 0xc12bcd8e, 0x2a8e, 0x4950, 0x8a, 0xe7, 0x36, 0x25, 0x11, 0x1d, 0x58, 0xeb);
 #include <oleacc.h>
 #include "GUI.h"
-#define UNICODE
+
 TCHAR GUI_title[260];
 FILE* AuditFile = NULL;
 LANGID locale;
@@ -1120,7 +1120,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                 lastHeading[0] = 0;
                 continue;
             }
-            if (strcmp(line, "Windows Registry Editor Version 5.00\r\n") &&
+            if (strcmp(line, "Windows Registry Editor Version 5.00\r\n") && 
                 strcmp(line, "\r\n") && 
                 (currentSection == -1 || currentSection == _this->section || !strncmp(line, ";T ", 3) || !strncmp(line, ";f", 2) || AuditFile) &&
                 !((!IsThemeActive() || IsHighContrast() || !IsWindows11() || IsDwmExtendFrameIntoClientAreaBrokenInThisBuild()) && !strncmp(line, ";M ", 3))
@@ -1294,7 +1294,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
 
                             sprintf_s(p, MAX_PATH, "%d.%d.%d.%d%s", dwLeftMost, dwSecondLeft, dwSecondRight, dwRightMost, 
 #if defined(DEBUG) | defined(_DEBUG)
-                                " (デバッグ)"
+                                " (Debug)"
 #else
                                 ""
 #endif
