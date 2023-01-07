@@ -10,7 +10,7 @@
 ;x 0 Windows 11 (デフォルト)
 ;x 1 Windows 10
 "OldTaskbar"=dword:00000001
-;y 設定アプリでその他のタスク バー オプションを開く🡕
+;y 設定アプリでその他のタスク バー オプションを開く 🡕                                                            
 ;ms-settings:taskbar
 ;y 通知領域のアイコンをカスタマイズする 🡕
 ;shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}
@@ -167,6 +167,14 @@
 ;x 0 Windows 10 のフライアウト (デフォルト)
 ;x 1 Windows 7
 "UseWin32BatteryFlyout"=dword:00000000
+;s SystemTray_LanguageSwitcherBefore22H2 !IsWindows11Version22H2OrHigher
+[HKEY_CURRENT_USER\Software\ExplorerPatcher]
+;c 3 言語の切り替え *
+;x 0 Windows 11 (デフォルト)
+;x 1 Windows 10 (言語設定の項目あり)
+;x 4 Windows 10
+"IMEStyle"=dword:00000000
+;g SystemTray_LanguageSwitcherBefore22H2
 ;s SystemTray_LanguageSwitcherAfter22H2 IsWindows11Version22H2OrHigher
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;c 4 キーボード レイアウト (IME) の切り替え *
@@ -235,6 +243,7 @@
 ;x 2 使用しない
 "MicaEffectOnTitlebar"=dword:00000000
 ;g Explorer_TitlebarSection
+
 
 
 ;T スタート メニュー
@@ -570,7 +579,7 @@
 ;s Spotlight_SpotlightEnabledCheck IsSpotlightEnabled
 ;T スポットライト
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b ""この写真について学ぶ""のアイコンを非表示にする
+;b "この写真について学ぶ"のアイコンを非表示にする
 "SpotlightDisableIcon"=dword:00000000
 ;c 8 デスクトップのコンテキストメニューの項目
 ;x 0 項目なし
@@ -663,6 +672,7 @@
 "DoNotRedirectNotificationIconsToSettingsApp"=dword:00000000
 
 
+
 ;T アップデート
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;z 3 ファイル エクスプローラーの起動時
@@ -741,6 +751,7 @@
 "ExplorerReadyDelay"=dword:00000000
 
 
+
 ;T 私達について
 ;e ExplorerPatcher-jp (非公式日本語版ビルド)
 ;e バージョン %VERSIONINFORMATIONSTRING%
@@ -748,13 +759,13 @@
 ;e 
 ;e このプロジェクトは、Windows 上での作業環境を改善することを目的としています。
 ;e Valentin-Gabriel Radu によって設計されました。この非公式日本語版は、creeper-0910 によって作成されています。
-;e 動作環境: Windows 11
-;t OS ビルド: %OSVERSIONSTRING%
+;t 動作環境: Windows 11 (%OSVERSIONSTRING%)
 ;y プロジェクトの GitHub (公式ビルド) (https://github.com/valinet) 🡕
+
 ;https://github.com/valinet
+;q
 ;y プロジェクトのGitHub (非公式日本語版ビルド) (https://github.com/creeper-0910/ExplorerPatcher-jp) 🡕
 ;https://github.com/creeper-0910/ExplorerPatcher-jp
-;q
 ;y 公式の Webサイト (https://www.valinet.ro) 🡕
 ;https://www.valinet.ro
 ;y 公式の作者にメールを送る (valentingabrielradu@gmail.com) 🡕
