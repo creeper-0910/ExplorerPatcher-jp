@@ -3,6 +3,18 @@
 
 ⚠️ExplorerPatcher-jpは、ExplorerPatcherの日本語化と日本語環境向けの最適化を行ったExplorerPatcherの「非公式なビルド」です! 公式ではありません!
 
+このプログラムはWindows Updateによって正常に動作しなくなる可能性があります。自己責任でご利用ください。
+
+もし、無限再起動等でアンインストールできなくなった場合は以下の方法をお試しください。
+
+> アンインストール方法
+>
+> Ctrl + Alt +Delを押下し、タスクマネージャーを選択します。
+>
+> ファイル(F)⇢新しいタスクの実行(N)でappwiz.cplと入力し、アプリと機能を起動します。
+>
+> ExplorerPatcherを検索し、アンインストールします。
+
 ![Build status](https://github.com/valinet/ExplorerPatcher/actions/workflows/build.yml/badge.svg)
 
 ## お礼
@@ -10,8 +22,9 @@
 最近、沢山の方々がExplorerPatcher-jpを使用してくださっているようでとても嬉しいです!
 翻訳やバグに関するお問い合わせはissueから受け付けておりますので、お気軽にどうぞ!
 |翻訳に貢献してくださった方々|
-|-----------------------|          
+|-----------------------|
 |reindex-otさん|
+|Rukotoさん|
 
 ご協力ありがとうございます!
 
