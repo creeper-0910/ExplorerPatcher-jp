@@ -1,5 +1,7 @@
 # ExplorerPatcher-jp
 このプロジェクトは、Windows上での作業環境を改善することを目的としています。  
+# ⚠️Windows 11の更新プログラム"KB5022913"を適用した場合、ExplorerPatcherを利用している環境下でexplorer.exeが無限に再起動しWindowsが起動しなくなる問題が発生しています。
+更新が来るまで利用しないことをおすすめします。
 
 ⚠️ExplorerPatcher-jpは、ExplorerPatcherの日本語化と日本語環境向けの最適化を行ったExplorerPatcherの「非公式なビルド」です! 公式ではありません!
 
