@@ -2,6 +2,25 @@
 
 本書には、GitHub の [Releases](https://github.com/creeper-0910/ExplorerPatcher-jp/releases) に掲載されているものと同じリリースノートが含まれています。
 
+## 22621.1413.54
+
+Tested on OS build 22621.1413.
+
+Please make sure you are connected to the Internet while installing, the application might need to perform one-time downloads for several resources in order to enable full functionality.
+
+#### Details
+
+##### 1
+
+* Windows 10 taskbar: Fixed a bug that made the following functionalities have issues or stop working: Task View button, `Win-Tab`, `Alt-Tab` after pressing `Win-Tab`, flyouts alignment, notification center alignment, `Win` key shortcuts on OS build 22621.1413+ (thanks @CthRio for the heads up). (0ad140c)
+* Setup: Fixed a bug that prevented File Explorer from starting automatically after servicing the application if the installer run using different credentials than the logged on user (thanks @Abestanis). (1738b45)
+* Weather: Fixed widget icons when using Microsoft icon pack. (2a1aad2)
+* Implemented a mechanism to stop repeated crashes. (d7e5b7d)
+
+##### 2
+
+* Weather: Fixed a bug that prevented the widget from displaying correctly. (a5e5287)
+
 ## 22621.1344.53
 
 Tested on OS builds 22621.1344, 22000.1574, and 19044.1466.
