@@ -21,6 +21,10 @@ Please make sure you are connected to the Internet while installing, the applica
 
 * Weather: Fixed a bug that prevented the widget from displaying correctly. (a5e5287)
 
+##### 3
+
+* Windows 11 Start menu: Better enforcement for disabling the "Recommended" section. (27a8fd9)
+
 ## 22621.1344.53
 
 Tested on OS builds 22621.1344, 22000.1574, and 19044.1466.
