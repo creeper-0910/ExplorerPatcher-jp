@@ -2,6 +2,16 @@
 
 本書には、GitHub の [Releases](https://github.com/creeper-0910/ExplorerPatcher-jp/releases) に掲載されているものと同じリリースノートが含まれています。
 
+## 22621.1555.55
+
+Tested on OS build 22621.1555. Installer requires Internet connectivity.
+
+#### Details
+
+##### 1
+
+* Weather: Fixed a bug that prevented the widget from loading when using the Microsoft icon pack. (968d969)
+
 ## 22621.1413.54
 
 Tested on OS build 22621.1413.
