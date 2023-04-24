@@ -1,6 +1,6 @@
-# Explorer Patcher JP Change log
+# ExplorerPatcher-jpの変更ログ
 
-This document includes the same release notes as in the [Releases](https://github.com/valinet/ExplorerPatcher/releases) section on GitHub.
+本書には、GitHub の [Releases](https://github.com/creeper-0910/ExplorerPatcher-jp/releases) に掲載されているものと同じリリースノートが含まれています。
 
 ## 22621.1555.55
 
@@ -133,21 +133,21 @@ Please make sure you are connected to the Internet while installing, the applica
 
 ## 22622.450.50
 
-Tested on OS build 22622.450.
+OSビルド22622.450でテストしています。
 
-Please make sure you are connected to the Internet while installing, the application might need to perform one-time downloads for several resources in order to enable full functionality.
+インストール中はインターネットに接続されていることを確認してください。完全な機能を有効にするために、アプリケーションはいくつかのリソースを一度にダウンロードする必要がある場合があります。
 
-#### Details
+#### 詳細
 
 ##### 1
 
-* Support for OS builds 22621+. Read more [here](https://github.com/valinet/ExplorerPatcher/issues/1082#issuecomment-1206690333).
-* Added an option to shrink address bar height in File Explorer windows (thanks @krlvm).
+* OS ビルド 22621+ に対応しました。詳しくは[こちら](https://github.com/valinet/ExplorerPatcher/issues/1082#issuecomment-1206690333)をご覧ください。
+* ファイルエクスプローラーのアドレスバーの高さを縮小するオプションを追加した。
 
 ##### 2
 
-* Support for disabling the modern search bar in 32-bit applications as well (thanks @krlvm).
-* Fixed a bug that could prevent deleting registry keys when the application was supposed to (for example, when uninstalling or toggling certain settings).
+* 32ビットアプリケーションでもモダン検索バーを無効にできるようになりました（@krlvm に感謝します）。
+* アプリケーションがレジストリキーを削除するはずなのに、削除されないことがあるバグを修正しました（例えば、アンインストール時や特定の設定を切り替える時など）。
 
 ##### 3
 
@@ -156,98 +156,151 @@ Please make sure you are connected to the Internet while installing, the applica
 
 ## 22000.795.48
 
-Tested on OS build 22000.795.
+OSビルド22000.795でテスト済みです。
 
-Please make sure you are connected to the Internet while installing, the application might need to perform one-time downloads for several resources in order to enable full functionality.
+インストール時には、インターネットに接続されていることを確認してください。
 
-#### Details
+#### 詳細
 
 ##### 1
 
-* Weather: Fixed a bug that could hang the widget and lead to an infinite loop with the program using an entire CPU core when the computer resumed from sleep or hibernation.
-* Weather: Fixed a bug that had the widget display the error page when the computer lost network connectivity; instead, now the widget continues to display the cached data from the previous refresh (if any).
+* 天気予報 コンピュータがスリープまたは休止状態から復帰したときに、ウィジェットがハングし、プログラムが CPU コア全体を使用する無限ループになる可能性があるバグを修正しました。
+* 天気予報。Weather: コンピュータがネットワーク接続を失ったときに、ウィジェットがエラーページを表示するバグを修正しました。
 
 ##### 2
 
-* Weather: Fixed a bug that could hang explorer and the weather widget host process under certain circumstances, for example, when explorer restarted.
+* 天気予報 エクスプローラの再起動など、特定の状況下でエクスプローラと天気予報ウィジェットホストプロセスがハングアップすることがあるバグを修正しました。
+
+## 22622.450.50
+
+OSビルド22622.450でテストしています。
+
+インストール中はインターネットに接続されていることを確認してください。完全な機能を有効にするために、アプリケーションはいくつかのリソースを一度にダウンロードする必要がある場合があります。
+
+#### 詳細
+
+##### 1
+
+* OS ビルド 22621+ に対応しました。詳しくは[こちら](https://github.com/valinet/ExplorerPatcher/issues/1082#issuecomment-1206690333)をご覧ください。
+* ファイルエクスプローラーのアドレスバーの高さを縮小するオプションを追加した。
+
+##### 2
+
+* 32ビットアプリケーションでもモダン検索バーを無効にできるようになりました（@krlvm に感謝します）。
+* アプリケーションがレジストリキーを削除するはずなのに、削除されないことがあるバグを修正しました（例えば、アンインストール時や特定の設定を切り替える時など）。
+
+## 22000.795.48
+
+OSビルド22000.795でテスト済みです。
+
+インストール時には、インターネットに接続されていることを確認してください。
+
+#### 詳細
+
+##### 1
+
+* 天気予報 コンピュータがスリープまたは休止状態から復帰したときに、ウィジェットがハングし、プログラムが CPU コア全体を使用する無限ループになる可能性があるバグを修正しました。
+* 天気予報。Weather: コンピュータがネットワーク接続を失ったときに、ウィジェットがエラーページを表示するバグを修正しました。
+
+##### 2
+
+* 天気予報 エクスプローラの再起動など、特定の状況下でエクスプローラと天気予報ウィジェットホストプロセスがハングアップすることがあるバグを修正しました。
 
 ## 22000.778.47
 
-Tested on OS build 22000.778.
+OSビルド22000.778でテスト済みです。
 
-Please make sure you are connected to the Internet while installing, the application might need to perform one-time downloads for several resources in order to enable full functionality.
+インストール時にはインターネットに接続されていることを確認してください。完全な機能を有効にするために、いくつかのリソースを一度にダウンロードする必要がある場合があります。
 
-#### Details
+#### 詳細
 
 ##### 1
 
-* Built-in support for OS build 22000.778.
-* Fixed a bug that had the Start button context menu / Win-X menu / power user menu fail to display and potentially lock the shell on OS builds 22000.778+ and 22621+
+* OSビルド22000.778をビルトインしました。
+* OS ビルド 22000.778+ および 22621+ において、スタートボタンのコンテキストメニュー / Win-X メニュー / パワーユーザーメニューが表示されず、シェルがロックされる可能性があったバグを修正しました。
 
 ##### 2
 
-* Fixed a system high DPI-related bug that caused wide Windows 10 taskbar buttons and incorrect (desktop) icon spacing
+* Windows 10 のタスクバーボタンが広くなり、（デスクトップの）アイコンの間隔が不正になるシステムの高 DPIに関連するバグを修正しました。
+##### 3
+
+* 翻訳を追加しました
+##### 4
+
+* プルリクエストを適用 - reindex-otさんありがとうございます！
+* 翻訳の追加修正
+* 通知の翻訳追加等
 
 ## 22000.708.46
 
-Tested on OS build 22000.708.
+OSビルド 22000.708 でテストされました。
 
-Please make sure you are connected to the Internet while installing, the application might need to perform one-time downloads for several resources in order to enable full functionality.
+インストール中は、インターネットに接続されていることを確認してください。完全な機能を有効にするために、アプリケーションはいくつかのリソースの1回限りのダウンロードを実行する必要がある場合があります。
 
 #### Details
 
 ##### 1
 
-* Built-in support for OS build 22000.708.
-* Added configuration options for the new Windows Spotlight desktop background feature, including:
-  * Hide the "Learn about this picture" icon
-  * Choose which items from the Windows spotlight icon context menu to have replicated in the desktop context menu (legacy context menu only)
-  * Set a schedule for "Switch to next picture"
-  * Manipulate the feature from the Properties UI, bypassing the desktop icon
-* The Properties UI hides sections that are not applicable to your current settings; for example, the "Weather" tab is not displayed if you've selected the Windows 11 taskbar, as none of the options in there apply when in this mode.
+* OS ビルド 22000.708 をビルトインでサポートされました。
+* 新しい Windows Spotlight デスクトップ背景機能のための設定オプションを追加しました。
+  * この画像について学ぶ」アイコンを非表示にします。
+  * Windowsスポットライトアイコンのコンテキストメニューから、デスクトップのコンテキストメニューに複製される項目を選択します（レガシーコンテキストメニューのみ）。
+  * 次の画像に切り替える" のスケジュールを設定する。
+  * デスクトップ アイコンをバイパスして、プロパティ UI から機能を操作します。
+* 例えば、「天気」タブは、Windows 11タスクバーを選択した場合、このモードではその中のオプションは何も適用されないため、表示されません。
 
 ##### 2
 
-* sws: Fixed a bug that created unnecessary paint events when a window was flashing and the switcher is not shown
+* sws: ウィンドウが点滅しているときにスイッチャーが表示されないと、不要なペイントイベントが発生する不具合を修正
 
 ##### 3
 
-* Added option to hide the "Show desktop" button, but still retain its functionality, when using the Windows 10 taskbar
-* Fixed a bug in Windows 10 where the Start menu was displayed centered by default
+* Windows 10 のタスクバー使用時に「デスクトップを表示」ボタンを非表示にし、機能を保持するオプションを追加しました。
+* Windows 10 でスタートメニューがデフォルトで中央に表示される不具合を修正
 
 ##### 4
 
-* Weather: Show "Reload" link when data fails to load (thanks Varun A. for the suggestion)
-* sws: Draw placeholder thumbnail when a proper thumbnail cannot be obtained (for example, due to a window having an invalid width or height)
-* sws: Fixed a bug that could prevent the switcher from identifying when the desktop is in the foreground
-* sws: Fixed a regression that could prevent the switcher from properly detecting foreground window changes
-* sws: Fixed a bug that made very small windows have a rectangle area too small for properly working with in the switcher
+* 天気予報のデータ読み込みに失敗した場合、「再読み込み」リンクを表示（提案いただいたVarun A.氏に感謝します）
+* sws: 適切なサムネイルが得られない場合、プレースホルダのサムネイルを表示します（例：ウィンドウの幅や高さが無効な場合）
+* sws: デスクトップがフォアグラウンドにあるときにスイッチャーが識別できないバグを修正
+* sws: スイッチャーがフォアグラウンドウィンドウの変更を適切に検出することを妨げる意図しない影響を修正しました。
+* sws: 非常に小さなウィンドウで、矩形領域が小さいためにスイッチャーで正しく動作しないバグを修正。
 
 ##### 5
 
-* Fixed a bug that could prevent Control Panel link redirection from working correctly
-* Weather: Fixed a bug that prevented the widget from working when WebView2 Runtime >= 102.0.1245.33
+* コントロールパネルのリンクリダイレクトが正しく動作しない場合がある不具合を修正しました。
+* 天気予報:WebView2 Runtime >= 102.0.1245.33 の場合、ウィジェットが動作しないバグを修正。
 
 ##### 6
 
-* Fix a bug in the Properties window that had the it fail to display some sections under default settings
-  
+* デフォルトの設定で、一部のセクションが表示されない不具合を修正しました。
+
 ## 22000.675.45
 
-Tested on OS build 22000.675.
+OSビルド 22000.675 でテストされました。
 
-Please make sure you are connected to the Internet while installing, the application might need to perform one-time downloads for several resources in order to enable full functionality.
+インストール中は、インターネットに接続されていることを確認してください。完全な機能を有効にするために、アプリケーションはいくつかのリソースの1回限りのダウンロードを実行する必要がある場合があります。
 
-#### Details
+#### 詳細
 
 ##### 1
 
-* sws: Fixed a bug that displayed a wrong window to switch to when a background application was denied the request to have the foreground window by the OS (#1084)
+* sws: バックグラウンドアプリケーションが OS によってフォアグラウンドウィンドウを持つ要求を拒否されたときに、切り替えるウィンドウが間違って表示されるバグを修正しました (#1084)
 
 ##### 2
 
-* libvalinet: Fixed a memory leak in `toast.h`
-* sws: Fixed a bug that caused the switcher to display non-responsive (hung) immersive (UWP) windows twice in the list
+* 更新用のurlにミスが有ったので修正しました。
+* 文字化けを修正しました。
+* ウィンドウサイズを修正しました。
+
+##### 3
+
+* libvalinet: toast.h` のメモリリークを修正。
+* sws: スイッチャーが応答しない (ハングした) immersive (UWP) ウィンドウをリストに 2 回表示する原因となっていたバグを修正した
+
+##### 3
+
+* sws: Fixed a bug that created unnecessary paint events when a window was flashing and the switcher is not shown
 
 ##### 3
 
