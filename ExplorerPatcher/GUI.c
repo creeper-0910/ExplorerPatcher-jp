@@ -3143,7 +3143,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                 1,
                                 0
                             );
-                            swprintf(text + 3, MAX_LINE_LENGTH, _T("アプリケーションごとのウィンドウリストを無効にする ( Alt + %c )"), key);
+                            swprintf(text + 3, MAX_LINE_LENGTH, L"アプリごとのインタラクション リストを無効にする ( Alt + %c )", key);
                         }
                         if (tabOrder == _this->tabOrder)
                         {
