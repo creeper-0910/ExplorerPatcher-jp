@@ -255,13 +255,13 @@
 "AltTabSettings"=dword:00000000
 ;t 以下の設定は Simple Window Switcher のみ適用されます:
 [HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
-;b デスクトップを含める
+;b デスクトップをインタラクション リストの最後のウィンドウとして表示する
 "IncludeWallpaper"=dword:00000001
-;b 常にプライマリ ディスプレイに表示する
+;b 常にプライマリーモニターにスイッチャーを表示する
 "PrimaryOnly"=dword:00000000
-;b 現在のディスプレイで表示されているウィンドウのみを表示する
+;b カーソルのあるモニターからしかウィンドウを表示しない
 "PerMonitor"=dword:00000000
-;b 直近のウィンドウのみ表示 (アプリケーション スイッチャーごと)
+;b 同じアプリのウィンドウをグループ化する
 "SwitcherIsPerApplication"=dword:00000000
 ;b %PLACEHOLDER_0001%
 "NoPerApplicationList"=dword:00000000
