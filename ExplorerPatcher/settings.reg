@@ -328,7 +328,7 @@
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_NoStartMenuMorePrograms"=dword:00000000
 ;u ファイル エクスプローラーから Windows 10 のスタート メニューにタイルをピン留めする
 ;pin_tiles
-;y IMPORTANT, MUST READ: Notice regarding this feature (online)
+;y 必ずお読みください: この機能に関する重要なお知らせ (webサイトで開きます)
 ;https://github.com/valinet/ExplorerPatcher/discussions/1679
 ;g StartMenu_Windows10
 

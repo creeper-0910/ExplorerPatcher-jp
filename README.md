@@ -1,7 +1,10 @@
 # ExplorerPatcher-jp
 このプロジェクトは、Windows上での作業環境を改善することを目的としています。  
 
-⚠️ExplorerPatcher-jpは、ExplorerPatcherの日本語化と日本語環境向けの最適化を行ったExplorerPatcherの「非公式なビルド」です! 公式ではありません!
+## ⚠️警告
+ExplorerPatcher-jpは、ExplorerPatcherの日本語化と日本語環境向けの最適化を行ったExplorerPatcherの「非公式なビルド」です! 公式ではありません!  
+非公式日本語訳の更新は遅れる場合があります。  
+更新に気づいていない場合もありますので、Twitterでメンション等して頂ければできるだけ早く更新します。
 
 このプログラムはWindows Updateによって正常に動作しなくなる可能性があります。自己責任でご利用ください。
 
