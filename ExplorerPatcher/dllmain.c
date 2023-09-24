@@ -2411,6 +2411,8 @@ LRESULT CALLBACK Shell_TrayWndMouseProc(
     return CallNextHookEx(Shell_TrayWndMouseHook, nCode, wParam, lParam);
 }
 
+PBYTE g_pTrayUIHost;
+
 INT64 Shell_TrayWndSubclassProc(
     _In_ HWND   hWnd,
     _In_ UINT   uMsg,
@@ -2492,29 +2494,25 @@ INT64 Shell_TrayWndSubclassProc(
                 }
                 DeleteMenu(hSubMenu, 424, MF_BYCOMMAND); // Lock the taskbar
                 DeleteMenu(hSubMenu, 425, MF_BYCOMMAND); // Lock all taskbars
-                HWND hShellTray_Wnd = FindWindowExW(NULL, NULL, L"Shell_TrayWnd", NULL);
-                INT64* CTrayInstance = (BYTE*)(GetWindowLongPtrW(hShellTray_Wnd, 0)); // -> CTray
-                const unsigned int TRAYUI_OFFSET_IN_CTRAY = 110;
-                uintptr_t TrayUIInstance = *((INT64*)CTrayInstance + TRAYUI_OFFSET_IN_CTRAY) + 8;
-                if (TrayUIInstance)
+                if (g_pTrayUIHost)
                 {
-                    int offset = 656;
-                    if (IsWindows11Version22H2OrHigher()) offset = 640;
-                    if (IsWindows11Version22H2Build2134OrHigher()) offset = 648;
-                    if ((*(unsigned __int8(__fastcall**)(INT64))(**(INT64**)(TrayUIInstance + offset) + 104i64))(*(INT64*)(TrayUIInstance + offset)))
+                    void** pTrayUIHostVtbl = *(void***)g_pTrayUIHost;
+                    BOOL (*ShouldDeleteContextMenuUndo)(PBYTE) = pTrayUIHostVtbl[13];
+                    UINT (*GetContextMenuUndoResourceId)(PBYTE) = pTrayUIHostVtbl[14];
+
+                    if (ShouldDeleteContextMenuUndo(g_pTrayUIHost))
                     {
-                        DeleteMenu(hSubMenu, 0x1A0u, 0);
+                        DeleteMenu(hSubMenu, 416, MF_BYCOMMAND);
                     }
                     else
                     {
-                        WCHAR Buffer[MAX_PATH];
-                        WCHAR v40[MAX_PATH];
-                        WCHAR NewItem[MAX_PATH];
-                        LoadStringW(GetModuleHandleW(NULL), 0x216u, Buffer, 64);
-                        UINT v22 = (*(__int64(__fastcall**)(INT64))(**(INT64**)(TrayUIInstance + offset) + 112i64))(*(INT64*)(TrayUIInstance + offset));
-                        LoadStringW(GetModuleHandleW(NULL), v22, v40, 96);
-                        swprintf_s(NewItem, 0xA0ui64, Buffer, v40);
-                        ModifyMenuW(hSubMenu, 0x1A0u, 0, 0x1A0ui64, NewItem);
+                        WCHAR wszTemplate[64];
+                        WCHAR wszCommand[96];
+                        WCHAR wszMenu[160];
+                        LoadStringW(GetModuleHandleW(NULL), 534, wszTemplate, 64);
+                        LoadStringW(GetModuleHandleW(NULL), GetContextMenuUndoResourceId(g_pTrayUIHost), wszCommand, 96);
+                        swprintf_s(wszMenu, 160, wszTemplate, wszCommand);
+                        ModifyMenuW(hSubMenu, 416, MF_BYCOMMAND, 416, wszMenu);
                     }
                 }
                 else
@@ -4277,18 +4275,21 @@ INT64 winrt_Windows_Internal_Shell_implementation_MeetAndChatManager_OnMessageHo
 
 #pragma region "Enable old taskbar"
 #ifdef _WIN64
-DEFINE_GUID(GUID_18C02F2E_2754_5A20_8BD5_0B34CE79DA2B,
-    0x18C02F2E,
-    0x2754, 0x5A20, 0x8b, 0xd5,
-    0x0b, 0x34, 0xce, 0x79, 0xda, 0x2b
-);
 HRESULT explorer_RoGetActivationFactoryHook(HSTRING activatableClassId, GUID* iid, void** factory)
 {
     PCWSTR StringRawBuffer = WindowsGetStringRawBuffer(activatableClassId, 0);
-    if (!wcscmp(StringRawBuffer, L"WindowsUdk.ApplicationModel.AppExtensions.XamlExtensions") && IsEqualGUID(iid, &GUID_18C02F2E_2754_5A20_8BD5_0B34CE79DA2B))
+    if (!wcscmp(StringRawBuffer, L"WindowsUdk.ApplicationModel.AppExtensions.XamlExtensions"))
     {
-        *factory = &XamlExtensionsFactory;
-        return S_OK;
+        if (IsEqualGUID(iid, &IID_WindowsUdk_ApplicationModel_AppExtensions_IXamlExtensionsStatics))
+        {
+            *factory = &instanceof_WindowsUdk_ApplicationModel_AppExtensions_IXamlExtensionsStatics;
+            return S_OK;
+        }
+        if (IsEqualGUID(iid, &IID_WindowsUdk_ApplicationModel_AppExtensions_IXamlExtensionsStatics2))
+        {
+            *factory = &instanceof_WindowsUdk_ApplicationModel_AppExtensions_IXamlExtensionsStatics2;
+            return S_OK;
+        }
     }
     return RoGetActivationFactory(activatableClassId, iid, factory);
 }
@@ -9629,17 +9630,36 @@ struct RTL_FEATURE_CONFIGURATION {
 int (*RtlQueryFeatureConfigurationFunc)(UINT32 featureId, int sectionType, INT64* changeStamp, struct RTL_FEATURE_CONFIGURATION* buffer);
 int RtlQueryFeatureConfigurationHook(UINT32 featureId, int sectionType, INT64* changeStamp, struct RTL_FEATURE_CONFIGURATION* buffer) {
     int rv = RtlQueryFeatureConfigurationFunc(featureId, sectionType, changeStamp, buffer);
+    switch (featureId)
+    {
 #if !USE_MOMENT_3_FIXES_ON_MOMENT_2
-    if (IsWindows11Version22H2Build1413OrHigher() && bOldTaskbar && featureId == 26008830) {
-        // Disable tablet optimized taskbar feature when using the Windows 10 taskbar
-        // 
-        // For now, this fixes Task View and Win-Tab, Alt-Tab breaking after pressing Win-Tab, 
-        // flyouts alignment, notification center alignment, Windows key shortcuts on
-        // OS builds 22621.1413+
-        //
-        buffer->enabledState = FEATURE_ENABLED_STATE_DISABLED;
-    }
+        case 26008830: // STTest
+        {
+            if (bOldTaskbar)
+            {
+                // Disable tablet optimized taskbar feature when using the Windows 10 taskbar
+                //
+                // For now, this fixes Task View and Win-Tab, Alt-Tab breaking after pressing Win-Tab,
+                // flyouts alignment, notification center alignment, Windows key shortcuts on
+                // OS builds 22621.1413+
+                //
+                buffer->enabledState = FEATURE_ENABLED_STATE_DISABLED;
+            }
+            break;
+        }
 #endif
+#if 0
+        case 42952021: // CategorySpecificXamlExtensions
+        {
+            if (bOldTaskbar)
+            {
+                // Make CTray::Init() use IXamlExtensionsStatics (first version, that we can modify)
+                buffer->enabledState = FEATURE_ENABLED_STATE_DISABLED;
+            }
+            break;
+        }
+#endif
+    }
     return rv;
 }
 #pragma endregion
@@ -10693,6 +10713,8 @@ DWORD Inject(BOOL bIsExplorer)
 
 
     HANDLE hExplorer = GetModuleHandleW(NULL);
+    MODULEINFO miExplorer;
+    GetModuleInformation(GetCurrentProcess(), hExplorer, &miExplorer, sizeof(MODULEINFO));
     SetChildWindowNoActivateFunc = GetProcAddress(GetModuleHandleW(L"user32.dll"), (LPCSTR)2005);
     if (bOldTaskbar)
     {
@@ -10762,7 +10784,29 @@ DWORD Inject(BOOL bIsExplorer)
         VnPatchIAT(hExplorer, "dwmapi.dll", "DwmUpdateThumbnailProperties", explorer_DwmUpdateThumbnailPropertiesHook);
         PatchExplorer_UpdateWindowAccentProperties();
     }
-
+    if (IsWindows11())
+    {
+        // Find a pointer to ITrayUIHost needed to have a working Windows 10 taskbar context menu on Windows 11 taskbar
+        // Ref: CTray::Init()
+        // 4C 8D 05 ? ? ? ? 48 8D 0D ? ? ? ? E8 ? ? ? ? 48 8B 8D
+        //                           ^^^^^^^
+        PBYTE match = FindPattern(
+            hExplorer,
+            miExplorer.SizeOfImage,
+            "\x4C\x8D\x05\x00\x00\x00\x00\x48\x8D\x0D\x00\x00\x00\x00\xE8\x00\x00\x00\x00\x48\x8B\x8D",
+            "xxx????xxx????x????xxx"
+        );
+        if (match)
+        {
+            match += 7;
+            g_pTrayUIHost = match + 7 + *(int*)(match + 3);
+            printf("ITrayUIHost = %llX\n", g_pTrayUIHost - (PBYTE)hExplorer);
+        }
+        else
+        {
+            printf("Failed to find ITrayUIHost, the custom Windows 11 taskbar context menu will not have the undo function\n");
+        }
+    }
 
     HANDLE hShcore = LoadLibraryW(L"shcore.dll");
     SHWindowsPolicy = GetProcAddress(hShcore, (LPCSTR)190);
@@ -10835,7 +10879,7 @@ DWORD Inject(BOOL bIsExplorer)
             //                                        ^^^^^^^
             PBYTE match = FindPattern(
                 hTwinuiPcshell,
-                miTwinuiPcshell.lpBaseOfDll,
+                miTwinuiPcshell.SizeOfImage,
                 "\x4D\x8B\xCF\x4D\x8B\xC4\x8B\xD6\x48\x8B\x49\x08\xE8\x00\x00\x00\x00\xE9",
                 "xxxxxxxxxxxxx????x"
             );
@@ -10851,7 +10895,7 @@ DWORD Inject(BOOL bIsExplorer)
             // 48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 30 49 8B D8 48 8B FA 48 8B F1 49 83 20 00 41 B0 03 B2 01
             PBYTE match = FindPattern(
                 hTwinuiPcshell,
-                miTwinuiPcshell.lpBaseOfDll,
+                miTwinuiPcshell.SizeOfImage,
                 "\x48\x89\x5C\x24\x00\x48\x89\x74\x24\x00\x57\x48\x83\xEC\x30\x49\x8B\xD8\x48\x8B\xFA\x48\x8B\xF1\x49\x83\x20\x00\x41\xB0\x03\xB2\x01",
                 "xxxx?xxxx?xxxxxxxxxxxxxxxxxxxxxxx"
             );
@@ -10868,7 +10912,7 @@ DWORD Inject(BOOL bIsExplorer)
             //    ^^^^^^^
             PBYTE match = FindPattern(
                 hTwinuiPcshell,
-                miTwinuiPcshell.lpBaseOfDll,
+                miTwinuiPcshell.SizeOfImage,
                 "\xE8\x00\x00\x00\x00\xE8\x00\x00\x00\x00\x0F\xB7\xC8\xE8\x00\x00\x00\x00\xF7\xD8",
                 "x????x????xxxx????xx"
             );
@@ -10885,7 +10929,7 @@ DWORD Inject(BOOL bIsExplorer)
             //    ^^^^^^^
             PBYTE match = FindPattern(
                 hTwinuiPcshell,
-                miTwinuiPcshell.lpBaseOfDll,
+                miTwinuiPcshell.SizeOfImage,
                 "\xE8\x00\x00\x00\x00\x85\xDB\x74\x29",
                 "x????xxxx"
             );
@@ -10901,7 +10945,7 @@ DWORD Inject(BOOL bIsExplorer)
             //    ^^^^^^^
             PBYTE match = FindPattern(
                 hTwinuiPcshell,
-                miTwinuiPcshell.lpBaseOfDll,
+                miTwinuiPcshell.SizeOfImage,
                 "\xE8\x00\x00\x00\x00\x90\x49\x8D\x56\x38\x49\x8B\xCE",
                 "x????xxxxxxxx"
             );
@@ -10917,7 +10961,7 @@ DWORD Inject(BOOL bIsExplorer)
             //    ^^^^^^^
             PBYTE match = FindPattern(
                 hTwinuiPcshell,
-                miTwinuiPcshell.lpBaseOfDll,
+                miTwinuiPcshell.SizeOfImage,
                 "\xE8\x00\x00\x00\x00\x90\x48\x8D\x56\x38\x48\x8B\xCE",
                 "x????xxxxxxxx"
             );
@@ -10932,7 +10976,7 @@ DWORD Inject(BOOL bIsExplorer)
             // 48 83 EC 28 41 B0 03 B2 01
             PBYTE match = FindPattern(
                 hTwinuiPcshell,
-                miTwinuiPcshell.lpBaseOfDll,
+                miTwinuiPcshell.SizeOfImage,
                 "\x48\x83\xEC\x28\x41\xB0\x03\xB2\x01",
                 "xxxxxxxxx"
             );
@@ -10949,7 +10993,7 @@ DWORD Inject(BOOL bIsExplorer)
             //                                               ^^^^^^^
             PBYTE match = FindPattern(
                 hTwinuiPcshell,
-                miTwinuiPcshell.lpBaseOfDll,
+                miTwinuiPcshell.SizeOfImage,
                 "\x4C\x89\x74\x24\x00\x00\x8B\x00\x00\x8B\x00\x8B\xD7\x48\x8B\xCE\xE8\x00\x00\x00\x00\x8B",
                 "xxxx??x??x?xxxxxx????x"
             );
@@ -10962,12 +11006,12 @@ DWORD Inject(BOOL bIsExplorer)
         }
         if (!symbols_PTRS.twinui_pcshell_PTRS[8] || symbols_PTRS.twinui_pcshell_PTRS[8] == 0xFFFFFFFF)
         {
-            // Ref: CMultitaskingViewManager::_CreateMTVHost
+            // Ref: CMultitaskingViewManager::_CreateMTVHost()
             // 4C 89 74 24 ? ? 8B ? ? 8B ? 8B D7 48 8B CE E8 ? ? ? ? 90
             //                                               ^^^^^^^
             PBYTE match = FindPattern(
                 hTwinuiPcshell,
-                miTwinuiPcshell.lpBaseOfDll,
+                miTwinuiPcshell.SizeOfImage,
                 "\x4C\x89\x74\x24\x00\x00\x8B\x00\x00\x8B\x00\x8B\xD7\x48\x8B\xCE\xE8\x00\x00\x00\x00\x90",
                 "xxxx??x??x?xxxxxx????x"
             );
