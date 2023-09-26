@@ -98,3 +98,5 @@ Windows 10では、一部の機能が使用できない場合があります。
 valinet氏 (ExplorerPatcher公式の作者)へ寄付は、[PayPal](https://www.paypal.com/donate?business=valentingabrielradu%40gmail.com&no_recurring=0&item_name=ExplorerPatcher&currency_code=EUR) もしくはメール(valentingabrielradu@gmail.com) からお願いします。
 
 creeper-0910 (ExplorerPatcher-jpの作者)へ寄付は、[Github Sponsor](https://github.com/sponsors/creeper-0910)かTwitterのDMからAmazonギフト券を送っていただけるとめちゃくちゃ喜びます。
+
+Discord サーバーは[こちら](https://discord.gg/gsPcfqHTD2)から参加可能です
