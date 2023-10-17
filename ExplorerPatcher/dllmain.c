@@ -13177,7 +13177,7 @@ HRESULT InformUserAboutCrashCallback(HWND hwnd, UINT msg, WPARAM wParam, LPARAM 
 DWORD InformUserAboutCrash(LPVOID msg) {
     TASKDIALOG_BUTTON buttons[1];
     buttons[0].nButtonID = IDNO;
-    buttons[0].pszButtonText = L"Dismiss";
+    buttons[0].pszButtonText = L"OK";
 
     TASKDIALOGCONFIG td;
     ZeroMemory(&td, sizeof(TASKDIALOGCONFIG));
@@ -13185,8 +13185,8 @@ DWORD InformUserAboutCrash(LPVOID msg) {
     td.hInstance = hModule;
     td.hwndParent = NULL;
     td.dwFlags = TDF_SIZE_TO_CONTENT | TDF_ENABLE_HYPERLINKS;
-    td.pszWindowTitle = L"ExplorerPatcher";
-    td.pszMainInstruction = L"Unfortunately, File Explorer is crashing :(";
+    td.pszWindowTitle = L"ExplorerPatcher-jp";
+    td.pszMainInstruction = L"おっと、エクスプローラーがクラッシュしたようです(´・ω・｀)";
     td.pszContent = msg;
     td.cButtons = sizeof buttons / sizeof buttons[0];
     td.pButtons = buttons;
@@ -13201,10 +13201,10 @@ DWORD InformUserAboutCrash(LPVOID msg) {
     if (!(hComCtl32 = GetModuleHandleA("Comctl32.dll")) || 
         !(pfTaskDialogIndirect = GetProcAddress(hComCtl32, "TaskDialogIndirect")) ||
         FAILED(pfTaskDialogIndirect(&td, &res, NULL, NULL))) {
-        wcscat_s(msg, 10000, L" Would you like to open the ExplorerPatcher status web page on GitHub in your default browser?");
-        res = MessageBoxW(NULL, msg, L"ExplorerPatcher", MB_ICONASTERISK | MB_YESNO);
+        wcscat_s(msg, 10000, L"ExplorerPatcherのステータスページ(Github)をデフォルトのブラウザーで開きますか？");
+        res = MessageBoxW(NULL, msg, L"ExplorerPatcher-jp", MB_ICONASTERISK | MB_YESNO);
     }
-    if (res == IDYES) ShellExecuteW(NULL, L"open", L"https://github.com/valinet/ExplorerPatcher/discussions/1102", L"", NULL, SW_SHOWNORMAL);
+    if (res == IDYES) ShellExecuteW(NULL, L"開く", L"https://github.com/valinet/ExplorerPatcher/discussions/1102", L"", NULL, SW_SHOWNORMAL);
     free(msg);
 }
 
@@ -13320,7 +13320,7 @@ HRESULT EntryPoint(DWORD dwMethod)
                     RegSetKeyValueW(HKEY_CURRENT_USER, _T(REGPATH), L"CrashCounter", REG_DWORD, &crashCounter, sizeof(DWORD));
                     wchar_t times[100];
                     ZeroMemory(times, sizeof(wchar_t) * 100);
-                    swprintf_s(times, 100, crashCounterThreshold == 1 ? L"once" : L"%d times", crashCounterThreshold);
+                    swprintf_s(times, 100, crashCounterThreshold == 1 ? L"1回" : L"%d回", crashCounterThreshold);
                     wchar_t uninstallLink[MAX_PATH];
                     ZeroMemory(uninstallLink, sizeof(wchar_t) * MAX_PATH);
                     uninstallLink[0] = L'\'';
@@ -13328,19 +13328,19 @@ HRESULT EntryPoint(DWORD dwMethod)
                     wcscat_s(uninstallLink, MAX_PATH, _T(APP_RELATIVE_PATH) L"\\" _T(SETUP_UTILITY_NAME) L"' /uninstall");
                     wchar_t* msg = calloc(sizeof(wchar_t), 10000);
                     swprintf_s(msg, 10000,
-                        L"It seems that File Explorer closed unexpectedly %s in less than %d seconds each time when starting up. "
-                        L"This might indicate a problem caused by ExplorerPatcher, which might be unaware of recent changes in Windows, for example "
-                        L"when running on a new OS build.\n"
-                        L"Here are a few recommendations:\n"
-                        L"\u2022 If an updated version is available, you can <A HREF=\"eplink://update\">update ExplorerPatcher and restart File Explorer</A>.\n"
-                        L"\u2022 On GitHub, you can <A HREF=\"https://github.com/valinet/ExplorerPatcher/releases\">view releases</A>, <A HREF=\"https://github.com/valinet/ExplorerPatcher/discussions/1102\">check the current status</A>, <A HREF=\"https://github.com/valinet/ExplorerPatcher/discussions\">discuss</A> or <A HREF=\"https://github.com/valinet/ExplorerPatcher/issues\">review the latest issues</A>.\n"
-                        L"\u2022 If you suspect this is not caused by ExplorerPatcher, please uninstall any recently installed shell extensions or similar utilities.\n"
-                        L"\u2022 If no fix is available for the time being, you can <A HREF=\"%s\">uninstall ExplorerPatcher</A>, and then later reinstall it when a fix is published on "
-                        L"GitHub. Rest assured, even if you uninstall, your program configuration will be preserved.\n"
+                        L"起動時、%d秒以内に%s予期せぬエラーによってエクスプローラーがクラッシュしたようです。 "
+                        L"このクラッシュは、ExplorerPatcher-jpによって引き起こされた可能性があります。新しいOSビルドをご利用の場合、"
+                        L"ExplorerPatcher-jpがWindows側の変更を認識していない可能性があります。\n"
+                        L"推奨される対処法は以下のとおりです:\n"
+                        L"\u2022 更新が利用可能な場合、<A HREF=\"eplink://update\">ExplorerPatcher-jpを更新し、エクスプローラを再起動する/A>事ができます。\n"
+                        L"\u2022 Githubでは、<A HREF=\"https://github.com/creeper-0910/ExplorerPatcher-jp/releases\">リリースを確認したり</A>、 <A HREF=\"https://github.com/valinet/ExplorerPatcher/discussions/1102\">現在のステータスを確認したり</A>、 <A HREF=\"https://github.com/valinet/ExplorerPatcher/discussions\">ディスカッションに参加</A>または<A HREF=\"https://github.com/valinet/ExplorerPatcher/issues\">最新のissueを確認</A>することが可能です。\n"
+                        L"\u2022 ExplorerPatcher-jpが原因ではないと思われる場合は、最近インストールされたシェル拡張機能または同様のユーティリティをアンインストールしてください。\n"
+                        L"\u2022 問題が解決しない場合、<A HREF=\"%s\">ExplorerPatcher-jpをアンインストール</A>し、修正版が公開された後再インストールする事ができます。"
+                        L"アンインストールしても、ExploerePatcher-jpの設定は保持されますのでご安心ください。\n"
                         L"\n"
-                        L"I am sorry for the inconvenience this might cause; I am doing my best to try to keep this program updated and working.\n\n"
-                        L"ExplorerPatcher is disabled until the next File Explorer restart, in order to allow you to perform maintenance tasks and take the necessary actions.",
-                        times, crashThresholdTime / 1000, uninstallLink);
+                        L"ご迷惑をおかけして申し訳ありません。このプログラムを更新し、機能し続けるよう最善を尽くしています。\n\n"
+                        L"ExplorerPatcher-jpは、問題の修正を行うことができるようにするため次のエクスプローラーの再起動まで無効化されます。",
+                        crashThresholdTime / 1000, times, uninstallLink);
                     SHCreateThread(InformUserAboutCrash, msg, 0, NULL);
                     IncrementDLLReferenceCount(hModule);
                     bInstanced = TRUE;
