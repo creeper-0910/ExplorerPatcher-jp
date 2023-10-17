@@ -13736,14 +13736,14 @@ HRESULT EntryPoint(DWORD dwMethod)
                         L"このクラッシュは、ExplorerPatcher-jpによって引き起こされた可能性があります。新しいOSビルドをご利用の場合、"
                         L"ExplorerPatcher-jpがWindows側の変更を認識していない可能性があります。\n"
                         L"推奨される対処法は以下のとおりです:\n"
-                        L"\u2022 更新が利用可能な場合、<A HREF=\"eplink://update\">ExplorerPatcher-jpを更新し、エクスプローラを再起動する/A>事ができます。\n"
+                        L"\u2022 更新が利用可能な場合、<A HREF=\"eplink://update\">ExplorerPatcher-jpを更新し、エクスプローラを再起動する</A>事ができます。\n"
                         L"\u2022 Githubでは、<A HREF=\"https://github.com/creeper-0910/ExplorerPatcher-jp/releases\">リリースを確認したり</A>、 <A HREF=\"https://github.com/valinet/ExplorerPatcher/discussions/1102\">現在のステータスを確認したり</A>、 <A HREF=\"https://github.com/valinet/ExplorerPatcher/discussions\">ディスカッションに参加</A>または<A HREF=\"https://github.com/valinet/ExplorerPatcher/issues\">最新のissueを確認</A>することが可能です。\n"
                         L"\u2022 ExplorerPatcher-jpが原因ではないと思われる場合は、最近インストールされたシェル拡張機能または同様のユーティリティをアンインストールしてください。\n"
                         L"\u2022 問題が解決しない場合、<A HREF=\"%s\">ExplorerPatcher-jpをアンインストール</A>し、修正版が公開された後再インストールする事ができます。"
                         L"アンインストールしても、ExploerePatcher-jpの設定は保持されますのでご安心ください。\n"
                         L"\n"
                         L"ご迷惑をおかけして申し訳ありません。このプログラムを更新し、継続的に機能するよう最善を尽くしています。\n\n"
-                        L"ExplorerPatcher-jpは、問題の修正を行うことができるようにするため次のエクスプローラーの再起動まで無効化されます。",
+                        L"ExplorerPatcher-jpは、問題の修正を行うことができるよう次のエクスプローラーの再起動まで無効化されます。",
                         crashThresholdTime / 1000, times, uninstallLink);
                     SHCreateThread(InformUserAboutCrash, msg, 0, NULL);
                     IncrementDLLReferenceCount(hModule);
