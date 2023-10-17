@@ -20,9 +20,7 @@ ExplorerPatcher-jpは、ExplorerPatcherの日本語化と日本語環境向け�
 
 > アンインストール方法
 >
-> Ctrl + Alt +Delを押下し、タスクマネージャーを選択します。
->
-> ファイル(F)⇢新しいタスクの実行(N)でappwiz.cplと入力し、アプリと機能を起動します。
+> Win + R を押下して、appwiz.cpl と入力し、［アプリと機能］を起動します。
 >
 > ExplorerPatcherを検索し、アンインストールします。
 
@@ -36,6 +34,7 @@ ExplorerPatcher-jpは、ExplorerPatcherの日本語化と日本語環境向け�
 |-----------------------|
 |reindex-otさん|
 |Rukotoさん|
+|Syuugoさん|
 
 ご協力ありがとうございます!
 
