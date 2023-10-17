@@ -1,4 +1,4 @@
-#ifdef _WIN64
+﻿#ifdef _WIN64
 #include "hooking.h"
 #endif
 #include <initguid.h>
@@ -13742,7 +13742,7 @@ HRESULT EntryPoint(DWORD dwMethod)
                         L"\u2022 問題が解決しない場合、<A HREF=\"%s\">ExplorerPatcher-jpをアンインストール</A>し、修正版が公開された後再インストールする事ができます。"
                         L"アンインストールしても、ExploerePatcher-jpの設定は保持されますのでご安心ください。\n"
                         L"\n"
-                        L"ご迷惑をおかけして申し訳ありません。このプログラムを更新し、機能し続けるよう最善を尽くしています。\n\n"
+                        L"ご迷惑をおかけして申し訳ありません。このプログラムを更新し、継続的に機能するよう最善を尽くしています。\n\n"
                         L"ExplorerPatcher-jpは、問題の修正を行うことができるようにするため次のエクスプローラーの再起動まで無効化されます。",
                         crashThresholdTime / 1000, times, uninstallLink);
                     SHCreateThread(InformUserAboutCrash, msg, 0, NULL);
