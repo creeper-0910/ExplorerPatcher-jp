@@ -1,4 +1,7 @@
 # ExplorerPatcher-jp
+
+[![Discordに参加する](https://discordapp.com/api/guilds/1155912047897350204/widget.png?style=shield)](https://discord.gg/gsPcfqHTD2)
+
 このプロジェクトは、Windows上での作業環境を改善することを目的としています。  
 
 ## ⚠️警告
@@ -100,4 +103,4 @@ valinet氏 (ExplorerPatcher公式の作者)へ寄付は、[PayPal](https://www.p
 
 creeper-0910 (ExplorerPatcher-jpの作者)へ寄付は、[Github Sponsor](https://github.com/sponsors/creeper-0910)かTwitterのDMからAmazonギフト券を送っていただけるとめちゃくちゃ喜びます。
 
-Discord サーバーは[こちら](https://discord.gg/gsPcfqHTD2)から参加可能です
+ExplorerPatcherについての詳細は[こちら](https://github.com/valinet/ExplorerPatcher/wiki)から確認できます。(英語)
