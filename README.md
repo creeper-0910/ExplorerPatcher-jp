@@ -1,18 +1,17 @@
 # ExplorerPatcher-jp
+ExplorerPatcherに多言語化が実装されたため、ExplorerPatcher-jpの更新は終了しました。  
+今後は[ExplorerPatcher](https://github.com/valinet/ExplorerPatcher)をご利用ください。
+## お礼
 
-[![Discordに参加する](https://discordapp.com/api/guilds/1155912047897350204/widget.png?style=shield)](https://discord.gg/gsPcfqHTD2)
+翻訳に貢献してくださったreindex-otさん、Rukotoさん、Syuugoさん  
+ExploerPatcherを開発、維持している皆さん  
+そして、ExplorerPatcher-jpを利用してくださった皆さん  
+今まで本当にありがとうございました！
+
+---------------------------------------  
 
 このプロジェクトは、Windows上での作業環境を改善することを目的としています。  
-
-## ⚠️警告
-EPバージョン22621.1992.56.3で下記の不具合が報告されていました。 
-最新版では修正されているようですのでそちらをご利用ください。
-
-・Alt+TabまたはWin+Tabが利用できない  
-・Win11スタイルのスタートボタンが機能しない  
-・タスクビューが利用できない  
-このバージョンでは多数の問題が報告されているようです。詳細は本家様のissueをご覧ください：https://github.com/valinet/ExplorerPatcher/issues/1687  
-  
+[![Discordに参加する](https://discordapp.com/api/guilds/1155912047897350204/widget.png?style=shield)](https://discord.gg/gsPcfqHTD2)  
 ExplorerPatcher-jpは、ExplorerPatcherの日本語化と日本語環境向けの最適化を行ったExplorerPatcherの「非公式なビルド」です! 公式ではありません!  
 非公式日本語訳の更新は遅れる場合があります。  
 更新に気づいていない場合もありますので、Twitterでメンション等して頂ければできるだけ早く更新します。
@@ -28,18 +27,6 @@ ExplorerPatcher-jpは、ExplorerPatcherの日本語化と日本語環境向け�
 > ExplorerPatcherを検索し、アンインストールします。
 
 ![Build status](https://github.com/valinet/ExplorerPatcher/actions/workflows/build.yml/badge.svg)
-
-## お礼
-
-最近、沢山の方々がExplorerPatcher-jpを使用してくださっているようでとても嬉しいです!
-翻訳やバグに関するお問い合わせはissueから受け付けておりますので、お気軽にどうぞ!
-|翻訳に貢献してくださった方々|
-|-----------------------|
-|reindex-otさん|
-|Rukotoさん|
-|Syuugoさん|
-
-ご協力ありがとうございます!
 
 ## ExplorerPatcherの概要
 
