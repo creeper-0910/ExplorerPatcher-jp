@@ -6,7 +6,11 @@ ExplorerPatcherに多言語化が実装されたため、ExplorerPatcher-jpの�
 翻訳に貢献してくださったreindex-otさん、Rukotoさん、Syuugoさん  
 ExploerPatcherを開発、維持している皆さん  
 そして、ExplorerPatcher-jpを利用してくださった皆さん  
-今まで本当にありがとうございました！
+今まで本当にありがとうございました！  
+
+最高ダウンロード数:164,045回  
+
+スターの数:90
 
 ---------------------------------------  
 
